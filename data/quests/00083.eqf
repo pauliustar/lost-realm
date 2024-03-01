@@ -1,0 +1,135 @@
+main
+{
+        questname   "The Trial of Luck"
+        version  1.0
+}
+
+
+state begin
+{
+        desc        "[Trial] The Trial of Luck"
+
+        if DoneDaily(3) SetState("ResetQuest");
+        else SetState("QuestStart");
+}
+state QuestStart
+{
+        desc        "[Trial] The Trial of Luck"
+}
+state ResetQuest
+{
+        desc        "[Trial] The Trial of Luck"
+
+        action SetQuestState(97, "AlreadyCompleted");
+}
+state Quest
+{
+        desc        "[Trial] The Trial of Luck"
+
+        action SetCoord(17,18,17);
+        action SetQuestState(97, "Menu");
+
+        rule IsQuestState(97, "Menu") goto Gatekeeper
+}
+state Gatekeeper
+{
+        desc        "[Trial - Luck] Talk to Chest of Luck"
+
+        action     AddNpcText(83, "[The Trial of Luck] Are you lucky enough? Get 1 Gold Essence and walk on one of color changing tiles to test it!");
+
+        action     addNpcInput(83, 1, "Start trial");
+        action     addNpcInput(83, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartEndurancePartyCheck
+        rule       InputNpc(2) goto Exit
+}
+state Exit
+{
+        action SetCoord(2,20,15);
+        action Reset();
+}
+state StartEndurancePartyCheck
+{
+
+        if PartyMembers(2) SetState("TooManyPartyMembers");
+        else SetState("Trial");
+}
+state TooManyPartyMembers
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(83, "There is too many party members to start this trial!");
+        rule         TalkedToNpc(83) goto Gatekeeper        
+}
+state Trial
+{
+
+        action SetCoord(17,17,1);
+        action SetState("Wave1");
+}
+state Wave1
+{
+        desc        "[Luck] Get 1 Luck Essence"
+
+        rule GotItems(121, 1) goto LuckTest
+        rule PartyMembers(2) goto Death
+        rule EnterCoord(1,13,14) goto Death
+
+}
+state LuckTest
+{
+        desc        "[Wave 2] Test your luck!"
+
+        action AddNpcBox("Trial of Luck", "Congrats! You've found 1 Luck Essence. Walk on a color changing tile to test your luck.");
+
+        rule EnterCoord(17,32,2) goto Tester
+        rule EnterCoord(17,19,1) goto Tester
+        rule EnterCoord(17,12,5) goto Tester
+        rule EnterCoord(17,2,2) goto Tester
+        rule EnterCoord(17,2,10) goto Tester
+        rule EnterCoord(17,5,18) goto Tester
+        rule EnterCoord(17,3,30) goto Tester
+        rule EnterCoord(17,9,32) goto Tester
+        rule EnterCoord(17,17,31) goto Tester
+        rule EnterCoord(17,28,32) goto Tester
+        rule EnterCoord(17,32,27) goto Tester
+        rule EnterCoord(17,32,18) goto Tester
+        rule EnterCoord(17,30,9) goto Tester
+        rule PartyMembers(2) goto Death
+        rule EnterMap(1) goto Death
+}
+state Tester
+{
+        action RemoveItem(121, 1);
+        action Roll(5)
+
+        if Rolled(5) SetState("Completed");
+        else SetState("Death");
+}
+state Completed
+{
+        
+        action SetCoord(2,20,15);
+        action GiveEXP(15000);
+        action GiveFame(2);
+        action AddNpcPM("[Completed] The Trial of Luck", "Experience gained: 15000 | Fame earned: 2");
+        action Heal(100, 0);
+
+        action ResetDaily();
+}
+state Death
+{
+        action SetState("Failed");
+        action Warp(17,18,17);
+}
+state Failed
+{
+        desc        "[Wave 1] Failed!"
+
+        action     AddNpcText(83, "[The Trial of Luck] Unlucky! Want to try again?");
+
+        action     addNpcInput(83, 1, "Retry");
+        action     addNpcInput(83, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartEndurancePartyCheck
+        rule       InputNpc(2) goto Exit
+}

@@ -1,0 +1,240 @@
+main
+{
+        questname   "Fame Shop"
+        version  1.0
+        hidden
+}
+
+
+state begin
+{
+        desc        "Talk to Johan"
+
+        action     AddNpcText(86, "Hi [name], how can I help you today?");
+
+        action addNpcInput(86, 1, "Items selection");
+        action addNpcInput(86, 2, "Dungeon Keys selection");
+        action addNpcInput(86, 3, "Character skins selection");
+        action addNpcInput(86, 4, "Materials selection");
+        action addNpcInput(86, 5, "Exit");
+
+        rule InputNpc(1) goto ItemsMenu
+        rule InputNpc(2) goto KeysMenu
+        rule InputNpc(3) goto SkinsMenu
+        rule InputNpc(4) goto MaterialsMenu
+        rule InputNpc(5) goto ResetQ
+        rule TalkedToNpc(86) goto ResetQ
+}
+state ItemsMenu
+{
+        desc        "Johan - Items Selection"
+
+        action     AddNpcText(86, "If you have fame to show for your progress, I can get you something..");
+
+        action addNpcInput(86, 1, "Title Certificate [10 Fame]");
+        action addNpcInput(86, 2, "100 Soul Essence [5 Fame]");
+        action addNpcInput(86, 3, "Exit");
+
+        rule InputNpc(1) goto TitleFame
+        rule InputNpc(2) goto SoulsFame
+        rule InputNpc(3) goto ResetQ
+        rule TalkedToNpc(86) goto ResetQ
+}
+state KeysMenu
+{
+        desc        "Johan - Keys Selection"
+
+        action     AddNpcText(86, "If you have fame to show for your progress, I can get you something..");
+
+        action addNpcInput(86, 1, "Secret Library Key [5 Fame]");
+        action addNpcInput(86, 2, "Void Key [10 Fame]");
+        action addNpcInput(86, 3, "Exit");
+
+        rule InputNpc(1) goto SecretFame
+        rule InputNpc(2) goto VoidFame
+        rule InputNpc(3) goto ResetQ
+        rule TalkedToNpc(86) goto ResetQ
+}
+state SkinsMenu
+{
+        desc        "Johan - Skins Selection"
+
+        action     AddNpcText(86, "If you have fame to show for your progress, I can get you something..");
+
+        action addNpcInput(86, 1, "Orc [10 Fame]");
+        action addNpcInput(86, 2, "Fish [25 Fame]");
+        action addNpcInput(86, 3, "Panda [25 Fame]");
+        action addNpcInput(86, 4, "Exit");
+
+        rule InputNpc(1) goto OrcFame
+        rule InputNpc(2) goto FishFame
+        rule InputNpc(3) goto PandaFame
+        rule InputNpc(4) goto ResetQ
+        rule TalkedToNpc(86) goto ResetQ
+}
+state MaterialsMenu
+{
+        desc        "Johan - Items Selection"
+
+        action     AddNpcText(86, "If you have fame to show for your progress, I can get you something..");
+
+        action addNpcInput(86, 1, "50 Wood Scraps [5 Fame]");
+        action addNpcInput(86, 2, "50 Metal Scraps [5 Fame]");
+        action addNpcInput(86, 3, "50 Cloth Scraps [5 Fame]");
+        action addNpcInput(86, 4, "Exit");
+
+        rule InputNpc(1) goto WoodFame
+        rule InputNpc(2) goto MetalFame
+        rule InputNpc(3) goto ClothFame
+        rule InputNpc(4) goto ResetQ
+        rule TalkedToNpc(86) goto ResetQ
+}
+state TitleFame
+{
+        if HasFame(10) SetState("Title");
+        else SetState("NoFame");
+}
+
+state Title
+{
+        action ShowHint("Title Certificate added!");
+        action RemoveFame(10);
+        action GiveItem(19, 1);
+        action Reset();
+}
+
+state SoulsFame
+{
+        if HasFame(5) SetState("Souls");
+        else SetState("NoFame");
+}
+
+state Souls
+{
+        action ShowHint("100 Soul Essence added!");
+        action RemoveFame(5);
+        action GiveItem(14, 100);
+        action Reset();
+}
+
+state SecretFame
+{
+        if HasFame(5) SetState("Secret");
+        else SetState("NoFame");
+}
+
+state WoodFame
+{
+        if HasFame(5) SetState("Wood");
+        else SetState("NoFame");
+}
+state MetalFame
+{
+        if HasFame(5) SetState("Metal");
+        else SetState("NoFame");
+}
+state ClothFame
+{
+        if HasFame(5) SetState("Cloth");
+        else SetState("NoFame");
+}
+
+state Wood
+{
+        action ShowHint("50 Wood Scrap added!");
+        action RemoveFame(5);
+        action GiveItem(57, 50);
+        action Reset();
+}
+state Metal
+{
+        action ShowHint("50 Metal Scrap added!");
+        action RemoveFame(5);
+        action GiveItem(54, 50);
+        action Reset();
+}
+state Cloth
+{
+        action ShowHint("50 Cloth Scrap added!");
+        action RemoveFame(5);
+        action GiveItem(56, 50);
+        action Reset();
+}
+
+state Secret
+{
+        action ShowHint("Secret Dungeon Key added!");
+        action RemoveFame(5);
+        action GiveItem(13, 1);
+        action Reset();
+}
+
+state VoidFame
+{
+        if HasFame(10) SetState("Void");
+        else SetState("NoFame");
+}
+
+state Void
+{
+        action ShowHint("Broken Void Dungeon Key added!");
+        action RemoveFame(10);
+        action GiveItem(73, 1);
+        action Reset();
+}
+
+state OrcFame
+{
+        if HasFame(10) SetState("Orc");
+        else SetState("NoFame");
+}
+
+state Orc
+{
+        action ShowHint("Race changed!");
+        action RemoveFame(10);
+        action SetRace(3);
+        action Reset();
+}
+
+state FishFame
+{
+        if HasFame(25) SetState("Fish");
+        else SetState("NoFame");
+}
+
+state Fish
+{
+        action ShowHint("Race changed!");
+        action RemoveFame(25);
+        action SetRace(6);
+        action Reset();
+}
+
+state PandaFame
+{
+        if HasFame(25) SetState("Panda");
+        else SetState("NoFame");
+}
+
+state Panda
+{
+        action ShowHint("Race changed!");
+        action RemoveFame(25);
+        action SetRace(5);
+        action Reset();
+}
+
+state NoFame
+{
+        desc        "Talk to Johan"
+
+        action     AddNpcText(86, "Not enough fame to perform this action!");
+
+        rule TalkedToNpc(86) goto ResetQ
+}
+
+state ResetQ
+{
+        action Reset();
+}

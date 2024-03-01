@@ -1,0 +1,104 @@
+main
+{
+        questname   "Elements"
+        version  1.0
+        hidden
+}
+
+state begin
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "I have some urgent matter to attend right now.. Come back later.");
+
+        rule TalkedToNpc(94) goto ResetQ
+}
+
+state ResetQ
+{
+        action Reset();
+}
+
+state Intro
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "Ah! [name]! Glad to see you. We have managed to secure the void. We found a lot of new interesting things in the area. Ready to research?");
+
+        action     addNpcInput(94, 1, "I'm ready");
+
+        rule       InputNpc(1) goto Teleport
+}
+
+state Teleport
+{
+        desc        "Talk to Orelius"
+
+        action     SetCoord(18,16,15);
+
+        action     AddNpcText(94, "Here we are! The secret lair! Those creatures really did a lot of work here..");
+
+        action     addNpcInput(94, 1, "What is this place?");
+
+        rule       InputNpc(1) goto SecretLair
+}
+
+state SecretLair
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "We are still investigating. But it seems they have been destroying the void for some elemental powers!");
+
+        action     addNpcInput(94, 1, "What should I do next?");
+
+        rule       InputNpc(1) goto Mining
+}
+
+state Mining
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "I believe we can use this for our own benefit! Explore the area and see what you can do.");
+
+        action     addNpcInput(94, 1, "Okay.");
+
+        rule       InputNpc(1) goto Leave
+}
+
+state Leave
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "If you are ready to leave let me know and I'll warp you out!");
+
+        action     addNpcInput(94, 1, "I want to leave..");
+        action     addNpcInput(94, 2, "I'll stay for a bit.");
+
+        rule       InputNpc(1) goto LostRealmTravel
+        rule       InputNpc(2) goto Leave
+}
+
+state LostRealmTravel
+{
+      action     SetCoord(2,24,23); 
+      action SetQuestState(94, "LostRealm"); 
+}
+
+state Travel
+{
+      action     SetCoord(18,16,15); 
+      action SetQuestState(94, "Leave"); 
+}
+
+state LostRealm
+{
+        desc        "Talk to Orelius"
+
+        action     AddNpcText(94, "Do you want to travel to Secret Lair?");
+
+        action     addNpcInput(94, 1, "Yes, let's go!");
+        action     addNpcInput(94, 2, "I'll stay here for a bit.");
+
+        rule       InputNpc(1) goto Travel
+        rule       InputNpc(2) goto LostRealm
+}

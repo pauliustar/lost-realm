@@ -1,0 +1,14 @@
+main
+{
+   questname  "Death Realm"
+   version      1.0
+   hidden
+}
+state begin
+{
+   desc         "Welcome to Death Realm"
+   action       SetRace(4);
+   action       SetClass(1);
+   action       StartQuest(92, "begin");
+   action       StartQuest(84, "begin");
+}

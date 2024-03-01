@@ -1,0 +1,84 @@
+main
+{
+        questname   "Menu"
+        version  1.0
+        hidden
+}
+
+state begin
+{
+        desc        "Talk to Master Pao"
+
+        action     AddNpcText(98, "Hey there [name], let's start your training.");
+
+        action     AddNpcInput(98, 1, "Abyssal Crucible [Level 1 - 8]");
+        action     AddNpcInput(98, 2, "Temporal Nexus [Level 2 - 12]");
+        action     AddNpcInput(98, 3, "Forgotten Arena [Level 11 - 17]");
+
+        rule         InputNpc(1) goto Abyssal
+        rule         InputNpc(2) goto NexusLevel
+        rule         InputNpc(3) goto ArenaLevel
+}
+state Level
+{
+        desc        "Talk to Master Pao"
+
+        action     AddNpcText(98, "You don't have level required to enter this area.");
+
+        rule TalkedToNpc(98) goto ResetQ       
+}
+state ResetQ
+{
+        action Reset();
+}
+state Abyssal
+{
+
+        action     SetCoord(3,12,6);
+
+        rule EnterCoord(3,12,6) goto Menu
+}
+state NexusLevel
+{
+        if IsLevel(2) SetState("Nexus");
+        else SetState("Level");
+}
+state ArenaLevel
+{
+        if IsLevel(11) SetState("Arena");
+        else SetState("Level");
+}
+state Nexus
+{
+
+        action     SetCoord(10,29,2);
+
+        rule EnterCoord(10,29,2) goto Menu
+}
+state Arena
+{
+
+        action     SetCoord(15,42,5);
+
+        rule EnterCoord(15,42,5) goto Menu
+}
+
+
+state Menu
+{
+        desc        "[Training]"
+
+        action     AddNpcText(98, "Leaving early? Perhaps you don't miss your life on Earth that much?");
+        action     AddNpcInput(98, 1, "Just get me back to Lost Realm..");
+
+        rule         InputNpc(1) goto Exit
+        rule EnterMap(2) goto begin
+}
+
+state Exit
+{
+
+        action     SetCoord(2,18,15);
+
+        action Reset();
+}

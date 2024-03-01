@@ -1,0 +1,1772 @@
+Searching 320 files for "level_up"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/src/npc.cpp:
+  687  		if (findopp != this->damagelist.end() || character->InRange(this))
+  688  		{
+  689: 			bool level_up = false;
+  690  
+  691  			PacketBuilder builder(spell_id == -1 ? PACKET_NPC : PACKET_CAST, PACKET_SPEC, 26);
+  ...
+  802  					while (character->level < static_cast<int>(this->map->world->config["MaxLevel"]) && character->exp >= this->map->world->exp_table[character->level+1])
+  803  					{
+  804: 						level_up = true;
+  805  						++character->level;
+  806  						character->statpoints += static_cast<int>(this->map->world->config["StatPerLevel"]);
+  ...
+  816  					}
+  817  
+  818: 					if (level_up)
+  819  					{
+  820  						builder.SetID(spell_id == -1 ? PACKET_NPC : PACKET_CAST, PACKET_ACCEPT);
+  ...
+  845  			}
+  846  
+  847: 			if (level_up)
+  848  			{
+  849  				builder.AddChar(character->level);
+
+~/Desktop/eoserv/src/party.cpp:
+  198  		member->exp += reward;
+  199  
+  200: 		bool level_up = (member->level < static_cast<int>(this->world->config["MaxLevel"]) && member->exp >= this->world->exp_table[member->level+1]);
+  201  
+  202  		PacketBuilder builder(PACKET_PARTY, PACKET_TARGET_GROUP, 7);
+  203  		builder.AddShort(member->PlayerID());
+  204  		builder.AddInt(reward);
+  205: 		builder.AddChar(level_up);
+  206  
+  207: 		if (level_up)
+  208  		{
+  209  			++member->level;
+
+~/Desktop/eoserv/src/quest.cpp:
+  590  	else if (function_name == "giveexp")
+  591  	{
+  592: 		bool level_up = false;
+  593  
+  594  	    int online = this->character->world->characters.size();
+  ...
+  616  		 && this->character->exp >= this->character->map->world->exp_table[this->character->level+1])
+  617  		{
+  618: 			level_up = true;
+  619  			++this->character->level;
+  620  			this->character->statpoints += int(this->character->map->world->config["StatPerLevel"]);
+  ...
+  626  		builder.AddInt(this->character->exp);
+  627  		builder.AddShort(this->character->karma);
+  628: 		builder.AddChar(level_up ? this->character->level : 0);
+  629  
+  630: 		if (level_up)
+  631  		{
+  632  			builder.AddShort(this->character->statpoints);
+  ...
+  639  		this->character->Send(builder);
+  640  
+  641: 		if (level_up)
+  642  		{
+  643  			UTIL_FOREACH(this->character->map->characters, character)
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  438  			case EIF::EXPReward:
+  439  			{
+  440: 				bool level_up = false;
+  441  
+  442  				character->exp += item.expreward;
+  ...
+  447  				 && character->exp >= character->map->world->exp_table[character->level+1])
+  448  				{
+  449: 					level_up = true;
+  450  					++character->level;
+  451  					character->statpoints += static_cast<int>(character->map->world->config["StatPerLevel"]);
+  ...
+  463  				reply.AddInt(character->exp);
+  464  
+  465: 				reply.AddChar(level_up ? character->level : 0);
+  466  				reply.AddShort(character->statpoints);
+  467  				reply.AddShort(character->skillpoints);
+  ...
+  470  				reply.AddShort(character->maxsp);
+  471  
+  472: 				if (level_up)
+  473  				{
+  474  					PacketBuilder builder(PACKET_RECOVER, PACKET_REPLY, 9);
+
+17 matches across 5 files
+
+
+Searching 321 files for "portal is now"
+
+0 matches
+
+Searching 321 files for "Portal"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/data/quests/00100.eqf:
+   53          desc         "Talk to Death"
+   54  
+   55:         action AddNpcText(100, "Use arrow keys (or WASD if configured) to move around. Left/Right CTRL button to attack. Hit Miserable Souls and portal will open next to Death. You will have 30 seconds to walk on it.");
+   56  
+   57          rule TalkedToNpc(100) goto EndIntro
+
+~/Desktop/eoserv/src/world.cpp:
+  203      world->EscapeDeath = false;
+  204  
+  205:     world->PortalEffect();
+  206      world->EndEscapeSequence();
+  207  
+  ...
+  217  			character->Send(builder);
+  218  
+  219: 			character->ServerMsg("Portal is open! You have 30 seconds to escape, hurry!");
+  220      	}
+  221      }
+  ...
+  233      	if(character->mapid == 1)
+  234      	{
+  235: 			character->ServerMsg("Portal vanished. Collect energy from souls to bring it back!");
+  236      	}
+  237      }
+  238  }
+  239  
+  240: void world_portal(void *world_void)
+  241  {
+  242      World *world = static_cast<World *>(world_void);
+  ...
+  415  Escape Death
+  416  
+  417: [false] - Stops "charging" of the portal. (NPC::Killed)
+  418: [true] - All counting added until portal opens & closes
+  419  
+  420  */
+  ...
+ 1927      this->timer.Register(event);
+ 1928  }
+ 1929: void World::PortalEffect()
+ 1930  {
+ 1931:     TimeEvent *event = new TimeEvent(world_portal, this, 3, 10);
+ 1932      this->timer.Register(event);
+ 1933  }
+
+~/Desktop/eoserv/src/world.hpp:
+  173  		void StartEscapeSequence();
+  174  		void EndEscapeSequence();
+  175: 		void PortalEffect();
+  176  
+  177  
+
+18 matches across 4 files
+
+
+Searching 321 files for "PACKET_STATSKILL, PACKET_PLAYER"
+
+~/Desktop/eoserv/src/character.cpp:
+ 2259  void Character::UpdateStats()
+ 2260  {
+ 2261:     PacketBuilder builder(PACKET_STATSKILL, PACKET_PLAYER, 32);
+ 2262      builder.AddShort(this->statpoints);
+ 2263      builder.AddShort(this->display_str);
+
+~/Desktop/eoserv/src/npc.cpp:
+  812  							++character->agi;
+  813  							++character->con;
+  814: 							builder.SetID(PACKET_STATSKILL, PACKET_PLAYER);
+  815  							builder.ReserveMore(32);
+  816  							builder.AddShort(character->statpoints);
+
+~/Desktop/eoserv/src/party.cpp:
+  217  				++member->agi;
+  218  				++member->con;
+  219: 				builder.SetID(PACKET_STATSKILL, PACKET_PLAYER);
+  220  				builder.ReserveMore(32);
+  221  				builder.AddShort(member->statpoints);
+
+~/Desktop/eoserv/src/quest.cpp:
+  279  		if (statpoints)
+  280  		{
+  281: 			builder.SetID(PACKET_STATSKILL, PACKET_PLAYER);
+  282  			builder.AddShort(victim->statpoints);
+  283  		}
+  ...
+  626  				++this->character->agi;
+  627  				++this->character->con;
+  628: 				PacketBuilder builder(PACKET_STATSKILL, PACKET_PLAYER);
+  629  				builder.ReserveMore(32);
+  630  				builder.AddShort(this->character->statpoints);
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  457  						++character->agi;
+  458  						++character->con;
+  459: 						reply.SetID(PACKET_STATSKILL, PACKET_PLAYER);
+  460  						reply.ReserveMore(32);
+  461  						reply.AddShort(character->statpoints);
+
+~/Desktop/eoserv/src/handlers/StatSkill.cpp:
+  176  			character->CalculateStats();
+  177  
+  178: 			reply.SetID(PACKET_STATSKILL, PACKET_PLAYER);
+  179  			reply.ReserveMore(32);
+  180  			reply.AddShort(character->statpoints);
+
+7 matches across 6 files
+
+
+Searching 321 files for "level_up"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/src/npc.cpp:
+  687  		if (findopp != this->damagelist.end() || character->InRange(this))
+  688  		{
+  689: 			bool level_up = false;
+  690  
+  691  			PacketBuilder builder(spell_id == -1 ? PACKET_NPC : PACKET_CAST, PACKET_SPEC, 26);
+  ...
+  802  					while (character->level < static_cast<int>(this->map->world->config["MaxLevel"]) && character->exp >= this->map->world->exp_table[character->level+1])
+  803  					{
+  804: 						level_up = true;
+  805  						++character->level;
+  806  						character->statpoints += static_cast<int>(this->map->world->config["StatPerLevel"]);
+  ...
+  836  					}
+  837  
+  838: 					if (level_up)
+  839  					{
+  840  						builder.SetID(spell_id == -1 ? PACKET_NPC : PACKET_CAST, PACKET_ACCEPT);
+  ...
+  865  			}
+  866  
+  867: 			if (level_up)
+  868  			{
+  869  				builder.AddChar(character->level);
+
+~/Desktop/eoserv/src/party.cpp:
+  198  		member->exp += reward;
+  199  
+  200: 		bool level_up = (member->level < static_cast<int>(this->world->config["MaxLevel"]) && member->exp >= this->world->exp_table[member->level+1]);
+  201  
+  202  		PacketBuilder builder(PACKET_PARTY, PACKET_TARGET_GROUP, 7);
+  203  		builder.AddShort(member->PlayerID());
+  204  		builder.AddInt(reward);
+  205: 		builder.AddChar(level_up);
+  206  
+  207: 		if (level_up)
+  208  		{
+  209  			++member->level;
+
+~/Desktop/eoserv/src/quest.cpp:
+  590  	else if (function_name == "giveexp")
+  591  	{
+  592: 		bool level_up = false;
+  593  
+  594  	    int online = this->character->world->characters.size();
+  ...
+  616  		 && this->character->exp >= this->character->map->world->exp_table[this->character->level+1])
+  617  		{
+  618: 			level_up = true;
+  619  			++this->character->level;
+  620  			this->character->statpoints += int(this->character->map->world->config["StatPerLevel"]);
+  ...
+  653  		builder.AddInt(this->character->exp);
+  654  		builder.AddShort(this->character->karma);
+  655: 		builder.AddChar(level_up ? this->character->level : 0);
+  656  
+  657: 		if (level_up)
+  658  		{
+  659  			builder.AddShort(this->character->statpoints);
+  ...
+  666  		this->character->Send(builder);
+  667  
+  668: 		if (level_up)
+  669  		{
+  670  			UTIL_FOREACH(this->character->map->characters, character)
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  438  			case EIF::EXPReward:
+  439  			{
+  440: 				bool level_up = false;
+  441  
+  442  				character->exp += item.expreward;
+  ...
+  447  				 && character->exp >= character->map->world->exp_table[character->level+1])
+  448  				{
+  449: 					level_up = true;
+  450  					++character->level;
+  451  					character->statpoints += static_cast<int>(character->map->world->config["StatPerLevel"]);
+  ...
+  490  				reply.AddInt(character->exp);
+  491  
+  492: 				reply.AddChar(level_up ? character->level : 0);
+  493  				reply.AddShort(character->statpoints);
+  494  				reply.AddShort(character->skillpoints);
+  ...
+  497  				reply.AddShort(character->maxsp);
+  498  
+  499: 				if (level_up)
+  500  				{
+  501  					PacketBuilder builder(PACKET_RECOVER, PACKET_REPLY, 9);
+
+17 matches across 5 files
+
+
+Searching 321 files for "SkillPerLevel"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/config/rates.ini:
+   37  StatPerLevel = 0
+   38  
+   39: ## SkillPerLevel (number)
+   40  # Skill points gained per level-up
+   41: SkillPerLevel = 1
+   42  
+   43  
+
+~/Desktop/eoserv/src/character.cpp:
+ 1936  
+ 1937  		this->statpoints = this->level * int(this->world->config["StatPerLevel"]);
+ 1938: 		this->skillpoints = this->level * int(this->world->config["SkillPerLevel"]);
+ 1939  
+ 1940  		this->CalculateStats();
+
+~/Desktop/eoserv/src/eoserv_config.cpp:
+  123  	eoserv_config_default(config, "AdminPrefix"        , "$");
+  124  	eoserv_config_default(config, "StatPerLevel"       , 3);
+  125: 	eoserv_config_default(config, "SkillPerLevel"      , 4);
+  126  	eoserv_config_default(config, "EnforceWeight"      , 2);
+  127  	eoserv_config_default(config, "MaxWeight"          , 250);
+
+~/Desktop/eoserv/src/npc.cpp:
+  807  						{
+  808  							character->statpoints += static_cast<int>(this->map->world->config["StatPerLevel"]);
+  809: 							character->skillpoints += static_cast<int>(this->map->world->config["SkillPerLevel"]);
+  810  						}
+  811  						character->CalculateStats();
+
+~/Desktop/eoserv/src/party.cpp:
+  209  			++member->level;
+  210  			member->statpoints += static_cast<int>(this->world->config["StatPerLevel"]);
+  211: 			member->skillpoints += static_cast<int>(this->world->config["SkillPerLevel"]);
+  212  			member->CalculateStats();
+  213  		}
+
+~/Desktop/eoserv/src/quest.cpp:
+  243  	else if (name == "cha")   (stats = true, victim->cha)   = util::clamp<int>(f(victim->cha),   0, victim->world->config["MaxStat"]);
+  244  	else if (name == "statpoints")  (statpoints = true,  victim->statpoints)  = util::clamp<int>(f(victim->statpoints),  0, int(victim->world->config["MaxLevel"]) * int(victim->world->config["StatPerLevel"]));
+  245: 	else if (name == "skillpoints") (skillpoints = true, victim->skillpoints) = util::clamp<int>(f(victim->skillpoints), 0, int(victim->world->config["MaxLevel"]) * int(victim->world->config["SkillPerLevel"]));
+  246  	else if (name == "admin")
+  247  	{
+  ...
+  619  			++this->character->level;
+  620  			this->character->statpoints += int(this->character->map->world->config["StatPerLevel"]);
+  621: 			this->character->skillpoints += int(this->character->map->world->config["SkillPerLevel"]);
+  622  			this->character->CalculateStats();
+  623  		}
+
+~/Desktop/eoserv/src/commands/char_mod.cpp:
+   71  		else if (set == "cha") (stats = true, victim->cha) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxStat"]));
+   72  		else if (set == "statpoints") (statpoints = true, victim->statpoints) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxLevel"]) * int(from->SourceWorld()->config["StatPerLevel"]));
+   73: 		else if (set == "skillpoints") (skillpoints = true, victim->skillpoints) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxLevel"]) * int(from->SourceWorld()->config["SkillPerLevel"]));
+   74  		else if (set == "admin")
+   75  		{
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  450  					++character->level;
+  451  					character->statpoints += static_cast<int>(character->map->world->config["StatPerLevel"]);
+  452: 					character->skillpoints += static_cast<int>(character->map->world->config["SkillPerLevel"]);
+  453  					character->CalculateStats();
+  454  				}
+
+17 matches across 9 files
+
+
+Searching 321 files for "SkillPerLevel"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/config/rates.ini:
+   37  StatPerLevel = 1
+   38  
+   39: ## SkillPerLevel (number)
+   40  # Skill points gained per level-up
+   41: SkillPerLevel = 1
+   42  
+   43  
+
+~/Desktop/eoserv/src/character.cpp:
+ 1936  
+ 1937  		this->statpoints = this->level * int(this->world->config["StatPerLevel"]);
+ 1938: 		this->skillpoints = this->level * int(this->world->config["SkillPerLevel"]);
+ 1939  
+ 1940  		this->CalculateStats();
+
+~/Desktop/eoserv/src/eoserv_config.cpp:
+  123  	eoserv_config_default(config, "AdminPrefix"        , "$");
+  124  	eoserv_config_default(config, "StatPerLevel"       , 3);
+  125: 	eoserv_config_default(config, "SkillPerLevel"      , 4);
+  126  	eoserv_config_default(config, "EnforceWeight"      , 2);
+  127  	eoserv_config_default(config, "MaxWeight"          , 250);
+
+~/Desktop/eoserv/src/npc.cpp:
+  807  						{
+  808  							character->statpoints += static_cast<int>(this->map->world->config["StatPerLevel"]);
+  809: 							character->skillpoints += static_cast<int>(this->map->world->config["SkillPerLevel"]);
+  810  						}
+  811  						character->CalculateStats();
+
+~/Desktop/eoserv/src/party.cpp:
+  209  			++member->level;
+  210  			member->statpoints += static_cast<int>(this->world->config["StatPerLevel"]);
+  211: 			member->skillpoints += static_cast<int>(this->world->config["SkillPerLevel"]);
+  212  			member->CalculateStats();
+  213  		}
+
+~/Desktop/eoserv/src/quest.cpp:
+  243  	else if (name == "cha")   (stats = true, victim->cha)   = util::clamp<int>(f(victim->cha),   0, victim->world->config["MaxStat"]);
+  244  	else if (name == "statpoints")  (statpoints = true,  victim->statpoints)  = util::clamp<int>(f(victim->statpoints),  0, int(victim->world->config["MaxLevel"]) * int(victim->world->config["StatPerLevel"]));
+  245: 	else if (name == "skillpoints") (skillpoints = true, victim->skillpoints) = util::clamp<int>(f(victim->skillpoints), 0, int(victim->world->config["MaxLevel"]) * int(victim->world->config["SkillPerLevel"]));
+  246  	else if (name == "admin")
+  247  	{
+  ...
+  619  			++this->character->level;
+  620  			this->character->statpoints += int(this->character->map->world->config["StatPerLevel"]);
+  621: 			this->character->skillpoints += int(this->character->map->world->config["SkillPerLevel"]);
+  622  			this->character->CalculateStats();
+  623  		}
+
+~/Desktop/eoserv/src/commands/char_mod.cpp:
+   71  		else if (set == "cha") (stats = true, victim->cha) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxStat"]));
+   72  		else if (set == "statpoints") (statpoints = true, victim->statpoints) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxLevel"]) * int(from->SourceWorld()->config["StatPerLevel"]));
+   73: 		else if (set == "skillpoints") (skillpoints = true, victim->skillpoints) = std::min(std::max(util::to_int(arguments[1]), 0), int(from->SourceWorld()->config["MaxLevel"]) * int(from->SourceWorld()->config["SkillPerLevel"]));
+   74  		else if (set == "admin")
+   75  		{
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  450  					++character->level;
+  451  					character->statpoints += static_cast<int>(character->map->world->config["StatPerLevel"]);
+  452: 					character->skillpoints += static_cast<int>(character->map->world->config["SkillPerLevel"]);
+  453  					character->CalculateStats();
+  454  				}
+
+17 matches across 9 files
+
+
+Searching 321 files for "Soul"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/data/pub/dat001.eif:
+    3  þþþþþþþ(þþþþþþþþþþFortitude [Buff 60s]þþþþþþþþþþþþþþþþþþVitality ShotþþþþþþþþþþþþþþþþþþPocket Knife [T0]'þþþþþþþþþþþþþþþþþþRock Smasher [Bound]êþþþþþþþþþþþþþþþþþþAegis Protector [T0]«þþþþþþþþþþþþþþþþþGorgon Gauntlets [T0]CþþþþþþþþþþþþþþþþþþRazorwind Scarf [T0]ÐþþþþþþþþþþþþþþþþþþFortitude Scarf [T0]Ïþþþþþþþþ
+    4  þþþþþþþþþþPrecision Scarf [T0]ÑþþþþþþþþþþþþþþþþþþSecret Library [Dungeon]ùþþþþþþþþþþþþþþþþþþ
+    5: Soul EssenceþþþþþþþþþþþþþþþþþþCombat Knife [T0]-þþþþþþþþþþþþþþþþþþRagged Tunic [T0]žþ
+    6  þþþþþþþþþþþþþþþþþThreadbare Bodice [T0]§þ
+    7  þþþþþþþþþþþþþþþþþSkin Modifier [White]þþþþþþþþþþþþþþþþþþTitle Certificate?þþþþþþþþþþþþþþþþþþSkin Modifier [Tan]þþþþþþþþþþþþþþþþþþSkin Modifier [Pale]þþþþþþþþþþþþþþþþþþIronbound Ward [T0]Iþ	þþþþþþþþþþþþþþþþþCombat Knife [+1]-þþþþþþþþþþþþþþþþþþCrit Star [1-Time Use]6þþþþþþþþþþþþþþþþþþ
+
+~/Desktop/eoserv/data/pub/dtn001.enf:
+    1: ENF m~CþMimicry [1]„þþþþþþþþþþþþþþþþ	þþþChimera [4]‹þþþþþ)þþþþ	þþþþþþþeþþþEryngi [8]¨þþþþþQþþþ	þþþþþþ	þþþ	þþShadow [?]—þþþþdþþþþþþþþþþþþþþþMaster Pao [Training]nþþþþcþþþþþþþþþþþþþþþAlchemist Adara [$]þþþþþþþþþþþþþþþþþþþMiserable Soul [0]
+    2  þþþþþþþþþþþþþþþþþþþ
+    3  Death [?]þþþþeþþþþþþþþþþþþþþþGerald [Daily Trials]þþþþbþþþþþþþþþþþþþþþLucien [Contracts]Sþþþþ`þþþþþþþþþþþþþþþOrelius [Elements]þþþþ_þþþþþþþþþþþþþþþBanker Bob [$]þþþ
+
+~/Desktop/eoserv/data/pub/backup/dat001.eif:
+    4  Pocket Knife'þþþþþþþþþþþþþþþþþþRock Smasher [P]êþþþþþþþþþþþþþþþþþþAegis Protector«þþþþþþþþþþþþþþþþþGorgon GauntletsCþþþþþþþþþþþþþþþþþþRazorwind ScarfÐþþþþþþþþþþþþþþþþþþFortitude ScarfÏþþþþþþþþ
+    5  þþþþþþþþþþPrecision ScarfÑþþþþþþþþþþþþþþþþþþSecret Library [Dungeon]ùþþþþþþþþþþþþþþþþþþ
+    6: Soul Essenceþþþþþþþþþþþþþþþþþþ
+    7  Combat Knife-þþþþþþþþþþþþþþþþþþ
+    8  Ragged Tunicžþ
+
+~/Desktop/eoserv/data/pub/backup/dtn001.enf:
+    1: ENFsÕþMimicry [1]„þþþþþþþþþþþþþþþþ	þþþChimera [4]‹þþþþþ)þþþþ	þþþþþþþeþþþEryngi [8]¨þþþþþQþþþ	þþþþþþ	þþþ	þþShadow [?]—þþþþdþþþþþþþþþþþþþþþMaster Pao [Training]nþþþþcþþþþþþþþþþþþþþþAlchemist Adara [$]þþþþþþþþþþþþþþþþþþþMiserable Soul [0]
+    2  þþþþþþþþþþþþþþþþþþþ
+    3  Death [?]þþþþeþþþþþþþþþþþþþþþGerald [Trials]þþþþbþþþþþþþþþþþþþþþLucien [Contract]Sþþþþ`þþþþþþþþþþþþþþþOrelius [Elements]þþþþ_þþþþþþþþþþþþþþþBanker Bobþþþ
+
+~/Desktop/eoserv/data/quests/00100.eqf:
+   53          desc         "Talk to Death"
+   54  
+   55:         action AddNpcText(100, "Use arrow keys (or WASD if configured) to move around. Left/Right CTRL button to attack. Kill Miserable Souls and portal will open next to Death. You will have 30 seconds to walk on it.");
+   56  
+   57          rule TalkedToNpc(100) goto EndIntro
+
+~/Desktop/eoserv/src/eoserv_config.cpp:
+  264  	eoserv_config_default(config, "MaxMap"             , 400);
+  265  	eoserv_config_default(config, "MaxTrade"           , 2000000000);
+  266: 	eoserv_config_default(config, "SoulItem"           , 14);
+  267  }
+  268  
+
+~/Desktop/eoserv/src/map.cpp:
+ 1664  				}
+ 1665  
+ 1666: 				//Soul Attack (Death Star)
+ 1667  				if (wepdata.id == 24)
+ 1668  				{
+
+~/Desktop/eoserv/src/npc.cpp:
+  515  	if(this->alive == false)
+  516  	{
+  517: 		// Soul drops
+  518: 		double roll_soul = util::rand(0.0, 100.0); 
+  519  
+  520: 		int soul_item = static_cast<int>(this->map->world->config["SoulItem"]);
+  521  
+  522: 		if (roll_soul >= 30.0 && roll_soul < 60.0 && from->mapid != 1)
+  523  		{
+  524: 			from->AddItem(soul_item, 1);
+  525  
+  526  			PacketBuilder reply(PACKET_ITEM, PACKET_GET, 9);
+  527  			reply.AddShort(0); // UID
+  528: 			reply.AddShort(soul_item);
+  529  			reply.AddThree(1);
+  530  			reply.AddChar(from->weight);
+
+~/Desktop/eoserv/src/world.cpp:
+  233      	if(character->mapid == 1)
+  234      	{
+  235: 			character->ServerMsg("Portal vanished. Collect energy from souls to bring it back!");
+  236      	}
+  237      }
+
+21 matches across 10 files
+
+
+Searching 321 files for "elements"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/data/pub/dtn001.enf:
+    1  ENF m~CþMimicry [1]„þþþþþþþþþþþþþþþþ	þþþChimera [4]‹þþþþþ)þþþþ	þþþþþþþeþþþEryngi [8]¨þþþþþQþþþ	þþþþþþ	þþþ	þþShadow [?]—þþþþdþþþþþþþþþþþþþþþMaster Pao [Training]nþþþþcþþþþþþþþþþþþþþþAlchemist Adara [$]þþþþþþþþþþþþþþþþþþþMiserable Soul [0]
+    2  þþþþþþþþþþþþþþþþþþþ
+    3: Death [?]þþþþeþþþþþþþþþþþþþþþGerald [Daily Trials]þþþþbþþþþþþþþþþþþþþþLucien [Contracts]Sþþþþ`þþþþþþþþþþþþþþþOrelius [Elements]þþþþ_þþþþþþþþþþþþþþþBanker Bob [$]þþþ
+    4  þþþþþþþþþþþþþþþþ	Carl [$]þþþþþþþþþþþþþþþþþþþGatekeeper [?]$þþþþaþþþþþþþþþþþþþþþGargoyle Eye [3]aþþþþþþþþþþþþþþþþþþþBarber Lisa [$]#þþþþþþþþþþþþþþþþþþþ
+    5  Thief [4]XþþþþþþþþþþþþþþþþþþþMarksman Brian [$]þþþþþþþþþþþþþþþþþþþRaidmaster Johan [Group]þþþþþþþþþþþþþþþþþþþ
+
+~/Desktop/eoserv/data/pub/backup/dtn001.enf:
+    1  ENFsÕþMimicry [1]„þþþþþþþþþþþþþþþþ	þþþChimera [4]‹þþþþþ)þþþþ	þþþþþþþeþþþEryngi [8]¨þþþþþQþþþ	þþþþþþ	þþþ	þþShadow [?]—þþþþdþþþþþþþþþþþþþþþMaster Pao [Training]nþþþþcþþþþþþþþþþþþþþþAlchemist Adara [$]þþþþþþþþþþþþþþþþþþþMiserable Soul [0]
+    2  þþþþþþþþþþþþþþþþþþþ
+    3: Death [?]þþþþeþþþþþþþþþþþþþþþGerald [Trials]þþþþbþþþþþþþþþþþþþþþLucien [Contract]Sþþþþ`þþþþþþþþþþþþþþþOrelius [Elements]þþþþ_þþþþþþþþþþþþþþþBanker Bobþþþ
+    4  þþþþþþþþþþþþþþþþ	Carl [$]þþþþþþþþþþþþþþþþþþþGatekeeper [?]$þþþþaþþþþþþþþþþþþþþþGargoyle Eye [3]aþþþþþþþþþþþþþþþþþþþBarber Lisa [$]#þþþþþþþþþþþþþþþþþþþ
+    5  Thief [4]XþþþþþþþþþþþþþþþþþþþEndurance Trainer [?]5þþþþ^þþþþþþþþþþþþþþþRaidmaster Johanþþþþþþþþþþþþþþþþþþþ
+
+56 matches across 3 files
+
+
+Searching 321 files for "dark"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/data/pub/dsl001.esf:
+   21  Ice Blastice blastþþþþþþþþþþþþþþþþþþþþþ
+   22  
+   23: Dark Beamdark beamþþþþþþþþþþþþþþþþþþþþþ
+   24: Dark Handdarkness come to meþþþþþþþþþþþþþþþþþþþþþDark Skulldarkness come to meþþþþþþþeþþþþþþþþþþþþþþFire Blastfire blastþþþþþþþeþþþþþþþþþþþþþþ
+   25  
+   26  TentaclesTentaclesþþþþþþþeþþþþþþþþþþþþþþPower Windpower windþþþþþþþeþþþþþþþþþþþþþþMagic Whirlmagic whirlþ þþþþþþeþþþþþþeþþþþþþþþ
+   27: Dark Bitedarness come to meþ!þþþþþþeþþþþþþþþþþþþþþShellshellþ"þþþþþþeþþþþþþþþþþþþþþGreen Flamegreen flameþ#þþþþþþeþþþþþþþþþþþþþþeofþþþþþþþeþþþþþþþþþþþþþþ
+
+~/Desktop/eoserv/data/pub/EoPub.ini:
+   59  # supported themes;
+   60  # 1. default
+   61: # 2. dark
+   62  
+   63: theme=dark
+   64  
+   65  [FINETUNE/BETA]
+
+~/Desktop/eoserv/gfx/themes/everendless000.ini:
+   74  # FontColorMenu : used in the 2 password recovery and validation screens.
+   75  # FontColorMenuVersion : used bottom-left to display version, host and theme.
+   76: # should contrast with the menu background ( for example light on dark )
+   77  
+   78  FontColorMenu = 220,220,220
+
+~/Desktop/eoserv/gfx/themes/lostrealm000.ini:
+   74  # FontColorMenu : used in the 2 password recovery and validation screens.
+   75  # FontColorMenuVersion : used bottom-left to display version, host and theme.
+   76: # should contrast with the menu background ( for example light on dark )
+   77  
+   78  FontColorMenu = 220,220,220
+
+~/Desktop/eoserv/src/eodata.cpp:
+   75  
+   76  	newdata.light = PacketProcessor::Number(buf[26]);
+   77: 	newdata.dark = PacketProcessor::Number(buf[27]);
+   78  	newdata.earth = PacketProcessor::Number(buf[28]);
+   79  	newdata.air = PacketProcessor::Number(buf[29]);
+
+~/Desktop/eoserv/src/eodata.hpp:
+   47  
+   48  	unsigned char light;
+   49: 	unsigned char dark;
+   50  	unsigned char earth;
+   51  	unsigned char air;
+   ..
+   97  	EIF_Data_Base() : id(0), graphic(0), type(EIF::Static), subtype(EIF::None), special(EIF::Lore),
+   98  	hp(0), tp(0), mindam(0), maxdam(0), accuracy(0), evade(0), armor(0), str(0), intl(0), wis(0),
+   99: 	agi(0), con(0), cha(0), light(0), dark(0), earth(0), air(0), water(0), fire(0), scrollmap(0),
+  100  	gender(0), scrolly(0), levelreq(0), classreq(0), strreq(0), intreq(0), wisreq(0), agireq(0),
+  101  	conreq(0), chareq(0), element(EIF::True), element_attack(0), weight(0), size(EIF::Size1x1) { }
+  ...
+  182  			True,
+  183  			Light,
+  184: 			Dark,
+  185  			Earth,
+  186  			Wind,
+  ...
+  303  			True,
+  304  			Light,
+  305: 			Dark,
+  306  			Earth,
+  307  			Wind,
+
+~/Desktop/eoserv/src/map.cpp:
+ 1610  		    				this->world->ServerMsg("effect " + util::to_string(effect));
+ 1611  		    				break;
+ 1612: 		    			case EIF::Dark:
+ 1613: 		    				effect = 31; //Dark
+ 1614  		    				this->world->ServerMsg("effect " + util::to_string(effect));
+ 1615  		    				break;
+
+~/Desktop/eoserv/src/commands/info.cpp:
+  287  			reply.AddShort(victim->armor);
+  288  			reply.AddShort(0); // light 
+  289: 			reply.AddShort(0); // dark
+  290  			reply.AddShort(0); // fire
+  291  			reply.AddShort(0); // water
+
+21 matches across 9 files
+
+
+Searching 321 files for "Starting"
+
+~/Desktop/eoserv/data/quests/00097.eqf:
+   65  
+   66          action     SetQuestState(96, "begin");
+   67:         action     AddNpcText(97, "[Trial Info] Levels: 3 | Starting Monsters: 1 | Level Multiplier: 2 | Rewards: 2 Fame | 1500 EXP | Daily Limit: 3");
+   68  
+   69          action     addNpcInput(97, 1, "Start Trial");
+
+1 match in 1 file
+
+
+Searching 321 files for "Start"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/Makefile:
+  127  # The main all target
+  128  all: cmake_check_build_system
+  129: 	$(CMAKE_COMMAND) -E cmake_progress_start /home/eoserv/Desktop/eoserv/CMakeFiles /home/eoserv/Desktop/eoserv/CMakeFiles/progress.marks
+  130  	$(MAKE) -f CMakeFiles/Makefile2 all
+  131: 	$(CMAKE_COMMAND) -E cmake_progress_start /home/eoserv/Desktop/eoserv/CMakeFiles 0
+  132  .PHONY : all
+  133  
+
+~/Desktop/eoserv/Makefile.bckp:
+  146  # The main all target
+  147  all: cmake_check_build_system
+  148: 	$(CMAKE_COMMAND) -E cmake_progress_start /opt/eoserv/CMakeFiles /opt/eoserv//CMakeFiles/progress.marks
+  149  	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+  150: 	$(CMAKE_COMMAND) -E cmake_progress_start /opt/eoserv/CMakeFiles 0
+  151  .PHONY : all
+  152  
+
+~/Desktop/eoserv/CMakeFiles/CMakeOutput.log:
+   69  
+   70  Parsed C implicit link information from above output:
+   71:   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+   72    ignore line: [Change Dir: /home/eoserv/Desktop/eoserv/CMakeFiles/CMakeTmp]
+   73    ignore line: []
+   ..
+  254  
+  255  Parsed CXX implicit link information from above output:
+  256:   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  257    ignore line: [Change Dir: /home/eoserv/Desktop/eoserv/CMakeFiles/CMakeTmp]
+  258    ignore line: []
+
+~/Desktop/eoserv/CMakeFiles/feature_tests.bin:
+    <binary>
+
+~/Desktop/eoserv/CMakeFiles/Makefile2:
+   82  # Build rule for subdir invocation for target.
+   83  CMakeFiles/eoserv.dir/rule: cmake_check_build_system
+   84: 	$(CMAKE_COMMAND) -E cmake_progress_start /home/eoserv/Desktop/eoserv/CMakeFiles 87
+   85  	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/eoserv.dir/all
+   86: 	$(CMAKE_COMMAND) -E cmake_progress_start /home/eoserv/Desktop/eoserv/CMakeFiles 0
+   87  .PHONY : CMakeFiles/eoserv.dir/rule
+   88  
+
+~/Desktop/eoserv/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin:
+    <binary>
+
+~/Desktop/eoserv/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin:
+    <binary>
+
+~/Desktop/eoserv/CMakeFiles/3.13.4/CompilerIdC/a.out:
+    <binary>
+
+~/Desktop/eoserv/CMakeFiles/3.13.4/CompilerIdCXX/a.out:
+    <binary>
+
+~/Desktop/eoserv/config/limits.ini:
+   26  ## MaxTile (number)
+   27  # Maximum number of items that can be placed on one map tile
+   28: # Shouldn't surpass 65k (though even a few 100 can start to cause problems)
+   29  MaxTile = 50
+   30  
+   31  ## MaxMap (number)
+   32  # Maximum number of items that can be placed on one map
+   33: # Shouldn't surpass 65k (though even a few 100 can start to cause problems)
+   34  MaxMap = 1000
+   35  
+
+~/Desktop/eoserv/config/misc.ini:
+  124  AllowStats = yes
+  125  
+  126: ## StartMap, StartX, StartY (number)
+  127: # Map+location new characters start on (0 to use database default)
+  128: StartMap = 1
+  129: StartX = 13
+  130: StartY = 14
+  131  
+  132  ## JailMap, JailX, JailY (number)
+  ...
+  138  UnJailY = 11
+  139  
+  140: ## StartItems (number[])
+  141: # Items a charater should start with
+  142  # Syntax: id,amt;id,amt;...
+  143: StartItems = 5,5;
+  144  
+  145: ## StartSpells (number[])
+  146: # Spells a charater should start with
+  147  # Syntax: id,level;id,level;...
+  148: StartSpells = 2,1;
+  149  
+  150: ## StartEquipMale (number[15])
+  151: # Equipment a male character should start with
+  152  # Syntax: item,item,item,... (x15)
+  153: StartEquipMale = 0,0,0,0,2,0,0,0,0,0,0,0,0,0,0
+  154  
+  155: ## StartEquipFemale (number[15])
+  156: # Equipment a female character should start with
+  157  # Syntax: item,item,item,... (x15)
+  158: StartEquipFemale = 0,0,0,0,3,0,0,0,0,0,0,0,0,0,0
+  159  
+  160  ## DefaultBanLength (string)
+
+~/Desktop/eoserv/data/quests/00000.eqf:
+   10     action       SetRace(4);
+   11     action       SetClass(1);
+   12:    action       StartQuest(92, "begin");
+   13  }
+
+~/Desktop/eoserv/data/quests/00095.eqf:
+   32          action     AddNpcText(95, "[Contracts] Monster: Mimicry | Amount to kill: 10 | EXP: 150 | Gold: 2 |");
+   33  
+   34:         action     addNpcInput(95, 1, "Start");
+   35          action     addNpcInput(95, 2, "Exit");
+   36  
+   ..
+   86          action     AddNpcText(95, "[Contracts] Monster: Chimera | Amount to kill: 5 | EXP: 300 | Gold: 15 |");
+   87  
+   88:         action     addNpcInput(95, 1, "Start");
+   89          action     addNpcInput(95, 2, "Exit");
+   90  
+   ..
+  141          action     AddNpcText(95, "[Contracts] Monster: Eryngi | Amount to kill: 3 | EXP: 550 | Gold: 30 |");
+  142  
+  143:         action     addNpcInput(95, 1, "Start");
+  144          action     addNpcInput(95, 2, "Exit");
+  145  
+
+~/Desktop/eoserv/data/quests/00096.eqf:
+   11  
+   12          if DoneDaily(3) SetState("ResetQuest");
+   13:         else SetState("QuestStart");
+   14  }
+   15: state QuestStart
+   16  {
+   17          desc        "[Trial] The Trial of Fire"
+   ..
+   36          desc        "[Trial - Fire] Talk to Gatekeeper"
+   37  
+   38:         action     AddNpcText(96, "[The Trial of Fire] Are you ready to start?");
+   39  
+   40:         action     addNpcInput(96, 1, "Start trial");
+   41          action     addNpcInput(96, 2, "Leave this area");
+   42  
+   ..
+  102          action     AddNpcText(96, "[The Trial of Fire] You failed.. All progress is lost.");
+  103  
+  104:         action     addNpcInput(96, 1, "Start again");
+  105          action     addNpcInput(96, 2, "Leave this area");
+  106  
+
+~/Desktop/eoserv/data/quests/00097.eqf:
+   51  {
+   52          desc        "Talk to Gerald"
+   53:         action     AddNpcText(97, "You need a higher level to start this Trial..");
+   54          rule         TalkedToNpc(97) goto Menu        
+   55  }
+   ..
+   65  
+   66          action     SetQuestState(96, "begin");
+   67:         action     AddNpcText(97, "[Trial Info] Levels: 3 | Starting Monsters: 1 | Level Multiplier: 2 | Rewards: 2 Fame | 1500 EXP | Daily Limit: 3");
+   68  
+   69:         action     addNpcInput(97, 1, "Start Trial");
+   70          action     addNpcInput(97, 2, "Exit");
+   71  
+   72  
+   73:         rule       InputNpc(1) goto StartFire
+   74          rule       InputNpc(2) goto Menu
+   75  }
+   76: state StartFire
+   77  {
+   78  
+   79          if IsQuestState(96, "ResetQuest") SetState("Menu");
+   80:         elseif IsQuestState(96, "QuestStart") SetQuestState(96, "Quest");
+   81:         else StartQuest(96, "Quest");
+   82  }
+
+~/Desktop/eoserv/data/quests/Actions.txt:
+    5  action GivePartyItem(id, amount);
+    6  action GivePartyEXP(id);
+    7: action StartQuest(id, "State");
+    8  action ResetQuest(id);
+    9  action SetQuestState(id, "State");
+
+~/Desktop/eoserv/gfx/gfx026.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/gfxupdate/gfx001.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/gfxupdate/gfx002.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/themes/everendless001.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/themes/everendless002.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/themes/lostrealm001.egf:
+    <binary>
+
+~/Desktop/eoserv/gfx/themes/lostrealm002.egf:
+    <binary>
+
+~/Desktop/eoserv/src/character.cpp:
+  218  		{
+  219  #ifdef DEBUG
+  220: 			Console::Dbg("Discarding inactive quest save as the quest was restarted: %i", state.quest_id);
+  221  #endif // DEBUG
+  222  			continue;
+  ...
+  539  	this->quest_string.clear();
+  540  
+  541: 	// Start the default 00000.eqf quest
+  542  	if (!this->GetQuest(0))
+  543  	{
+
+~/Desktop/eoserv/src/console.cpp:
+  106  	if (Styled[stream] && color != COLOR_GREY) SetTextColor(stream, color, bold); \
+  107  	va_list args; \
+  108: 	va_start(args, f); \
+  109  	std::fputs("[" prefix "] ", fh); \
+  110  	std::vfprintf(fh, f, args); \
+
+~/Desktop/eoserv/src/database.cpp:
+  338  #endif // DEBUG
+  339  
+  340: 						if (mysql_real_query(this->impl->mysql_handle, "START TRANSACTION", std::strlen("START TRANSACTION")) != 0)
+  341  						{
+  342  							int myerr = mysql_errno(this->impl->mysql_handle);
+  ...
+  497  
+  498  	std::va_list ap;
+  499: 	va_start(ap, format);
+  500  
+  501  	std::string finalquery;
+  ...
+  653  			if (attempt > 1)
+  654  			{
+  655: 				Console::Wrn("Start transaction failed. Trying again... (Attempt %i / 10)", attempt);
+  656  				util::sleep(1.0 * attempt);
+  657  			}
+  ...
+  661  #ifdef DATABASE_MYSQL
+  662  				case MySQL:
+  663: 					this->RawQuery("START TRANSACTION", true);
+  664  					break;
+  665  #endif // DATABASE_MYSQL
+
+~/Desktop/eoserv/src/eoclient.cpp:
+   45  {
+   46  	this->upload_fh = 0;
+   47: 	this->seq_start = 0;
+   48: 	this->upcoming_seq_start = -1;
+   49  	this->seq = 0;
+   50  	this->id = this->server()->world->GeneratePlayerID();
+   ..
+   56  	this->needpong = false;
+   57  	this->login_attempts = 0;
+   58: 	this->start = Timer::GetTime();
+   59  }
+   60  
+   ..
+  180  void EOClient::InitNewSequence()
+  181  {
+  182: 	this->seq_start = util::rand(0, 1757);
+  183  }
+  184  
+  185  void EOClient::PingNewSequence()
+  186  {
+  187: 	this->upcoming_seq_start = util::rand(0, 1757);
+  188  }
+  189  
+  190  void EOClient::PongNewSequence()
+  191  {
+  192: 	this->seq_start = this->upcoming_seq_start;
+  193  }
+  194  
+  195  void EOClient::AccountReplyNewSequence()
+  196  {
+  197: 	this->seq_start = util::rand(0, 240);
+  198  }
+  199  
+  200: int EOClient::GetSeqStart()
+  201  {
+  202: 	return this->seq_start;
+  203  }
+  204  
+  205  std::pair<unsigned char, unsigned char> EOClient::GetSeqInitBytes()
+  206  {
+  207: 	int s1_max = (this->seq_start + 13) / 7;
+  208: 	int s1_min = std::max(0, (this->seq_start - 252 + 13 + 6) / 7);
+  209  
+  210  	unsigned char s1 = util::rand(s1_min, s1_max);
+  211: 	unsigned char s2 = this->seq_start - s1 * 7 + 13;
+  212  
+  213  	return {s1, s2};
+  ...
+  216  std::pair<unsigned short, unsigned char> EOClient::GetSeqUpdateBytes()
+  217  {
+  218: 	int s1_max = this->upcoming_seq_start + 252;
+  219: 	int s1_min = this->upcoming_seq_start;
+  220  
+  221  	unsigned short s1 = util::rand(s1_min, s1_max);
+  222: 	unsigned char s2 = s1 - this->upcoming_seq_start;
+  223  
+  224  	return {s1, s2};
+  ...
+  227  int EOClient::GenSequence()
+  228  {
+  229: 	int result = std::uint32_t(this->seq_start + this->seq);
+  230  
+  231  	this->seq = (this->seq + 1) % 10;
+  ...
+  236  int EOClient::GenUpcomingSequence()
+  237  {
+  238: 	int result = std::uint32_t(this->upcoming_seq_start + this->seq);
+  239  
+  240  	this->seq = (this->seq + 1) % 10;
+  ...
+  320  
+  321  	std::string filename;
+  322: 	std::size_t file_start = 0;
+  323  	std::size_t file_length = 0;
+  324  
+  ...
+  380  			return false;
+  381  
+  382: 		file_start = (*file_splits)[id - 1];
+  383: 		file_length = (*file_splits)[id] - file_start;
+  384  	}
+  385  
+  386: 	return EOClient::Upload(type, filename, file_start, file_length, init_reply);
+  387  }
+  388  
+  389: bool EOClient::Upload(FileType type, const std::string &filename, std::size_t file_start, std::size_t file_length, InitReply init_reply)
+  390  {
+  391  	using std::swap;
+  ...
+  453  
+  454  	// Copy the header from dat001 in to higher numbered files
+  455: 	if (file_start != 0)
+  456  	{
+  457  		int bytes_read = std::fread(&pub_header_bytes[0], 1, pub_header_bytes.size(), this->upload_fh);
+  ...
+  466  		this->send_buffer_used += bytes_read;
+  467  
+  468: 		if (file_start != pub_header_bytes.size())
+  469: 			std::fseek(this->upload_fh, file_start, SEEK_SET);
+  470  	}
+  471  
+
+~/Desktop/eoserv/src/eoclient.hpp:
+   92  		std::size_t send_buffer2_used;
+   93  
+   94: 		int seq_start;
+   95: 		int upcoming_seq_start;
+   96  		int seq;
+   97  
+   ..
+  104  		int hdid;
+  105  		ClientState state;
+  106: 		double start = 0.0;
+  107  		int login_attempts;
+  108  
+  ...
+  139  		void PongNewSequence();
+  140  		void AccountReplyNewSequence();
+  141: 		int GetSeqStart();
+  142  		std::pair<unsigned char, unsigned char> GetSeqInitBytes();
+  143  		std::pair<unsigned short, unsigned char> GetSeqUpdateBytes();
+  ...
+  148  
+  149  		bool Upload(FileType type, int id, InitReply init_reply);
+  150: 		bool Upload(FileType type, const std::string &filename, std::size_t file_start, std::size_t file_length, InitReply init_reply);
+  151  		void Send(const PacketBuilder &packet);
+  152  
+
+~/Desktop/eoserv/src/eoserv_config.cpp:
+  172  	eoserv_config_default(config, "GhostArena"         , false);
+  173  	eoserv_config_default(config, "AllowStats"         , true);
+  174: 	eoserv_config_default(config, "StartMap"           , 0);
+  175: 	eoserv_config_default(config, "StartX"             , 0);
+  176: 	eoserv_config_default(config, "StartY"             , 0);
+  177  	eoserv_config_default(config, "JailMap"            , 76);
+  178  	eoserv_config_default(config, "JailX"              , 6);
+  ...
+  180  	eoserv_config_default(config, "UnJailX"            , 8);
+  181  	eoserv_config_default(config, "UnJailY"            , 11);
+  182: 	eoserv_config_default(config, "StartItems"         , "");
+  183: 	eoserv_config_default(config, "StartSpells"        , "");
+  184: 	eoserv_config_default(config, "StartEquipMale"     , "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,");
+  185: 	eoserv_config_default(config, "StartEquipFemale"   , "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,");
+  186  	eoserv_config_default(config, "MaxHairStyle"       , 30);
+  187  	eoserv_config_default(config, "MaxHairColor"       , 9);
+
+~/Desktop/eoserv/src/eoserver.cpp:
+   65  		EOClient *client = static_cast<EOClient *>(rawclient);
+   66  
+   67: 		if (client->Connected() && !client->Accepted() && client->start + delay < now)
+   68  		{
+   69  			server->RecordClientRejection(client->GetRemoteAddr(), "hanging up on idle client");
+   ..
+  180  	this->world->server = this;
+  181  
+  182: 	this->start = Timer::GetTime();
+  183  
+  184  	this->UpdateConfig();
+  ...
+  330  EOServer::~EOServer()
+  331  {
+  332: 	double shutdown_start_time = Timer::GetTime();
+  333  
+  334  	PacketBuilder builder(PACKET_MESSAGE, PACKET_CLOSE);
+  ...
+  344  
+  345  	// Spend up to 1 second pumping the clients' send buffers dry
+  346: 	while (shutdown_start_time + 1.0 < Timer::GetTime())
+  347  	{
+  348  		this->Select(0.1);
+
+~/Desktop/eoserv/src/eoserver.hpp:
+   47  	public:
+   48  		World *world;
+   49: 		double start;
+   50  
+   51  		bool QuietConnectionErrors = false;
+
+~/Desktop/eoserv/src/hash.cpp:
+   16  	char cdigest[64];
+   17  
+   18: 	sha256_start(&ctx);
+   19  	sha256_update(&ctx, str.c_str(), str.length());
+   20  	sha256_finish(&ctx, digest);
+
+~/Desktop/eoserv/src/map.cpp:
+  710  {
+  711  	int lowest_free_id = 1;
+  712: 	restart_loop:
+  713  	UTIL_FOREACH(this->items, item)
+  714  	{
+  ...
+  716  		{
+  717  			lowest_free_id = item->uid + 1;
+  718: 			goto restart_loop;
+  719  		}
+  720  	}
+  ...
+  725  {
+  726  	unsigned char lowest_free_id = 1;
+  727: 	restart_loop:
+  728  	UTIL_FOREACH(this->npcs, npc)
+  729  	{
+  ...
+  731  		{
+  732  			lowest_free_id = npc->index + 1;
+  733: 			goto restart_loop;
+  734  		}
+  735  	}
+
+~/Desktop/eoserv/src/nanohttp.cpp:
+  116  		}
+  117  
+  118: 		std::size_t startcontent = this->response.find("\r\n\r\n");
+  119  
+  120: 		if (startcontent == std::string::npos)
+  121  		{
+  122  			this->response = "";
+  ...
+  124  		else
+  125  		{
+  126: 			this->response = this->response.substr(startcontent+4);
+  127  		}
+  128  
+
+~/Desktop/eoserv/src/npc.cpp:
+  182  void NPC::Act()
+  183  {
+  184: 	// Needed for the server startup spawn to work properly
+  185  	if (this->ENF().child && !this->parent)
+  186  	{
+
+~/Desktop/eoserv/src/npc_data.cpp:
+  247  	if (this->ENF().type == ENF::Type::Inn && home_vend_id > 0)
+  248  	{
+  249: 		restart_loop:
+  250  		UTIL_FOREACH(this->world->home_config, hc)
+  251  		{
+  ...
+  268  					Console::Wrn("Vendor #%i's innkeeper set on non-existent home: %s", home_vend_id, this->citizenship->home.c_str());
+  269  
+  270: 				// Restart the loop so questions/answers specified before the innkeeper option will load
+  271: 				goto restart_loop;
+  272  			}
+  273  			else if (this->citizenship && this->citizenship->home == parts[0] && parts[1].substr(0, parts[1].length() - 1) == "question")
+
+~/Desktop/eoserv/src/quest.cpp:
+   79  		{"end", 0},
+   80  
+   81: 		{"startquest", {1, 2}},
+   82  		{"resetquest", 1},
+   83  		{"setqueststate", 2},
+   ..
+  482  		return true;
+  483  	}
+  484: 	else if (function_name == "startquest")
+  485  	{
+  486  		short id = int(action.expr.args[0]);
+
+~/Desktop/eoserv/src/sha256.c:
+   73  }
+   74  
+   75: void sha256_start(sha256_context *ctx)
+   76  {
+   77  	size_t i;
+
+~/Desktop/eoserv/src/sha256.h:
+   40  } sha256_context;
+   41  
+   42: void sha256_start(sha256_context *ctx);
+   43  void sha256_update(sha256_context *ctx, const char *input, uint64_t length);
+   44  void sha256_finish(sha256_context *ctx, char digest[SHA256_HASH_SIZE * 4]);
+
+~/Desktop/eoserv/src/socket.cpp:
+   78  {
+   79  #ifdef WIN32
+   80: 	if (WSAStartup(MAKEWORD(2,0), &socket_wsadata) != 0)
+   81  	{
+   82  		throw Socket_InitFailed(OSErrorString());
+
+~/Desktop/eoserv/src/timer.hpp:
+   73  		/**
+   74  		 * Helper function to get the current time in seconds
+   75: 		 * This is not guaranteed to start at any particular number, or be a UNIX timestamp
+   76  		 */
+   77  		static double GetTime();
+
+~/Desktop/eoserv/src/world.cpp:
+  163  }
+  164  
+  165: void world_startdungeon(void *world_void)
+  166  {
+  167      World *world = static_cast<World *>(world_void);
+  ...
+  169      if (world->DungeonEnabled == false && world->SecretDungeon == false)
+  170      {
+  171: 	    world->ServerMsg("[Secret Library] Dungeon is now active! 30 seconds until start. Type #secret to join! [Req: Level 5]");
+  172  
+  173  	    world->DungeonEnabled = true;
+  174  
+  175: 	    world->StartDungeon();
+  176  
+  177  	    world->wave = 0;
+  ...
+  306      World *world = static_cast<World *>(world_void);
+  307  
+  308:     world->ServerMsg("[Secret Library] Started!");
+  309      world->SecretDungeon = true;
+  310  
+  ...
+  435  				if(world->deathcounter >= 5)
+  436  				{
+  437: 					world->StartEscapeSequence();
+  438  					break;
+  439  				}
+  ...
+  530  	UTIL_FOREACH(world->maps, map)
+  531  	{
+  532: 		restart_loop:
+  533  		UTIL_FOREACH(map->items, item)
+  534  		{
+  ...
+  536  			{
+  537  				map->DelItem(item->uid, 0);
+  538: 				goto restart_loop;
+  539  			}
+  540  		}
+  ...
+ 1005  {
+ 1006  	unsigned int lowest_free_id = 1;
+ 1007: 	restart_loop:
+ 1008  	UTIL_FOREACH(this->server->clients, client)
+ 1009  	{
+ ....
+ 1013  		{
+ 1014  			lowest_free_id = eoclient->id + 1;
+ 1015: 			goto restart_loop;
+ 1016  		}
+ 1017  	}
+ ....
+ 1583  {
+ 1584  	char buffer[1024];
+ 1585: 	std::string startmapinfo;
+ 1586: 	std::string startmapval;
+ 1587  
+ 1588: 	if (static_cast<int>(this->config["StartMap"]))
+ 1589  	{
+ 1590  		using namespace std;
+ 1591: 		startmapinfo = ", `map`, `x`, `y`";
+ 1592: 		snprintf(buffer, 1024, ",%i,%i,%i", static_cast<int>(this->config["StartMap"]), static_cast<int>(this->config["StartX"]), static_cast<int>(this->config["StartY"]));
+ 1593: 		startmapval = buffer;
+ 1594  	}
+ 1595  
+ 1596  	this->db.Query("INSERT INTO `characters` (`name`, `account`, `gender`, `hairstyle`, `haircolor`, `race`, `inventory`, `bank`, `paperdoll`, `spells`, `quest`, `vars`@) VALUES ('$','$',#,#,#,#,'$','','$','$','',''@)",
+ 1597: 		startmapinfo.c_str(), name.c_str(), player->username.c_str(), gender, hairstyle, haircolor, race,
+ 1598: 		static_cast<std::string>(this->config["StartItems"]).c_str(), static_cast<std::string>(gender?this->config["StartEquipMale"]:this->config["StartEquipFemale"]).c_str(),
+ 1599: 		static_cast<std::string>(this->config["StartSpells"]).c_str(), startmapval.c_str());
+ 1600  
+ 1601  	return new Character(name, this);
+ ....
+ 1901  void World::DungeonTimer()
+ 1902  {
+ 1903:     TimeEvent *event = new TimeEvent(world_startdungeon, this, 1, 1);
+ 1904      this->timer.Register(event);
+ 1905  }
+ 1906  
+ 1907: void World::StartDungeon()
+ 1908  {
+ 1909      TimeEvent *event = new TimeEvent(world_dungeontimer, this, 30, 1);
+ ....
+ 1917  }
+ 1918  
+ 1919: void World::StartEscapeSequence()
+ 1920  {
+ 1921      TimeEvent *event = new TimeEvent(world_deathescape, this, 0.5, 1);
+
+~/Desktop/eoserv/src/world.hpp:
+  169  
+  170  		void DungeonTimer();
+  171: 		void StartDungeon();
+  172  		void FloorTimer();
+  173: 		void StartEscapeSequence();
+  174  		void EndEscapeSequence();
+  175  		void PortalEffect();
+
+~/Desktop/eoserv/src/commands/server.cpp:
+  103  	(void)arguments;
+  104  
+  105: 	std::string buffer = "Server started ";
+  106: 	buffer += util::timeago(from->SourceWorld()->server->start, Timer::GetTime());
+  107  	from->ServerMsg(buffer);
+  108  }
+
+~/Desktop/eoserv/src/eoplus/lex.cpp:
+   33  	bool ctype_digit(char c) { return std::isdigit(c); }
+   34  	bool ctype_alnum(char c) { return ctype_alpha(c) || ctype_digit(c); }
+   35: 	bool ctype_ident_start(char c) { return ctype_alpha(c) || c == '_' || c == '$'; }
+   36: 	bool ctype_ident(char c) { return c != '$' && (ctype_ident_start(c) || ctype_digit(c)); }
+   37  
+   38  	bool check_op(char a, char b)
+   ..
+  163  		std::string s;
+  164  
+  165: 		if (!this->GetCharIf(c, ctype_ident_start))
+  166  			return Token();
+  167  
+  ...
+  237  				token = this->ReadNumber();
+  238  			}
+  239: 			else if (ctype_ident_start(c))
+  240  			{
+  241  				token = this->ReadIdentifier();
+
+~/Desktop/eoserv/src/extra/ntservice.cpp:
+   30  	service_status.dwCurrentState = state;
+   31  
+   32: 	if (service_state == SERVICE_START_PENDING)
+   33  	{
+   34  		service_status.dwControlsAccepted = 0;
+   ..
+   87  
+   88  	// Ugly hack to make sure EOSERV instances don't overlap
+   89: 	service_update_status(SERVICE_START_PENDING, NO_ERROR, 0, 1, 6000);
+   90  	Sleep(5000);
+   91  
+   ..
+  104  	};
+  105  
+  106: 	StartServiceCtrlDispatcher(service_table);
+  107  }
+  108  
+  ...
+  119  
+  120  	SC_HANDLE scm = OpenSCManager(0, 0, SC_MANAGER_CREATE_SERVICE);
+  121: 	SC_HANDLE service = CreateService(scm, name, name, 0, SERVICE_WIN32_OWN_PROCESS, SERVICE_AUTO_START, SERVICE_ERROR_NORMAL, file.c_str(), 0, 0, 0, 0, 0);
+  122  
+  123  	if (service != 0)
+
+~/Desktop/eoserv/src/handlers/Account.cpp:
+   48  	else
+   49  	{
+   50: 		if (client->GetSeqStart() > 240)
+   51  			client->AccountReplyNewSequence();
+   52  
+   53  		reply.AddShort(ACCOUNT_CONTINUE);
+   54: 		reply.AddChar(client->GetSeqStart());
+   55  
+   56  		reply.AddString("OK");
+
+~/Desktop/eoserv/src/handlers/Item.cpp:
+  180  	            		character->world->DungeonTimer();
+  181  		            	std::string name = "Secret Library";
+  182: 					    std::string message = "You have started a dungeon. Please wait in lobby while the game starts.";
+  183  
+  184  						PacketBuilder builder(PACKET_TALK, PACKET_TELL, 2 + name.length() + message.length());
+
+~/Desktop/eoserv/src/util/rpn.cpp:
+  325  	while (!stack.empty())
+  326  	{
+  327: 		start_of_loop:
+  328  
+  329  		const std::string& val = stack.top();
+  ...
+  354  					return argstack.top();
+  355  
+  356: 				goto start_of_loop;
+  357  			}
+  358  		}
+
+263 matches across 50 files
+
+
+Searching 321 files for "onlibe"
+
+0 matches
+
+Searching 321 files for "online"
+
+~/Desktop/eoserv/admin.ini:
+  104  warpmeto = 2
+  105  
+  106: # Sets hide flags for the admin (invisible, online, admin icon, warp bubbles, npc ignore)
+  107  # $hide [flags]
+  108  # $show [flags]
+  109: # Flags can be: invisible,online,admin,npc,warp,all
+  110  # Blank flags toggles all flags on/off except those manually hidden
+  111  hide = 2
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/config/misc.ini:
+  119  
+  120  ## AllowStats (bool)
+  121: # Allow WebCP to retrieve stats from your server (eg. online user list)
+  122  # You might want to disable this if you don't use WebCP
+  123  # This option has no effect if SLN is enabled
+
+~/Desktop/eoserv/config/server.ini:
+   23  
+   24  ## MaxPlayers (number)
+   25: # The maximum number of players who can be online
+   26  MaxPlayers = 200
+   27  
+   ..
+   91  
+   92  ## TimedSave (number)
+   93: # How often to save all online characters and guilds
+   94  # Characters are still saved on logout
+   95  # Set to 0 to disable timed saves (not reccommended)
+
+~/Desktop/eoserv/data/news.txt:
+    1  Welcome to Lost Realm!
+    2  Thanks:
+    3: https://www.endless-online.com/credential.html 
+    4: https://www.endless-online.com/contributors.html
+    5  https://eoserv.net/
+
+~/Desktop/eoserv/data/extras/message.ini:
+   31  BoxTitle = Welcome to Lost Realm!
+   32  BoxMessage.1 = This server is a hobby project and has no agenda. Reading through rest of information provided here is highly recommended.
+   33: BoxMessage.2 = Gameplay does not intend to represent classic Endless Online exprience. For e.g. Monsters will not give EXP and all items will be dropped on death.
+   34  BoxMessage.3 = It's recommended to use PATCH 0.3.X from official EO website. All credits for contributions are available in the "Endless News" section upon login.
+   35: BoxMessage.4 = Some projects I've worked on in the past: Adventures Online (2011 - 2013) MasterCraftsEO (2015)                                                                                                                                    Have fun! -Root.
+
+~/Desktop/eoserv/data/pub/EoPub.ini:
+    3  # this is the Endless Pub Editor [ EoPub.exe ] configuration file
+    4  # if you do not know what you are doing, please consider leaving.
+    5: # visit www.endless-online.com for more instructions.
+    6  
+    7  [FILE PATHS]
+
+~/Desktop/eoserv/gfx/themes/everendless000.ini:
+    1: # Endless Online [ theme init file ]
+    2  
+    3: # This is a main Endless Online theme init file for customization.
+    4  # if you do not know what you are doing, please consider leaving.
+    5: # visit www.endless-online.com for more instructions.
+    6  
+    7  # Rules:
+
+~/Desktop/eoserv/gfx/themes/lostrealm000.ini:
+    1: # Endless Online [ theme init file ]
+    2  
+    3: # This is a main Endless Online theme init file for customization.
+    4  # if you do not know what you are doing, please consider leaving.
+    5: # visit www.endless-online.com for more instructions.
+    6  
+    7  # Rules:
+
+~/Desktop/eoserv/src/character.cpp:
+  379  	this->login_time = std::time(0);
+  380  
+  381: 	this->online = false;
+  382  	this->nowhere = false;
+  383  	this->id = this->world->GenerateCharacterID();
+  ...
+  558  	}
+  559  
+  560: 	this->online = true;
+  561  
+  562  	this->CalculateStats();
+  ...
+ 2188  void Character::Logout()
+ 2189  {
+ 2190: 	if (!this->online)
+ 2191  	{
+ 2192  		return;
+ ....
+ 2241  	}
+ 2242  
+ 2243: 	this->online = false;
+ 2244  
+ 2245  	this->Save();
+
+~/Desktop/eoserv/src/character.hpp:
+  137  		{
+  138  			HideInvisible = 0x01,
+  139: 			HideOnline    = 0x02,
+  140  			HideNpc       = 0x04,
+  141  			HideAdmin     = 0x08,
+  142  			HideWarp      = 0x10,
+  143  
+  144: 			HideOnlineExplicit    = 0x020000,
+  145  			HideNpcExplicit       = 0x040000,
+  146  			HideAdminExplicit     = 0x080000,
+  ...
+  163  
+  164  		int login_time;
+  165: 		bool online;
+  166  		bool nowhere;
+  167  		unsigned int id;
+  ...
+  299  
+  300  		bool IsHideInvisible() const { return hidden & HideInvisible; }
+  301: 		bool IsHideOnline() const { return hidden & HideOnline; }
+  302  		bool IsHideNpc() const { return hidden & HideNpc; }
+  303  		bool IsHideAdmin() const { return hidden & HideAdmin; }
+
+~/Desktop/eoserv/src/guild.cpp:
+  414  					// *this may not be valid after this point
+  415  
+  416: 					if (character->online)
+  417  						return;
+  418  					else
+  ...
+  452  						character->guild_rank_string = rank_str;
+  453  						
+  454: 						if (character->online)
+  455  							return;
+  456  						else
+
+~/Desktop/eoserv/src/guild.hpp:
+   97  
+   98  /**
+   99:  * Stores guild information and references to online members
+  100   * Created by the World object when a member of the guild logs in, and destroyed when the last member logs out
+  101   */
+
+~/Desktop/eoserv/src/player.cpp:
+   37  	this->login_time = std::time(0);
+   38  
+   39: 	this->online = true;
+   40  	this->character = nullptr;
+   41  
+
+~/Desktop/eoserv/src/player.hpp:
+   26  	public:
+   27  		int login_time;
+   28: 		bool online;
+   29  		unsigned int id;
+   30  		std::string username;
+
+~/Desktop/eoserv/src/quest.cpp:
+  592  		bool level_up = false;
+  593  
+  594: 	    int online = this->character->world->characters.size();
+  595  
+  596: 	    if (online >= 5 && online < 15)
+  597  	    {
+  598  	    	int bonus_exp = 0.2 * int(action.expr.args[0]);
+  599  	    	this->character->exp = this->character->exp + (bonus_exp + int(action.expr.args[0]));
+  600: 	    	this->character->StatusMsg("You gained " + util::to_string(bonus_exp) + " bonus experience [5+ Online Players Streak]");
+  601  	    }
+  602: 	    else if (online >= 15)
+  603  	    {
+  604  	    	int bonus_exp = 0.4 * int(action.expr.args[0]);
+  605  	    	this->character->exp = this->character->exp + (bonus_exp + int(action.expr.args[0]));
+  606: 	    	this->character->StatusMsg("You gained " + util::to_string(bonus_exp) + " bonus experience [15+ Online Players Streak]");
+  607  	    }
+  608  	    else
+
+~/Desktop/eoserv/src/world.cpp:
+  150      World *world = static_cast<World *>(world_void);
+  151  
+  152:     int online = world->characters.size();
+  153  
+  154:     if (online >= 5 && online < 15)
+  155      {
+  156:     	world->ServerMsg("[Online Players Streak] - " + util::to_string(online) + " - Bonus 0.2x EXP from all Contracts!");
+  157      }
+  158:     else if (online >= 15)
+  159      {
+  160:     	world->ServerMsg("[Online Players Streak] - " + util::to_string(online) + " - Bonus 0.4x EXP from all Contracts!");
+  161      }
+  162  
+  ...
+ 1633  		return LOGIN_WRONG_USERPASS;
+ 1634  	}
+ 1635: 	else if (this->PlayerOnline(username))
+ 1636  	{
+ 1637  		return LOGIN_LOGGEDIN;
+ ....
+ 1664  }
+ 1665  
+ 1666: bool World::PlayerOnline(std::string username)
+ 1667  {
+ 1668  	if (!Player::ValidName(username))
+
+~/Desktop/eoserv/src/world.hpp:
+  207  
+  208  		bool PlayerExists(std::string username);
+  209: 		bool PlayerOnline(std::string username);
+  210  
+  211  		bool PKExcept(const Map *map);
+
+~/Desktop/eoserv/src/commands/map.cpp:
+   55  	{
+   56  		     if (flag == "invisible") flags |= Character::HideInvisible;
+   57: 		else if (flag == "online")    flags |= Character::HideOnline;
+   58  		else if (flag == "npc")       flags |= Character::HideNpc;
+   59  		else if (flag == "admin")     flags |= Character::HideAdmin;
+
+~/Desktop/eoserv/src/handlers/Players.cpp:
+   45  }
+   46  
+   47: // Requested a list of online players
+   48  void Players_List(EOClient *client, PacketReader &reader)
+   49  {
+   ..
+   67  	}
+   68  
+   69: 	int online = client->server()->world->characters.size();
+   70  
+   71  	UTIL_FOREACH(client->server()->world->characters, character)
+   72  	{
+   73: 		bool hide_online = character->IsHideOnline();
+   74  
+   75: 		if (hide_online && really_hidden(character))
+   76: 			--online;
+   77  	}
+   78  
+   ..
+   80  	std::string hidden_admin_suffix = client->server()->world->i18n.Format("hidden_admin_suffix");
+   81  
+   82: 	PacketBuilder reply(PACKET_F_INIT, PACKET_A_INIT, 4 + online * (is_friends_list ? 13 : (36 + hidden_admin_suffix.length())));
+   83  	reply.AddChar(is_friends_list ? INIT_FRIEND_LIST_PLAYERS : INIT_PLAYERS);
+   84: 	reply.AddShort(online);
+   85  	reply.AddByte(255);
+   86  	UTIL_FOREACH(client->server()->world->characters, character)
+   87  	{
+   88: 		bool hide_online = character->IsHideOnline();
+   89  		bool hide_admin = character->IsHideAdmin();
+   90  
+   91  		std::string name_suffix;
+   92  
+   93: 		if (hide_online && really_hidden(character))
+   94  			continue;
+   95  
+   96: 		if (hide_online)
+   97  			name_suffix = " " + hidden_admin_suffix;
+   98  
+
+~/Desktop/eoserv/src/handlers/Talk.cpp:
+   87  	Character *to = character->world->GetCharacter(name);
+   88  
+   89: 	if (to && !to->IsHideOnline())
+   90  	{
+   91  		if (to->whispers)
+
+74 matches across 21 files
+
+
+Searching 321 files for "world_playerevents"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/src/world.cpp:
+  146  }
+  147  
+  148: void world_playerevents(void *world_void)
+  149  {
+  150      World *world = static_cast<World *>(world_void);
+  ...
+  808      this->timer.Register(event);
+  809  
+  810: 	event = new TimeEvent(world_playerevents, this, 3600.00, Timer::FOREVER);
+  811  	this->timer.Register(event);
+  812  
+
+5 matches across 2 files
+
+
+Searching 321 files for "Ghost"
+
+~/Desktop/eoserv/eoserv:
+    <binary>
+
+~/Desktop/eoserv/config/extra.ini:
+   44  ## MISC ##
+   45  
+   46: ## GhostTimer (number)
+   47: # Time to wait between ghost walks
+   48  # Uses 4 seconds to compensate for lag (should be 5)
+   49: GhostTimer = 1s
+   50  
+   51  ## SpellCastCooldown (number)
+
+~/Desktop/eoserv/config/misc.ini:
+  108  DropRateMode = 3
+  109  
+  110: ## GhostNPC (bool)
+  111  # Are players allowed to walk through NPCs
+  112  # A client shouldn't be able to, but it can help laggy users
+  113: GhostNPC = no
+  114  
+  115: ## GhostArena (bool)
+  116  # Are players allowed to walk through players/NPCs on arena-marked tiles?
+  117  # Turning this on can dramatically change the experience of the arena by removing "bumping"
+  118: GhostArena = no
+  119  
+  120  ## AllowStats (bool)
+
+~/Desktop/eoserv/src/eoserv_config.cpp:
+  134  	eoserv_config_default(config, "MaxCharacters"      , 3);
+  135  	eoserv_config_default(config, "MaxShopBuy"         , 4);
+  136: 	eoserv_config_default(config, "GhostTimer"         , 4);
+  137  	eoserv_config_default(config, "SpellCastCooldown"  , 0.6);
+  138  	eoserv_config_default(config, "DropTimer"          , 120);
+  ...
+  169  	eoserv_config_default(config, "PartyShareMode"     , 2);
+  170  	eoserv_config_default(config, "DropRateMode"       , 3);
+  171: 	eoserv_config_default(config, "GhostNPC"           , false);
+  172: 	eoserv_config_default(config, "GhostArena"         , false);
+  173  	eoserv_config_default(config, "AllowStats"         , true);
+  174  	eoserv_config_default(config, "StartMap"           , 0);
+
+~/Desktop/eoserv/src/map.cpp:
+  915  			return WalkFail;
+  916  
+  917: 		if (this->Occupied(target_x, target_y, PlayerOnly) && (from->last_walk + double(this->world->config["GhostTimer"]) > Timer::GetTime()))
+  918  			return WalkFail;
+  919  	}
+  ...
+ 1271  	}
+ 1272  
+ 1273: 	bool adminghost = (from->ENF().type == ENF::Aggressive || from->parent);
+ 1274  
+ 1275: 	if (!this->Walkable(target_x, target_y, true) || this->Occupied(target_x, target_y, Map::PlayerAndNPC, adminghost))
+ 1276  	{
+ 1277  		return WalkFail;
+ ....
+ 1971  }
+ 1972  
+ 1973: bool Map::Occupied(unsigned char x, unsigned char y, Map::OccupiedTarget target, bool adminghost) const
+ 1974  {
+ 1975  	if (!InBounds(x, y))
+ ....
+ 1982  		UTIL_FOREACH(this->characters, character)
+ 1983  		{
+ 1984: 			bool ghost = adminghost && (!character->CanInteractCombat() || character->IsHideNpc());
+ 1985  
+ 1986: 			if (character->x == x && character->y == y && !ghost)
+ 1987  			{
+ 1988  				return true;
+ ....
+ 2554  		return false;
+ 2555  
+ 2556: 	if (this->world->config["GhostArena"] && this->GetTile(x, y).tilespec == Map_Tile::Arena && this->Occupied(x, y, PlayerAndNPC))
+ 2557  		return false;
+ 2558  
+
+~/Desktop/eoserv/src/map.hpp:
+  323  			PlayerAndNPC
+  324  		};
+  325: 		bool Occupied(unsigned char x, unsigned char y, Map::OccupiedTarget target, bool adminghost = false) const;
+  326  
+  327  		~Map();
+
+~/Desktop/eoserv/src/handlers/Walk.cpp:
+   91  }
+   92  
+   93: // Player walking (ghost)
+   94  /*void Walk_Spec(Character *character, PacketReader &reader)
+   95  {
+
+26 matches across 7 files

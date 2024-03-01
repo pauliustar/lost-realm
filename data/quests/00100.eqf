@@ -1,0 +1,65 @@
+main
+{
+   questname  "Death Escape"
+   version      1.0
+}
+
+state begin
+{
+   desc         "Talk to Death"
+
+   action       AddNpcText(100, "Welcome to the Lost Realm [name]! Your first time? Can be a bit shocking..");
+
+   rule TalkedToNpc(100) goto Intro
+}
+
+state Intro
+{
+   desc         "Talk to Death"
+
+   action       AddNpcText(100, "Don't be so scared, death is just a minor inconvenience..");
+
+   action addNpcInput(100, 1, "Am I dead? Let me go!");
+
+   rule InputNpc(1) goto Process
+}
+
+state Process
+{
+   desc         "Talk to Death"
+
+   action       AddNpcText(100, "Where? Haha.. You know they say - you can't escape death.. This is.. your new home. Although it's not the end of your journey.");
+
+   action addNpcInput(100, 1, "I died? But how?!");
+
+   rule InputNpc(1) goto Gateway
+}
+
+
+state  Gateway
+{
+        desc         "Talk to Death"
+
+        action AddNpcText(100, "There is only so much I can tell you [name]. Find a way out! Once you do, send my regards to the Shadow.. ");
+
+        action       StartQuest(99, "begin");
+        action addNpcInput(100, 1, "Tell me how!");
+
+        rule InputNpc(1) goto Hint
+}
+state  Hint
+{
+        desc         "Talk to Death"
+
+        action AddNpcText(100, "Okay okay.. Kill Miserable Souls and portal will open next to Me. You will have 30 seconds to walk on it.");
+
+        rule TalkedToNpc(100) goto EndIntro
+}
+
+state  EndIntro
+{
+        desc         "Talk to Death"
+
+        action GiveEXP(200);
+        action End();
+}

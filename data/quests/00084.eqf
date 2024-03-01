@@ -1,0 +1,30 @@
+main
+{
+   questname  "Death Helper"
+   version      1.0
+   hidden
+}
+state begin
+{
+   rule EnterCoord(1,12,14) goto OpenHelper
+   rule EnterCoord(1,13,15) goto OpenHelper
+   rule EnterCoord(1,14,14) goto OpenHelper
+   rule EnterCoord(1,13,13) goto OpenHelper
+}
+state OpenHelper
+{
+   action AddNpcBox("Death Realm", "Talk to the Death [?] NPC to find out how to leave this place.");
+   action SetState("ShadowStep");
+}
+state ShadowStep
+{
+   rule EnterCoord(2,18,8) goto ShadowIntro
+   rule EnterCoord(2,19,7) goto ShadowIntro
+   rule EnterCoord(2,18,6) goto ShadowIntro
+   rule EnterCoord(2,17,7) goto ShadowIntro
+}
+state ShadowIntro
+{
+   action AddNpcBox("Main Story", "Start main story by talking to the Shadow [?] NPC next to you. Follow Shadow tasks to progress in game faster.");
+   action End();
+}

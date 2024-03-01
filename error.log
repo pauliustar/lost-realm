@@ -1,0 +1,6281 @@
+
+
+--- Sun Feb 19 21:10:32 2023 ---
+
+21:10:32 [ERR] Could not load file: ./data/pub/dat001.eif
+
+
+--- Sun Feb 19 22:01:30 2023 ---
+
+22:01:30 [ERR] Could not load quest: ./data/quests/00095.eqf
+22:01:30 [ERR] Validation Error: Unknown action: addnpcpm (State: chimerareward)
+22:01:30 [ERR] Could not load quest: ./data/quests/00096.eqf
+22:01:30 [ERR] Validation Error: Unknown rule: isqueststate (State: begin)
+22:01:30 [ERR] Could not load quest: ./data/quests/00100.eqf
+22:01:30 [ERR] Validation Error: Unknown action: addnpcpm (State: life)
+
+
+--- Sun Feb 19 22:16:02 2023 ---
+
+22:16:02 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Feb 19 22:16:48 2023 ---
+
+22:16:48 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Feb 19 22:03:27 2023 ---
+
+22:03:27 [ERR] Could not load quest: ./data/quests/00095.eqf
+22:03:27 [ERR] Validation Error: Unknown action: addnpcpm (State: chimerareward)
+22:03:27 [ERR] Could not load quest: ./data/quests/00096.eqf
+22:03:27 [ERR] Validation Error: Unknown rule: isqueststate (State: begin)
+22:03:27 [ERR] Could not load quest: ./data/quests/00100.eqf
+22:03:27 [ERR] Validation Error: Unknown action: addnpcpm (State: life)
+
+
+--- Sun Feb 19 22:18:00 2023 ---
+
+22:18:00 [ERR] Could not load quest: ./data/quests/00096.eqf
+22:18:00 [ERR] Validation Error: Unknown rule: isqueststate (State: begin)
+
+
+--- Sun Feb 19 22:20:34 2023 ---
+
+
+
+--- Sun Feb 19 22:51:12 2023 ---
+
+
+
+--- Sun Feb 19 23:01:25 2023 ---
+
+
+
+--- Sun Feb 19 23:05:56 2023 ---
+
+
+
+--- Sun Feb 19 23:15:25 2023 ---
+
+
+
+--- Sun Feb 19 23:19:34 2023 ---
+
+
+
+--- Sun Feb 19 23:25:21 2023 ---
+
+
+
+--- Sun Feb 19 23:39:01 2023 ---
+
+
+
+--- Mon Feb 20 18:07:55 2023 ---
+
+
+
+--- Mon Feb 20 19:18:44 2023 ---
+
+
+
+--- Mon Feb 20 19:21:46 2023 ---
+
+terminate called after throwing an instance of 'Socket_SelectFailed'
+  what():  Socket_SelectFailed
+
+
+--- Mon Feb 20 19:24:02 2023 ---
+
+
+
+--- Mon Feb 20 19:25:17 2023 ---
+
+
+
+--- Mon Feb 20 19:27:45 2023 ---
+
+
+
+--- Mon Feb 20 19:29:03 2023 ---
+
+
+
+--- Mon Feb 20 19:30:11 2023 ---
+
+
+
+--- Mon Feb 20 19:30:45 2023 ---
+
+terminate called after throwing an instance of 'Socket_SelectFailed'
+  what():  Socket_SelectFailed
+
+
+--- Mon Feb 20 19:32:29 2023 ---
+
+
+
+--- Mon Feb 20 19:34:26 2023 ---
+
+
+
+--- Mon Feb 20 19:41:26 2023 ---
+
+
+
+--- Mon Feb 20 21:06:59 2023 ---
+
+
+
+--- Tue Feb 21 20:56:17 2023 ---
+
+
+
+--- Tue Feb 21 21:04:23 2023 ---
+
+
+
+--- Tue Feb 21 21:21:56 2023 ---
+
+
+
+--- Tue Feb 21 22:25:02 2023 ---
+
+
+
+--- Tue Feb 21 22:41:42 2023 ---
+
+
+
+--- Tue Feb 21 23:06:17 2023 ---
+
+
+
+--- Tue Feb 21 23:15:43 2023 ---
+
+
+
+--- Tue Feb 21 23:15:50 2023 ---
+
+
+
+--- Tue Feb 21 23:22:13 2023 ---
+
+
+
+--- Tue Feb 21 23:25:19 2023 ---
+
+
+
+--- Tue Feb 21 23:27:44 2023 ---
+
+
+
+--- Tue Feb 21 23:43:22 2023 ---
+
+
+
+--- Tue Feb 21 23:44:00 2023 ---
+
+
+
+--- Tue Feb 21 23:51:14 2023 ---
+
+
+
+--- Tue Feb 21 23:54:36 2023 ---
+
+
+
+--- Tue Feb 21 23:59:40 2023 ---
+
+
+
+--- Wed Feb 22 00:03:52 2023 ---
+
+
+
+--- Wed Feb 22 00:09:07 2023 ---
+
+
+
+--- Wed Feb 22 00:12:10 2023 ---
+
+
+
+--- Wed Feb 22 15:41:06 2023 ---
+
+15:41:06 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Wed Feb 22 15:46:18 2023 ---
+
+
+
+--- Wed Feb 22 15:49:22 2023 ---
+
+
+
+--- Wed Feb 22 15:49:59 2023 ---
+
+
+
+--- Wed Feb 22 16:02:21 2023 ---
+
+
+
+--- Wed Feb 22 16:09:41 2023 ---
+
+
+
+--- Wed Feb 22 16:11:56 2023 ---
+
+
+
+--- Wed Feb 22 16:16:44 2023 ---
+
+
+
+--- Wed Feb 22 20:37:55 2023 ---
+
+
+
+--- Wed Feb 22 20:44:23 2023 ---
+
+
+
+--- Wed Feb 22 21:10:22 2023 ---
+
+
+
+--- Wed Feb 22 21:16:56 2023 ---
+
+
+
+--- Wed Feb 22 21:35:10 2023 ---
+
+
+
+--- Wed Feb 22 22:24:30 2023 ---
+
+
+
+--- Wed Feb 22 22:33:05 2023 ---
+
+
+
+--- Wed Feb 22 22:44:56 2023 ---
+
+
+
+--- Wed Feb 22 23:03:09 2023 ---
+
+
+
+--- Wed Feb 22 23:07:59 2023 ---
+
+
+
+--- Fri Feb 24 21:17:57 2023 ---
+
+
+
+--- Fri Feb 24 21:24:08 2023 ---
+
+
+
+--- Sat Feb 25 01:24:48 2023 ---
+
+
+
+--- Sat Feb 25 01:28:05 2023 ---
+
+
+
+--- Sat Feb 25 01:31:05 2023 ---
+
+
+
+--- Sat Feb 25 01:40:12 2023 ---
+
+
+
+--- Sat Feb 25 02:22:37 2023 ---
+
+
+
+--- Sat Feb 25 02:28:45 2023 ---
+
+
+
+--- Sat Feb 25 13:46:18 2023 ---
+
+
+
+--- Sat Feb 25 13:58:35 2023 ---
+
+
+
+--- Sat Feb 25 14:05:14 2023 ---
+
+
+
+--- Sat Feb 25 14:06:32 2023 ---
+
+
+
+--- Sat Feb 25 14:06:40 2023 ---
+
+
+
+--- Sat Feb 25 14:12:09 2023 ---
+
+
+
+--- Sat Feb 25 14:17:41 2023 ---
+
+
+
+--- Sat Feb 25 14:20:04 2023 ---
+
+
+
+--- Sat Feb 25 14:49:26 2023 ---
+
+15:07:13 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:07:13 [ERR] Runtime Error: RPN Stack underflow
+15:07:30 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:07:30 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Sat Feb 25 15:09:26 2023 ---
+
+15:09:45 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:09:45 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Sat Feb 25 15:10:40 2023 ---
+
+15:27:20 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:27:20 [ERR] Runtime Error: RPN Stack underflow
+15:28:36 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:28:36 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Sat Feb 25 15:29:21 2023 ---
+
+
+
+--- Sat Feb 25 15:59:06 2023 ---
+
+
+
+--- Sun Feb 26 00:23:13 2023 ---
+
+
+
+--- Sun Feb 26 00:26:33 2023 ---
+
+
+
+--- Sun Feb 26 00:26:50 2023 ---
+
+
+
+--- Sun Feb 26 00:28:59 2023 ---
+
+
+
+--- Sun Feb 26 00:30:42 2023 ---
+
+
+
+--- Sun Feb 26 00:31:43 2023 ---
+
+
+
+--- Sun Feb 26 00:34:31 2023 ---
+
+
+
+--- Sun Feb 26 00:42:34 2023 ---
+
+
+
+--- Sun Feb 26 00:45:10 2023 ---
+
+
+
+--- Sun Feb 26 00:56:31 2023 ---
+
+
+
+--- Sun Feb 26 01:08:45 2023 ---
+
+
+
+--- Sun Feb 26 01:13:22 2023 ---
+
+
+
+--- Sun Feb 26 01:21:41 2023 ---
+
+
+
+--- Sun Feb 26 01:24:40 2023 ---
+
+
+
+--- Sun Feb 26 01:26:20 2023 ---
+
+
+
+--- Sun Feb 26 01:31:09 2023 ---
+
+
+
+--- Sun Feb 26 01:38:52 2023 ---
+
+
+
+--- Sun Feb 26 01:41:17 2023 ---
+
+
+
+--- Sun Feb 26 01:41:25 2023 ---
+
+
+
+--- Sun Feb 26 01:49:32 2023 ---
+
+
+
+--- Sun Feb 26 01:54:20 2023 ---
+
+
+
+--- Sun Feb 26 01:58:51 2023 ---
+
+
+
+--- Sun Feb 26 02:47:06 2023 ---
+
+
+
+--- Sun Feb 26 11:19:17 2023 ---
+
+11:19:17 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Feb 26 11:19:30 2023 ---
+
+
+
+--- Sun Feb 26 12:33:45 2023 ---
+
+
+
+--- Sun Feb 26 12:39:33 2023 ---
+
+
+
+--- Sun Feb 26 12:47:45 2023 ---
+
+
+
+--- Sun Feb 26 13:04:21 2023 ---
+
+
+
+--- Sun Feb 26 13:10:14 2023 ---
+
+
+
+--- Sun Feb 26 19:26:58 2023 ---
+
+
+
+--- Sun Feb 26 19:37:07 2023 ---
+
+
+
+--- Sun Feb 26 20:26:47 2023 ---
+
+
+
+--- Tue Feb 28 20:21:09 2023 ---
+
+
+
+--- Tue Feb 28 22:05:36 2023 ---
+
+
+
+--- Wed Mar  1 16:47:37 2023 ---
+
+
+
+--- Wed Mar  1 17:00:34 2023 ---
+
+
+
+--- Wed Mar  1 17:02:01 2023 ---
+
+
+
+--- Wed Mar  1 17:04:02 2023 ---
+
+
+
+--- Wed Mar  1 17:08:24 2023 ---
+
+
+
+--- Wed Mar  1 17:11:21 2023 ---
+
+
+
+--- Wed Mar  1 17:26:31 2023 ---
+
+
+
+--- Wed Mar  1 17:52:56 2023 ---
+
+
+
+--- Wed Mar  1 17:56:53 2023 ---
+
+
+
+--- Wed Mar  1 18:08:29 2023 ---
+
+
+
+--- Wed Mar  1 18:21:26 2023 ---
+
+
+
+--- Wed Mar  1 18:24:34 2023 ---
+
+
+
+--- Wed Mar  1 18:29:05 2023 ---
+
+
+
+--- Wed Mar  1 18:38:50 2023 ---
+
+
+
+--- Wed Mar  1 18:42:14 2023 ---
+
+
+
+--- Wed Mar  1 18:43:53 2023 ---
+
+
+
+--- Wed Mar  1 18:45:32 2023 ---
+
+
+
+--- Wed Mar  1 18:48:52 2023 ---
+
+
+
+--- Wed Mar  1 18:48:56 2023 ---
+
+
+
+--- Wed Mar  1 18:49:03 2023 ---
+
+
+
+--- Wed Mar  1 18:54:28 2023 ---
+
+
+
+--- Wed Mar  1 18:56:59 2023 ---
+
+
+
+--- Wed Mar  1 19:12:08 2023 ---
+
+
+
+--- Wed Mar  1 19:18:37 2023 ---
+
+
+
+--- Sat Mar  4 10:00:23 2023 ---
+
+
+
+--- Sat Mar  4 10:51:37 2023 ---
+
+
+
+--- Sat Mar  4 12:27:03 2023 ---
+
+
+
+--- Sat Mar  4 18:45:43 2023 ---
+
+
+
+--- Sat Mar  4 18:49:51 2023 ---
+
+
+
+--- Sat Mar  4 21:03:56 2023 ---
+
+21:03:56 [ERR] Could not load quest: ./data/quests/00100.eqf
+21:03:56 [ERR] Validation Error: Unknown quest state: moveout1 (State: awaittrial)
+
+
+--- Sat Mar  4 21:04:22 2023 ---
+
+21:07:43 [ERR] Client caused an exception and was closed: 78.60.185.23.
+21:07:43 [ERR] Runtime Error: Quest action recursion too deep
+21:08:58 [ERR] Client caused an exception and was closed: 78.60.185.23.
+21:08:58 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Sat Mar  4 21:10:04 2023 ---
+
+
+
+--- Sat Mar  4 21:45:46 2023 ---
+
+
+
+--- Sat Mar  4 21:48:35 2023 ---
+
+
+
+--- Sun Mar  5 00:09:38 2023 ---
+
+
+
+--- Sun Mar  5 01:16:05 2023 ---
+
+
+
+--- Sun Mar  5 01:23:53 2023 ---
+
+
+
+--- Sun Mar  5 15:35:08 2023 ---
+
+
+
+--- Sun Mar  5 15:39:58 2023 ---
+
+
+
+--- Sun Mar  5 15:46:18 2023 ---
+
+
+
+--- Sun Mar  5 15:58:33 2023 ---
+
+
+
+--- Sun Mar  5 16:07:44 2023 ---
+
+
+
+--- Sun Mar  5 16:16:16 2023 ---
+
+
+
+--- Sun Mar  5 16:20:24 2023 ---
+
+
+
+--- Sun Mar  5 16:23:15 2023 ---
+
+
+
+--- Sun Mar  5 16:32:29 2023 ---
+
+
+
+--- Sun Mar  5 16:34:03 2023 ---
+
+
+
+--- Sun Mar  5 16:36:37 2023 ---
+
+
+
+--- Sun Mar  5 16:41:37 2023 ---
+
+
+
+--- Sun Mar  5 18:36:45 2023 ---
+
+
+
+--- Sun Mar  5 18:45:03 2023 ---
+
+
+
+--- Sun Mar  5 18:54:03 2023 ---
+
+
+
+--- Sun Mar  5 19:16:39 2023 ---
+
+
+
+--- Tue Mar  7 21:33:45 2023 ---
+
+21:33:45 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Tue Mar  7 21:44:10 2023 ---
+
+
+
+--- Tue Mar  7 22:15:11 2023 ---
+
+
+
+--- Tue Mar  7 22:24:49 2023 ---
+
+
+
+--- Sat Mar 11 23:45:59 2023 ---
+
+
+
+--- Sun Mar 12 22:29:32 2023 ---
+
+
+
+--- Sun Mar 12 22:45:41 2023 ---
+
+
+
+--- Sun Mar 12 23:07:28 2023 ---
+
+
+
+--- Mon Mar 13 10:51:45 2023 ---
+
+10:51:45 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Mar 13 10:54:48 2023 ---
+
+
+
+--- Mon Mar 13 14:12:03 2023 ---
+
+
+
+--- Mon Mar 13 14:28:01 2023 ---
+
+
+
+--- Mon Mar 13 17:29:15 2023 ---
+
+
+
+--- Mon Mar 13 18:42:49 2023 ---
+
+
+
+--- Mon Mar 13 18:45:34 2023 ---
+
+
+
+--- Mon Mar 13 18:50:40 2023 ---
+
+
+
+--- Mon Mar 13 19:05:31 2023 ---
+
+
+
+--- Mon Mar 13 19:09:01 2023 ---
+
+
+
+--- Mon Mar 13 19:11:22 2023 ---
+
+
+
+--- Mon Mar 13 19:13:35 2023 ---
+
+
+
+--- Mon Mar 13 19:21:57 2023 ---
+
+
+
+--- Mon Mar 13 19:24:01 2023 ---
+
+
+
+--- Mon Mar 13 19:24:43 2023 ---
+
+
+
+--- Mon Mar 13 20:08:05 2023 ---
+
+
+
+--- Mon Mar 13 20:19:04 2023 ---
+
+
+
+--- Mon Mar 13 20:42:48 2023 ---
+
+
+
+--- Mon Mar 13 21:02:14 2023 ---
+
+
+
+--- Mon Mar 13 22:10:37 2023 ---
+
+
+
+--- Mon Mar 13 22:10:39 2023 ---
+
+
+
+--- Mon Mar 13 22:12:12 2023 ---
+
+
+
+--- Mon Mar 13 22:22:00 2023 ---
+
+
+
+--- Mon Mar 13 22:22:58 2023 ---
+
+
+
+--- Mon Mar 13 22:27:37 2023 ---
+
+
+
+--- Tue Mar 14 18:01:43 2023 ---
+
+
+
+--- Tue Mar 14 18:09:08 2023 ---
+
+18:09:56 [ERR] NPC couldn't spawn anywhere valid!
+18:09:56 [ERR] NPC couldn't spawn anywhere valid!
+18:09:56 [ERR] NPC couldn't spawn anywhere valid!
+18:09:56 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:57 [ERR] NPC couldn't spawn anywhere valid!
+18:09:58 [ERR] NPC couldn't spawn anywhere valid!
+18:09:58 [ERR] NPC couldn't spawn anywhere valid!
+18:09:58 [ERR] NPC couldn't spawn anywhere valid!
+18:09:59 [ERR] NPC couldn't spawn anywhere valid!
+18:09:59 [ERR] NPC couldn't spawn anywhere valid!
+18:09:59 [ERR] NPC couldn't spawn anywhere valid!
+18:09:59 [ERR] NPC couldn't spawn anywhere valid!
+18:09:59 [ERR] NPC couldn't spawn anywhere valid!
+18:10:00 [ERR] NPC couldn't spawn anywhere valid!
+18:10:00 [ERR] NPC couldn't spawn anywhere valid!
+18:10:00 [ERR] NPC couldn't spawn anywhere valid!
+18:10:00 [ERR] NPC couldn't spawn anywhere valid!
+18:10:00 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:01 [ERR] NPC couldn't spawn anywhere valid!
+18:10:27 [ERR] NPC couldn't spawn anywhere valid!
+18:10:30 [ERR] NPC couldn't spawn anywhere valid!
+18:10:35 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Tue Mar 14 18:13:18 2023 ---
+
+
+
+--- Tue Mar 14 18:13:31 2023 ---
+
+
+
+--- Tue Mar 14 18:16:46 2023 ---
+
+
+
+--- Tue Mar 14 19:36:29 2023 ---
+
+
+
+--- Tue Mar 14 19:42:35 2023 ---
+
+
+
+--- Tue Mar 14 19:46:56 2023 ---
+
+
+
+--- Tue Mar 14 19:53:29 2023 ---
+
+
+
+--- Tue Mar 14 19:58:37 2023 ---
+
+
+
+--- Tue Mar 14 19:58:46 2023 ---
+
+
+
+--- Tue Mar 14 20:02:25 2023 ---
+
+
+
+--- Tue Mar 14 20:09:03 2023 ---
+
+
+
+--- Tue Mar 14 20:20:02 2023 ---
+
+
+
+--- Tue Mar 14 20:26:48 2023 ---
+
+
+
+--- Tue Mar 14 20:27:48 2023 ---
+
+
+
+--- Tue Mar 14 20:33:47 2023 ---
+
+
+
+--- Tue Mar 14 21:00:08 2023 ---
+
+
+
+--- Tue Mar 14 21:15:14 2023 ---
+
+
+
+--- Tue Mar 14 21:19:07 2023 ---
+
+
+
+--- Wed Mar 15 19:23:12 2023 ---
+
+
+
+--- Wed Mar 15 19:34:50 2023 ---
+
+
+
+--- Wed Mar 15 19:42:52 2023 ---
+
+
+
+--- Wed Mar 15 19:42:59 2023 ---
+
+
+
+--- Wed Mar 15 19:55:35 2023 ---
+
+
+
+--- Wed Mar 15 20:01:45 2023 ---
+
+
+
+--- Wed Mar 15 20:33:31 2023 ---
+
+
+
+--- Wed Mar 15 20:39:04 2023 ---
+
+
+
+--- Wed Mar 15 21:37:14 2023 ---
+
+
+
+--- Wed Mar 15 21:37:30 2023 ---
+
+
+
+--- Wed Mar 15 21:43:35 2023 ---
+
+
+
+--- Wed Mar 15 21:45:54 2023 ---
+
+
+
+--- Wed Mar 15 21:52:51 2023 ---
+
+
+
+--- Wed Mar 15 22:03:14 2023 ---
+
+
+
+--- Wed Mar 15 22:06:13 2023 ---
+
+
+
+--- Thu Mar 16 19:59:29 2023 ---
+
+
+
+--- Thu Mar 16 20:51:31 2023 ---
+
+
+
+--- Thu Mar 16 20:57:28 2023 ---
+
+
+
+--- Thu Mar 16 20:57:44 2023 ---
+
+
+
+--- Thu Mar 16 21:29:50 2023 ---
+
+
+
+--- Thu Mar 16 21:32:25 2023 ---
+
+
+
+--- Thu Mar 16 21:48:53 2023 ---
+
+
+
+--- Thu Mar 16 21:51:43 2023 ---
+
+
+
+--- Thu Mar 16 21:53:11 2023 ---
+
+
+
+--- Thu Mar 16 21:55:23 2023 ---
+
+
+
+--- Thu Mar 16 22:00:29 2023 ---
+
+
+
+--- Thu Mar 16 22:05:17 2023 ---
+
+
+
+--- Thu Mar 16 22:08:49 2023 ---
+
+
+
+--- Thu Mar 16 22:09:56 2023 ---
+
+
+
+--- Thu Mar 16 22:10:58 2023 ---
+
+
+
+--- Thu Mar 16 22:11:54 2023 ---
+
+
+
+--- Thu Mar 16 22:30:43 2023 ---
+
+
+
+--- Thu Mar 16 22:48:53 2023 ---
+
+
+
+--- Thu Mar 16 22:57:35 2023 ---
+
+
+
+--- Fri Mar 17 20:23:22 2023 ---
+
+
+
+--- Fri Mar 17 20:24:55 2023 ---
+
+
+
+--- Fri Mar 17 20:34:38 2023 ---
+
+
+
+--- Fri Mar 17 20:49:52 2023 ---
+
+
+
+--- Fri Mar 17 21:05:06 2023 ---
+
+
+
+--- Fri Mar 17 21:57:41 2023 ---
+
+
+
+--- Fri Mar 17 22:06:00 2023 ---
+
+
+
+--- Fri Mar 17 22:20:06 2023 ---
+
+
+
+--- Fri Mar 17 22:23:40 2023 ---
+
+
+
+--- Fri Mar 17 22:26:37 2023 ---
+
+
+
+--- Fri Mar 17 22:28:04 2023 ---
+
+
+
+--- Fri Mar 17 22:31:01 2023 ---
+
+
+
+--- Fri Mar 17 22:34:02 2023 ---
+
+
+
+--- Fri Mar 17 22:34:29 2023 ---
+
+
+
+--- Fri Mar 17 22:36:12 2023 ---
+
+
+
+--- Fri Mar 17 22:42:26 2023 ---
+
+22:42:38 [ERR] Client caused an exception and was closed: 78.60.185.23.
+22:42:38 [ERR] Logic Error: basic_string::substr: __pos (which is 13) > this->size() (which is 11)
+
+
+--- Fri Mar 17 22:46:32 2023 ---
+
+
+
+--- Fri Mar 17 23:08:58 2023 ---
+
+
+
+--- Fri Mar 17 23:20:47 2023 ---
+
+
+
+--- Fri Mar 17 23:28:35 2023 ---
+
+
+
+--- Fri Mar 17 23:29:05 2023 ---
+
+
+
+--- Sat Mar 18 00:03:41 2023 ---
+
+
+
+--- Sat Mar 18 00:03:58 2023 ---
+
+
+
+--- Sat Mar 18 00:06:57 2023 ---
+
+
+
+--- Sat Mar 18 00:07:15 2023 ---
+
+
+
+--- Sat Mar 18 00:26:17 2023 ---
+
+
+
+--- Sat Mar 18 00:27:42 2023 ---
+
+
+
+--- Sat Mar 18 00:39:01 2023 ---
+
+
+
+--- Sat Mar 18 00:46:55 2023 ---
+
+
+
+--- Sat Mar 18 00:48:38 2023 ---
+
+
+
+--- Sat Mar 18 00:51:33 2023 ---
+
+
+
+--- Sat Mar 18 00:51:42 2023 ---
+
+
+
+--- Sat Mar 18 00:54:00 2023 ---
+
+
+
+--- Sat Mar 18 19:52:51 2023 ---
+
+
+
+--- Sat Mar 18 20:00:28 2023 ---
+
+
+
+--- Sat Mar 18 20:02:33 2023 ---
+
+
+
+--- Sat Mar 18 20:04:06 2023 ---
+
+
+
+--- Sat Mar 18 20:13:05 2023 ---
+
+
+
+--- Sat Mar 18 21:05:28 2023 ---
+
+
+
+--- Sat Mar 18 21:08:24 2023 ---
+
+
+
+--- Sat Mar 18 21:08:36 2023 ---
+
+
+
+--- Sat Mar 18 21:25:40 2023 ---
+
+
+
+--- Sat Mar 18 21:34:27 2023 ---
+
+
+
+--- Sat Mar 18 21:42:51 2023 ---
+
+
+
+--- Sat Mar 18 22:05:39 2023 ---
+
+
+
+--- Sat Mar 18 22:10:16 2023 ---
+
+
+
+--- Sat Mar 18 22:42:45 2023 ---
+
+
+
+--- Sat Mar 18 22:44:49 2023 ---
+
+
+
+--- Sat Mar 18 22:53:41 2023 ---
+
+
+
+--- Sat Mar 18 22:58:52 2023 ---
+
+
+
+--- Sat Mar 18 23:01:18 2023 ---
+
+
+
+--- Sat Mar 18 23:12:12 2023 ---
+
+
+
+--- Sat Mar 18 23:18:47 2023 ---
+
+
+
+--- Sat Mar 18 23:23:15 2023 ---
+
+
+
+--- Sat Mar 18 23:25:54 2023 ---
+
+
+
+--- Sat Mar 18 23:27:44 2023 ---
+
+
+
+--- Sat Mar 18 23:33:03 2023 ---
+
+
+
+--- Sat Mar 18 23:38:59 2023 ---
+
+
+
+--- Sat Mar 18 23:40:17 2023 ---
+
+
+
+--- Sat Mar 18 23:43:51 2023 ---
+
+
+
+--- Sun Mar 19 00:51:30 2023 ---
+
+
+
+--- Sun Mar 19 01:13:40 2023 ---
+
+
+
+--- Sun Mar 19 01:14:53 2023 ---
+
+
+
+--- Sun Mar 19 01:16:55 2023 ---
+
+
+
+--- Sun Mar 19 01:20:51 2023 ---
+
+
+
+--- Sun Mar 19 01:29:40 2023 ---
+
+
+
+--- Sun Mar 19 01:55:43 2023 ---
+
+
+
+--- Sun Mar 19 02:28:29 2023 ---
+
+
+
+--- Sun Mar 19 02:34:05 2023 ---
+
+
+
+--- Sun Mar 19 02:42:04 2023 ---
+
+
+
+--- Sun Mar 19 02:46:20 2023 ---
+
+
+
+--- Sun Mar 19 02:47:51 2023 ---
+
+
+
+--- Sun Mar 19 02:48:53 2023 ---
+
+
+
+--- Sun Mar 19 02:55:14 2023 ---
+
+
+
+--- Sun Mar 19 02:58:34 2023 ---
+
+
+
+--- Sun Mar 19 03:00:45 2023 ---
+
+
+
+--- Sun Mar 19 03:05:10 2023 ---
+
+
+
+--- Sun Mar 19 03:05:17 2023 ---
+
+
+
+--- Sun Mar 19 03:19:03 2023 ---
+
+
+
+--- Sun Mar 19 03:21:14 2023 ---
+
+
+
+--- Sun Mar 19 03:24:33 2023 ---
+
+
+
+--- Sun Mar 19 03:36:04 2023 ---
+
+
+
+--- Sun Mar 19 03:37:07 2023 ---
+
+
+
+--- Sun Mar 19 03:39:40 2023 ---
+
+
+
+--- Sun Mar 19 03:49:14 2023 ---
+
+
+
+--- Sun Mar 19 03:58:58 2023 ---
+
+
+
+--- Sun Mar 19 04:09:11 2023 ---
+
+
+
+--- Sun Mar 19 09:24:28 2023 ---
+
+
+
+--- Sun Mar 19 09:29:51 2023 ---
+
+
+
+--- Sun Mar 19 09:35:14 2023 ---
+
+
+
+--- Sun Mar 19 09:43:53 2023 ---
+
+
+
+--- Sun Mar 19 09:48:00 2023 ---
+
+
+
+--- Sun Mar 19 09:53:44 2023 ---
+
+
+
+--- Sun Mar 19 10:04:37 2023 ---
+
+
+
+--- Sun Mar 19 10:09:09 2023 ---
+
+
+
+--- Sun Mar 19 10:09:19 2023 ---
+
+
+
+--- Sun Mar 19 10:11:07 2023 ---
+
+
+
+--- Sun Mar 19 10:16:46 2023 ---
+
+
+
+--- Sun Mar 19 10:18:55 2023 ---
+
+
+
+--- Sun Mar 19 10:19:54 2023 ---
+
+
+
+--- Sun Mar 19 11:48:25 2023 ---
+
+
+
+--- Sun Mar 19 11:50:01 2023 ---
+
+
+
+--- Sun Mar 19 11:53:37 2023 ---
+
+
+
+--- Sun Mar 19 11:56:36 2023 ---
+
+
+
+--- Sun Mar 19 11:56:54 2023 ---
+
+
+
+--- Sun Mar 19 11:59:26 2023 ---
+
+
+
+--- Sun Mar 19 12:04:08 2023 ---
+
+
+
+--- Sun Mar 19 12:09:52 2023 ---
+
+
+
+--- Sun Mar 19 12:16:25 2023 ---
+
+
+
+--- Sun Mar 19 12:18:18 2023 ---
+
+
+
+--- Sun Mar 19 12:21:38 2023 ---
+
+
+
+--- Sun Mar 19 12:23:55 2023 ---
+
+
+
+--- Sun Mar 19 12:29:10 2023 ---
+
+
+
+--- Sun Mar 19 13:08:32 2023 ---
+
+
+
+--- Sun Mar 19 13:19:56 2023 ---
+
+
+
+--- Sun Mar 19 13:22:09 2023 ---
+
+
+
+--- Sun Mar 19 13:24:14 2023 ---
+
+
+
+--- Sun Mar 19 13:24:32 2023 ---
+
+
+
+--- Sun Mar 19 13:28:20 2023 ---
+
+
+
+--- Sun Mar 19 13:28:29 2023 ---
+
+
+
+--- Sun Mar 19 13:32:43 2023 ---
+
+
+
+--- Sun Mar 19 13:39:20 2023 ---
+
+
+
+--- Sun Mar 19 13:41:12 2023 ---
+
+
+
+--- Sun Mar 19 13:48:39 2023 ---
+
+
+
+--- Sun Mar 19 13:53:33 2023 ---
+
+
+
+--- Sun Mar 19 14:01:17 2023 ---
+
+
+
+--- Sun Mar 19 14:25:08 2023 ---
+
+
+
+--- Sun Mar 19 14:28:08 2023 ---
+
+
+
+--- Sun Mar 19 14:29:30 2023 ---
+
+
+
+--- Sun Mar 19 14:32:34 2023 ---
+
+
+
+--- Sun Mar 19 16:37:01 2023 ---
+
+
+
+--- Sun Mar 19 16:38:36 2023 ---
+
+
+
+--- Sun Mar 19 18:52:53 2023 ---
+
+
+
+--- Sun Mar 19 18:54:20 2023 ---
+
+
+
+--- Sun Mar 19 19:06:42 2023 ---
+
+
+
+--- Sun Mar 19 20:25:45 2023 ---
+
+
+
+--- Mon Mar 20 17:50:59 2023 ---
+
+
+
+--- Mon Mar 20 17:51:37 2023 ---
+
+
+
+--- Mon Mar 20 20:38:44 2023 ---
+
+
+
+--- Mon Mar 20 20:49:18 2023 ---
+
+
+
+--- Mon Mar 20 21:22:19 2023 ---
+
+
+
+--- Wed Mar 22 18:04:41 2023 ---
+
+18:04:42 [ERR] Database_OpenFailed: Can't connect to local MySQL server through socket '/run/mysqld/mysqld.sock' (2)
+
+
+--- Wed Mar 22 18:15:07 2023 ---
+
+18:15:07 [ERR] Database_OpenFailed: 
+
+
+--- Wed Mar 22 18:43:55 2023 ---
+
+18:43:55 [ERR] Database_OpenFailed: 
+
+
+--- Wed Mar 22 18:46:25 2023 ---
+
+18:46:25 [ERR] Could not install tables.
+18:46:25 [ERR] 
+
+
+--- Wed Mar 22 18:46:50 2023 ---
+
+18:46:51 [ERR] Could not install tables.
+18:46:51 [ERR] 
+
+
+--- Wed Mar 22 18:47:36 2023 ---
+
+18:47:36 [ERR] Could not install tables.
+18:47:36 [ERR] 
+
+
+--- Wed Mar 22 20:44:50 2023 ---
+
+20:44:50 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost' (using password: YES)
+
+
+--- Wed Mar 22 20:45:44 2023 ---
+
+20:45:45 [ERR] Database_OpenFailed: 
+
+
+--- Wed Mar 22 20:47:10 2023 ---
+
+20:47:11 [ERR] Could not install tables.
+20:47:11 [ERR] 
+
+
+--- Wed Mar 22 20:54:46 2023 ---
+
+
+
+--- Wed Mar 22 21:03:01 2023 ---
+
+
+
+--- Wed Mar 22 21:10:24 2023 ---
+
+
+
+--- Wed Mar 22 21:12:35 2023 ---
+
+
+
+--- Wed Mar 22 21:13:45 2023 ---
+
+
+
+--- Wed Mar 22 21:39:10 2023 ---
+
+
+
+--- Fri Mar 24 17:02:44 2023 ---
+
+
+
+--- Fri Mar 24 17:03:27 2023 ---
+
+
+
+--- Fri Mar 24 17:05:03 2023 ---
+
+
+
+--- Fri Mar 24 19:32:39 2023 ---
+
+
+
+--- Fri Mar 24 19:38:27 2023 ---
+
+
+
+--- Fri Mar 24 19:52:47 2023 ---
+
+
+
+--- Fri Mar 24 19:56:02 2023 ---
+
+
+
+--- Fri Mar 24 20:05:08 2023 ---
+
+
+
+--- Fri Mar 24 20:12:32 2023 ---
+
+
+
+--- Fri Mar 24 20:14:32 2023 ---
+
+
+
+--- Fri Mar 24 20:16:53 2023 ---
+
+
+
+--- Fri Mar 24 20:17:03 2023 ---
+
+
+
+--- Fri Mar 24 20:24:42 2023 ---
+
+
+
+--- Fri Mar 24 20:30:49 2023 ---
+
+
+
+--- Fri Mar 24 20:32:25 2023 ---
+
+
+
+--- Fri Mar 24 20:35:35 2023 ---
+
+
+
+--- Fri Mar 24 20:42:30 2023 ---
+
+
+
+--- Fri Mar 24 20:47:28 2023 ---
+
+
+
+--- Fri Mar 24 20:51:21 2023 ---
+
+
+
+--- Fri Mar 24 21:00:11 2023 ---
+
+
+
+--- Fri Mar 24 21:00:49 2023 ---
+
+
+
+--- Fri Mar 24 21:07:39 2023 ---
+
+
+
+--- Fri Mar 24 21:08:49 2023 ---
+
+
+
+--- Fri Mar 24 21:34:54 2023 ---
+
+
+
+--- Fri Mar 24 21:57:57 2023 ---
+
+
+
+--- Fri Mar 24 22:00:35 2023 ---
+
+
+
+--- Fri Mar 24 22:15:48 2023 ---
+
+
+
+--- Fri Mar 24 22:39:15 2023 ---
+
+
+
+--- Fri Mar 24 23:04:11 2023 ---
+
+
+
+--- Fri Mar 24 23:13:16 2023 ---
+
+
+
+--- Fri Mar 24 23:16:53 2023 ---
+
+
+
+--- Fri Mar 24 23:17:15 2023 ---
+
+
+
+--- Fri Mar 24 23:19:13 2023 ---
+
+
+
+--- Fri Mar 24 23:39:23 2023 ---
+
+
+
+--- Fri Mar 24 23:41:59 2023 ---
+
+
+
+--- Fri Mar 24 23:55:10 2023 ---
+
+
+
+--- Sat Mar 25 00:38:02 2023 ---
+
+
+
+--- Sat Mar 25 00:41:33 2023 ---
+
+
+
+--- Sat Mar 25 00:45:18 2023 ---
+
+
+
+--- Sat Mar 25 00:58:15 2023 ---
+
+
+
+--- Sat Mar 25 00:59:59 2023 ---
+
+
+
+--- Sat Mar 25 01:05:27 2023 ---
+
+
+
+--- Sat Mar 25 01:21:00 2023 ---
+
+
+
+--- Sat Mar 25 02:00:35 2023 ---
+
+
+
+--- Sat Mar 25 23:50:23 2023 ---
+
+
+
+--- Sat Mar 25 23:53:02 2023 ---
+
+
+
+--- Sun Mar 26 00:59:26 2023 ---
+
+
+
+--- Sun Mar 26 14:04:31 2023 ---
+
+
+
+--- Sun Mar 26 14:11:25 2023 ---
+
+
+
+--- Sun Mar 26 14:17:15 2023 ---
+
+
+
+--- Sun Mar 26 14:27:21 2023 ---
+
+
+
+--- Sun Mar 26 14:30:16 2023 ---
+
+
+
+--- Sun Mar 26 14:34:19 2023 ---
+
+
+
+--- Sun Mar 26 14:39:31 2023 ---
+
+
+
+--- Sun Mar 26 15:38:03 2023 ---
+
+
+
+--- Sun Mar 26 15:39:50 2023 ---
+
+
+
+--- Sun Mar 26 15:44:31 2023 ---
+
+
+
+--- Sun Mar 26 17:03:52 2023 ---
+
+
+
+--- Sun Mar 26 17:32:16 2023 ---
+
+
+
+--- Sun Mar 26 17:40:04 2023 ---
+
+
+
+--- Sun Mar 26 18:06:13 2023 ---
+
+
+
+--- Sun Mar 26 18:09:04 2023 ---
+
+
+
+--- Sun Mar 26 18:12:34 2023 ---
+
+
+
+--- Sun Mar 26 18:14:21 2023 ---
+
+
+
+--- Sun Mar 26 18:16:21 2023 ---
+
+
+
+--- Sun Mar 26 18:27:27 2023 ---
+
+
+
+--- Sun Mar 26 18:35:31 2023 ---
+
+
+
+--- Sun Mar 26 18:39:09 2023 ---
+
+
+
+--- Mon Mar 27 21:07:16 2023 ---
+
+
+
+--- Mon Mar 27 21:29:29 2023 ---
+
+
+
+--- Mon Mar 27 21:30:39 2023 ---
+
+
+
+--- Tue Mar 28 09:56:37 2023 ---
+
+
+
+--- Tue Mar 28 10:26:03 2023 ---
+
+
+
+--- Tue Mar 28 10:27:46 2023 ---
+
+
+
+--- Tue Mar 28 11:47:09 2023 ---
+
+
+
+--- Tue Mar 28 11:48:18 2023 ---
+
+
+
+--- Tue Mar 28 13:43:48 2023 ---
+
+
+
+--- Tue Mar 28 15:19:07 2023 ---
+
+15:19:20 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:19:20 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Tue Mar 28 15:38:52 2023 ---
+
+15:39:05 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:39:05 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Tue Mar 28 15:43:16 2023 ---
+
+15:43:37 [ERR] Client caused an exception and was closed: 78.60.185.23.
+15:43:37 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Tue Mar 28 16:35:01 2023 ---
+
+16:35:14 [ERR] Client caused an exception and was closed: 78.60.185.23.
+16:35:14 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Tue Mar 28 16:36:43 2023 ---
+
+
+
+--- Tue Mar 28 16:43:30 2023 ---
+
+
+
+--- Tue Mar 28 16:52:32 2023 ---
+
+
+
+--- Tue Mar 28 17:05:34 2023 ---
+
+
+
+--- Tue Mar 28 17:09:39 2023 ---
+
+
+
+--- Tue Mar 28 17:12:50 2023 ---
+
+
+
+--- Tue Mar 28 17:14:11 2023 ---
+
+
+
+--- Tue Mar 28 17:14:37 2023 ---
+
+
+
+--- Tue Mar 28 18:09:36 2023 ---
+
+
+
+--- Tue Mar 28 18:11:36 2023 ---
+
+
+
+--- Tue Mar 28 18:16:13 2023 ---
+
+
+
+--- Tue Mar 28 18:33:12 2023 ---
+
+18:33:28 [ERR] Client caused an exception and was closed: 78.60.185.23.
+18:33:28 [ERR] Runtime Error: RPN Stack underflow
+
+
+--- Tue Mar 28 18:39:53 2023 ---
+
+
+
+--- Tue Mar 28 19:06:51 2023 ---
+
+
+
+--- Tue Mar 28 19:10:18 2023 ---
+
+
+
+--- Tue Mar 28 19:13:38 2023 ---
+
+
+
+--- Tue Mar 28 19:14:55 2023 ---
+
+
+
+--- Tue Mar 28 19:21:30 2023 ---
+
+
+
+--- Tue Mar 28 19:32:22 2023 ---
+
+
+
+--- Tue Mar 28 19:36:05 2023 ---
+
+
+
+--- Tue Mar 28 19:52:32 2023 ---
+
+
+
+--- Tue Mar 28 19:54:25 2023 ---
+
+
+
+--- Tue Mar 28 19:58:49 2023 ---
+
+
+
+--- Tue Mar 28 20:09:06 2023 ---
+
+
+
+--- Tue Mar 28 20:11:01 2023 ---
+
+
+
+--- Tue Mar 28 20:16:15 2023 ---
+
+
+
+--- Tue Mar 28 20:21:27 2023 ---
+
+
+
+--- Tue Mar 28 20:28:47 2023 ---
+
+
+
+--- Tue Mar 28 20:33:41 2023 ---
+
+
+
+--- Tue Mar 28 20:33:52 2023 ---
+
+
+
+--- Tue Mar 28 20:46:09 2023 ---
+
+
+
+--- Tue Mar 28 20:49:26 2023 ---
+
+
+
+--- Tue Mar 28 20:53:06 2023 ---
+
+
+
+--- Tue Mar 28 20:58:03 2023 ---
+
+
+
+--- Tue Mar 28 20:58:14 2023 ---
+
+
+
+--- Tue Mar 28 21:01:45 2023 ---
+
+
+
+--- Tue Mar 28 21:09:58 2023 ---
+
+
+
+--- Tue Mar 28 21:10:44 2023 ---
+
+
+
+--- Tue Mar 28 21:17:42 2023 ---
+
+
+
+--- Tue Mar 28 21:19:46 2023 ---
+
+
+
+--- Tue Mar 28 21:22:27 2023 ---
+
+
+
+--- Tue Mar 28 21:24:46 2023 ---
+
+
+
+--- Tue Mar 28 21:25:41 2023 ---
+
+
+
+--- Tue Mar 28 21:28:49 2023 ---
+
+
+
+--- Tue Mar 28 21:30:10 2023 ---
+
+
+
+--- Wed Mar 29 15:51:48 2023 ---
+
+
+
+--- Wed Mar 29 16:09:56 2023 ---
+
+
+
+--- Wed Mar 29 16:22:28 2023 ---
+
+
+
+--- Wed Mar 29 16:23:23 2023 ---
+
+
+
+--- Wed Mar 29 16:34:22 2023 ---
+
+
+
+--- Wed Mar 29 16:35:49 2023 ---
+
+
+
+--- Wed Mar 29 16:54:33 2023 ---
+
+
+
+--- Wed Mar 29 16:57:23 2023 ---
+
+
+
+--- Wed Mar 29 16:58:28 2023 ---
+
+
+
+--- Wed Mar 29 17:00:43 2023 ---
+
+
+
+--- Wed Mar 29 17:22:21 2023 ---
+
+
+
+--- Wed Mar 29 17:32:06 2023 ---
+
+
+
+--- Wed Mar 29 17:33:16 2023 ---
+
+
+
+--- Wed Mar 29 17:36:57 2023 ---
+
+
+
+--- Wed Mar 29 17:38:06 2023 ---
+
+
+
+--- Wed Mar 29 19:11:27 2023 ---
+
+19:11:27 [ERR] Invalid file / failed read/seek: ./data/pub/dtn001.enf -- 232
+
+
+--- Wed Mar 29 19:13:36 2023 ---
+
+19:13:36 [ERR] Invalid file / failed read/seek: ./data/pub/dtn001.enf -- 221
+
+
+--- Wed Mar 29 19:17:07 2023 ---
+
+19:17:07 [ERR] Invalid file / failed read/seek: ./data/pub/dtn001.enf -- 232
+
+
+--- Wed Mar 29 19:22:26 2023 ---
+
+
+
+--- Wed Mar 29 19:42:01 2023 ---
+
+
+
+--- Wed Mar 29 19:51:33 2023 ---
+
+
+
+--- Wed Mar 29 19:59:27 2023 ---
+
+
+
+--- Wed Mar 29 20:03:27 2023 ---
+
+
+
+--- Wed Mar 29 20:05:33 2023 ---
+
+
+
+--- Wed Mar 29 20:11:14 2023 ---
+
+
+
+--- Wed Mar 29 20:16:39 2023 ---
+
+
+
+--- Wed Mar 29 20:25:50 2023 ---
+
+
+
+--- Wed Mar 29 20:36:10 2023 ---
+
+
+
+--- Wed Mar 29 20:45:03 2023 ---
+
+
+
+--- Wed Mar 29 21:01:26 2023 ---
+
+
+
+--- Wed Mar 29 21:09:30 2023 ---
+
+
+
+--- Sat Apr  8 22:57:55 2023 ---
+
+
+
+--- Sat Apr  8 23:07:03 2023 ---
+
+
+
+--- Sat Apr  8 23:10:29 2023 ---
+
+
+
+--- Sat Apr  8 23:10:42 2023 ---
+
+
+
+--- Sat Apr  8 23:12:01 2023 ---
+
+
+
+--- Sat Apr  8 23:40:31 2023 ---
+
+
+
+--- Sun Apr  9 20:13:04 2023 ---
+
+
+
+--- Sun Apr  9 20:20:47 2023 ---
+
+
+
+--- Sun Apr  9 20:23:47 2023 ---
+
+
+
+--- Sun Apr  9 20:24:59 2023 ---
+
+
+
+--- Sun Apr  9 20:50:16 2023 ---
+
+
+
+--- Sun Apr  9 20:56:06 2023 ---
+
+
+
+--- Sun Apr  9 20:59:01 2023 ---
+
+
+
+--- Sun Apr  9 21:00:37 2023 ---
+
+
+
+--- Sun Apr  9 21:42:44 2023 ---
+
+
+
+--- Sun Apr  9 21:48:24 2023 ---
+
+
+
+--- Sun Apr  9 21:58:57 2023 ---
+
+
+
+--- Sun Apr  9 22:04:37 2023 ---
+
+
+
+--- Sun Apr  9 22:42:10 2023 ---
+
+
+
+--- Sun Apr  9 22:43:19 2023 ---
+
+
+
+--- Sun Apr  9 23:37:35 2023 ---
+
+
+
+--- Sun Apr  9 23:47:01 2023 ---
+
+
+
+--- Sun Apr  9 23:58:39 2023 ---
+
+
+
+--- Mon Apr 10 00:35:21 2023 ---
+
+
+
+--- Fri Apr 21 23:01:24 2023 ---
+
+
+
+--- Fri Apr 21 23:40:31 2023 ---
+
+
+
+--- Fri Apr 21 23:44:08 2023 ---
+
+
+
+--- Fri Apr 21 23:54:15 2023 ---
+
+
+
+--- Fri Apr 21 23:56:29 2023 ---
+
+
+
+--- Sat Apr 22 00:23:43 2023 ---
+
+
+
+--- Thu Jun 22 16:48:40 2023 ---
+
+16:48:40 [ERR] Database_OpenFailed: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+
+
+--- Thu Jun 22 16:49:49 2023 ---
+
+
+
+--- Thu Jun 22 17:59:04 2023 ---
+
+
+
+--- Thu Jun 22 18:17:49 2023 ---
+
+
+
+--- Thu Jun 22 18:26:12 2023 ---
+
+
+
+--- Thu Jun 22 18:32:54 2023 ---
+
+
+
+--- Thu Jun 22 18:36:54 2023 ---
+
+
+
+--- Thu Jun 22 18:58:49 2023 ---
+
+
+
+--- Thu Jun 22 19:02:02 2023 ---
+
+
+
+--- Thu Jun 22 19:09:25 2023 ---
+
+
+
+--- Thu Jun 22 19:12:57 2023 ---
+
+
+
+--- Fri Jun 23 07:21:40 2023 ---
+
+
+
+--- Fri Jun 23 07:32:32 2023 ---
+
+
+
+--- Fri Jun 23 07:55:49 2023 ---
+
+
+
+--- Sat Jul  1 08:12:04 2023 ---
+
+
+
+--- Sat Jul  1 16:31:15 2023 ---
+
+
+
+--- Sat Jul  1 16:33:58 2023 ---
+
+
+
+--- Sat Jul  1 16:37:59 2023 ---
+
+
+
+--- Sat Jul  1 16:39:05 2023 ---
+
+
+
+--- Sat Jul  1 16:40:21 2023 ---
+
+
+
+--- Sat Jul  1 16:47:12 2023 ---
+
+
+
+--- Sat Jul  1 16:48:50 2023 ---
+
+
+
+--- Sat Jul  1 16:54:57 2023 ---
+
+
+
+--- Mon Jul  3 08:15:15 2023 ---
+
+
+
+--- Mon Jul  3 08:36:40 2023 ---
+
+
+
+--- Mon Jul  3 08:39:58 2023 ---
+
+
+
+--- Mon Jul  3 08:43:17 2023 ---
+
+
+
+--- Mon Jul  3 09:22:04 2023 ---
+
+
+
+--- Tue Jul  4 06:29:40 2023 ---
+
+07:11:26 [ERR] Client caused an exception and was closed: 10.0.2.2.
+07:11:26 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Tue Jul  4 07:13:38 2023 ---
+
+07:18:38 [ERR] Timer callback caused an exception
+07:18:38 [ERR] Database_QueryFailed: database is locked
+07:23:38 [ERR] Timer callback caused an exception
+07:23:38 [ERR] Database_QueryFailed: database is locked
+07:28:38 [ERR] Timer callback caused an exception
+07:28:38 [ERR] Database_QueryFailed: database is locked
+07:33:38 [ERR] Timer callback caused an exception
+07:33:38 [ERR] Database_QueryFailed: database is locked
+07:38:38 [ERR] Timer callback caused an exception
+07:38:38 [ERR] Database_QueryFailed: database is locked
+07:43:38 [ERR] Timer callback caused an exception
+07:43:38 [ERR] Database_QueryFailed: database is locked
+07:48:38 [ERR] Timer callback caused an exception
+07:48:38 [ERR] Database_QueryFailed: database is locked
+07:53:38 [ERR] Timer callback caused an exception
+07:53:38 [ERR] Database_QueryFailed: database is locked
+07:58:38 [ERR] Timer callback caused an exception
+07:58:38 [ERR] Database_QueryFailed: database is locked
+08:03:38 [ERR] Timer callback caused an exception
+08:03:38 [ERR] Database_QueryFailed: database is locked
+08:08:38 [ERR] Timer callback caused an exception
+08:08:38 [ERR] Database_QueryFailed: database is locked
+08:13:38 [ERR] Timer callback caused an exception
+08:13:38 [ERR] Database_QueryFailed: database is locked
+08:18:38 [ERR] Timer callback caused an exception
+08:18:38 [ERR] Database_QueryFailed: database is locked
+08:23:38 [ERR] Timer callback caused an exception
+08:23:38 [ERR] Database_QueryFailed: database is locked
+08:28:38 [ERR] Timer callback caused an exception
+08:28:38 [ERR] Database_QueryFailed: database is locked
+08:33:38 [ERR] Timer callback caused an exception
+08:33:38 [ERR] Database_QueryFailed: database is locked
+08:38:38 [ERR] Timer callback caused an exception
+08:38:38 [ERR] Database_QueryFailed: database is locked
+08:43:38 [ERR] Timer callback caused an exception
+08:43:38 [ERR] Database_QueryFailed: database is locked
+08:48:38 [ERR] Timer callback caused an exception
+08:48:38 [ERR] Database_QueryFailed: database is locked
+08:53:38 [ERR] Timer callback caused an exception
+08:53:38 [ERR] Database_QueryFailed: database is locked
+08:58:38 [ERR] Timer callback caused an exception
+08:58:38 [ERR] Database_QueryFailed: database is locked
+09:03:38 [ERR] Timer callback caused an exception
+09:03:38 [ERR] Database_QueryFailed: database is locked
+terminate called after throwing an instance of 'Database_QueryFailed'
+  what():  Database_QueryFailed
+
+
+--- Tue Jul  4 12:52:35 2023 ---
+
+12:57:35 [ERR] Timer callback caused an exception
+12:57:35 [ERR] Database_QueryFailed: database is locked
+13:02:35 [ERR] Timer callback caused an exception
+13:02:35 [ERR] Database_QueryFailed: database is locked
+13:07:35 [ERR] Timer callback caused an exception
+13:07:35 [ERR] Database_QueryFailed: database is locked
+
+
+--- Tue Jul  4 13:11:03 2023 ---
+
+
+
+--- Tue Jul  4 13:13:14 2023 ---
+
+
+
+--- Tue Jul  4 13:20:45 2023 ---
+
+
+
+--- Tue Jul  4 13:40:56 2023 ---
+
+
+
+--- Tue Jul  4 14:18:16 2023 ---
+
+
+
+--- Tue Jul  4 14:22:53 2023 ---
+
+
+
+--- Tue Jul  4 16:28:36 2023 ---
+
+
+
+--- Wed Jul  5 16:04:44 2023 ---
+
+
+
+--- Wed Jul  5 16:13:54 2023 ---
+
+
+
+--- Wed Jul  5 16:17:13 2023 ---
+
+
+
+--- Wed Jul  5 16:32:30 2023 ---
+
+
+
+--- Wed Jul  5 16:35:57 2023 ---
+
+
+
+--- Wed Jul  5 16:37:17 2023 ---
+
+
+
+--- Wed Jul  5 16:43:17 2023 ---
+
+
+
+--- Wed Jul  5 16:46:55 2023 ---
+
+
+
+--- Wed Jul  5 16:52:01 2023 ---
+
+
+
+--- Wed Jul  5 17:12:33 2023 ---
+
+
+
+--- Wed Jul  5 17:23:55 2023 ---
+
+
+
+--- Wed Jul  5 17:28:23 2023 ---
+
+
+
+--- Wed Jul  5 17:28:31 2023 ---
+
+
+
+--- Wed Jul  5 18:15:51 2023 ---
+
+
+
+--- Thu Jul  6 20:27:43 2023 ---
+
+
+
+--- Thu Jul  6 20:47:36 2023 ---
+
+
+
+--- Thu Jul  6 20:49:11 2023 ---
+
+
+
+--- Thu Jul  6 20:53:16 2023 ---
+
+
+
+--- Thu Jul  6 20:59:25 2023 ---
+
+
+
+--- Thu Jul  6 21:01:37 2023 ---
+
+
+
+--- Thu Jul  6 21:04:39 2023 ---
+
+
+
+--- Thu Jul  6 21:06:45 2023 ---
+
+
+
+--- Fri Jul  7 15:31:03 2023 ---
+
+
+
+--- Fri Jul  7 16:31:26 2023 ---
+
+
+
+--- Fri Jul  7 20:02:06 2023 ---
+
+
+
+--- Fri Jul  7 20:04:35 2023 ---
+
+
+
+--- Sat Jul  8 14:48:18 2023 ---
+
+
+
+--- Sat Jul  8 14:57:16 2023 ---
+
+
+
+--- Sat Jul  8 14:59:13 2023 ---
+
+
+
+--- Sat Jul  8 15:11:00 2023 ---
+
+15:29:30 [ERR] Could not load quest: ./data/quests/00096.eqf
+15:29:30 [ERR] Validation Error: Rule donedaily requires at most 1 argument(s) (State: quest)
+15:31:05 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:31:05 [ERR] Runtime Error: Quest action recursion too deep
+15:41:53 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:41:53 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Sat Jul  8 15:47:24 2023 ---
+
+15:47:44 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:47:44 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Sat Jul  8 15:52:09 2023 ---
+
+15:52:36 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:52:36 [ERR] Runtime Error: Quest action recursion too deep
+15:58:22 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:58:22 [ERR] Runtime Error: Quest action recursion too deep
+16:00:12 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:00:12 [ERR] Runtime Error: Quest action recursion too deep
+16:00:54 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:00:54 [ERR] Runtime Error: Quest action recursion too deep
+16:07:20 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:07:20 [ERR] Runtime Error: Quest action recursion too deep
+16:08:16 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:08:16 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Sat Jul  8 16:08:22 2023 ---
+
+
+
+--- Sat Jul  8 16:09:59 2023 ---
+
+
+
+--- Sat Jul  8 16:12:43 2023 ---
+
+16:13:20 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:13:20 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Sat Jul  8 16:15:14 2023 ---
+
+
+
+--- Sat Jul  8 16:18:42 2023 ---
+
+
+
+--- Sat Jul  8 16:32:01 2023 ---
+
+
+
+--- Sat Jul  8 16:41:49 2023 ---
+
+
+
+--- Sat Jul  8 16:42:48 2023 ---
+
+
+
+--- Sat Jul  8 16:59:51 2023 ---
+
+
+
+--- Sat Jul  8 17:10:08 2023 ---
+
+
+
+--- Sat Jul  8 17:13:26 2023 ---
+
+
+
+--- Sat Jul  8 18:02:21 2023 ---
+
+
+
+--- Sat Jul  8 18:12:28 2023 ---
+
+18:20:23 [ERR] Could not load quest: ./data/quests/00095.eqf
+18:20:23 [ERR] Validation Error: Unknown quest state: menu (State: chimera)
+
+
+--- Sat Jul  8 18:51:07 2023 ---
+
+18:51:07 [ERR] Could not load quest: ./data/quests/00095.eqf
+18:51:07 [ERR] Validation Error: Unknown quest state: menu (State: chimera)
+
+
+--- Sat Jul  8 18:56:25 2023 ---
+
+
+
+--- Sat Jul  8 19:02:34 2023 ---
+
+
+
+--- Sat Jul  8 19:09:17 2023 ---
+
+
+
+--- Sat Jul  8 19:09:48 2023 ---
+
+
+
+--- Sat Jul  8 19:13:52 2023 ---
+
+
+
+--- Sat Jul  8 19:16:14 2023 ---
+
+
+
+--- Sat Jul  8 19:34:58 2023 ---
+
+
+
+--- Sat Jul  8 19:46:51 2023 ---
+
+
+
+--- Sat Jul  8 19:50:01 2023 ---
+
+
+
+--- Sat Jul  8 19:52:23 2023 ---
+
+
+
+--- Sun Jul  9 07:15:35 2023 ---
+
+
+
+--- Sun Jul  9 07:25:10 2023 ---
+
+
+
+--- Sun Jul  9 07:46:41 2023 ---
+
+
+
+--- Sun Jul  9 10:40:22 2023 ---
+
+
+
+--- Sun Jul  9 10:47:43 2023 ---
+
+
+
+--- Sun Jul  9 12:56:29 2023 ---
+
+
+
+--- Sun Jul  9 13:08:18 2023 ---
+
+
+
+--- Sun Jul  9 13:26:00 2023 ---
+
+
+
+--- Sun Jul  9 13:32:33 2023 ---
+
+
+
+--- Sun Jul  9 13:41:28 2023 ---
+
+
+
+--- Sun Jul  9 13:47:18 2023 ---
+
+
+
+--- Sun Jul  9 13:55:28 2023 ---
+
+
+
+--- Sun Jul  9 14:04:12 2023 ---
+
+
+
+--- Tue Jul 11 20:18:04 2023 ---
+
+
+
+--- Tue Jul 11 20:18:57 2023 ---
+
+
+
+--- Tue Jul 11 20:21:19 2023 ---
+
+
+
+--- Tue Jul 11 20:22:07 2023 ---
+
+
+
+--- Tue Jul 11 20:39:42 2023 ---
+
+
+
+--- Tue Jul 11 20:43:25 2023 ---
+
+
+
+--- Tue Jul 11 20:46:17 2023 ---
+
+
+
+--- Wed Jul 12 15:40:31 2023 ---
+
+
+
+--- Wed Jul 12 15:43:19 2023 ---
+
+
+
+--- Wed Jul 12 15:57:21 2023 ---
+
+
+
+--- Wed Jul 12 17:26:42 2023 ---
+
+
+
+--- Wed Jul 12 18:15:30 2023 ---
+
+
+
+--- Wed Jul 12 18:41:29 2023 ---
+
+
+
+--- Wed Jul 12 18:45:32 2023 ---
+
+
+
+--- Wed Jul 12 18:59:14 2023 ---
+
+
+
+--- Wed Jul 12 19:02:38 2023 ---
+
+
+
+--- Wed Jul 12 19:04:39 2023 ---
+
+
+
+--- Wed Jul 12 19:15:27 2023 ---
+
+
+
+--- Wed Jul 12 19:36:34 2023 ---
+
+
+
+--- Sun Jul 16 14:14:59 2023 ---
+
+
+
+--- Sun Jul 16 15:34:26 2023 ---
+
+
+
+--- Sun Jul 16 16:31:14 2023 ---
+
+
+
+--- Mon Jul 17 04:15:58 2023 ---
+
+
+
+--- Mon Jul 17 04:17:33 2023 ---
+
+
+
+--- Mon Jul 17 04:30:07 2023 ---
+
+
+
+--- Mon Jul 17 04:35:39 2023 ---
+
+
+
+--- Mon Jul 17 04:37:34 2023 ---
+
+
+
+--- Mon Jul 17 04:46:11 2023 ---
+
+
+
+--- Mon Jul 17 04:59:53 2023 ---
+
+
+
+--- Mon Jul 17 05:03:13 2023 ---
+
+
+
+--- Mon Jul 17 05:03:58 2023 ---
+
+
+
+--- Mon Jul 17 05:16:17 2023 ---
+
+
+
+--- Mon Jul 17 05:25:27 2023 ---
+
+05:25:27 [ERR] Could not load quest: ./data/quests/00092.eqf
+05:25:27 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'level' (Line 17)
+
+
+--- Mon Jul 17 05:28:09 2023 ---
+
+05:28:09 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Jul 17 05:28:12 2023 ---
+
+05:28:12 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Jul 17 05:28:22 2023 ---
+
+05:28:22 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Jul 17 05:28:30 2023 ---
+
+05:28:30 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Jul 17 05:28:34 2023 ---
+
+05:28:34 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Jul 17 05:29:27 2023 ---
+
+
+
+--- Mon Jul 17 05:31:03 2023 ---
+
+
+
+--- Mon Jul 17 05:32:32 2023 ---
+
+05:32:32 [ERR] Could not load quest: ./data/quests/00092.eqf
+05:32:32 [ERR] Syntax Error: Expected state-block entry (rule/action/if/elseif/else/goal/desc) or closing brace '}' in state 'begin'. Got: identifier 'r' (Line 9)
+
+
+--- Mon Jul 17 05:32:45 2023 ---
+
+
+
+--- Mon Jul 17 05:33:54 2023 ---
+
+
+
+--- Mon Jul 17 05:35:10 2023 ---
+
+
+
+--- Mon Jul 17 09:06:41 2023 ---
+
+
+
+--- Mon Jul 17 15:55:25 2023 ---
+
+
+
+--- Mon Jul 17 16:07:33 2023 ---
+
+
+
+--- Mon Jul 17 16:12:43 2023 ---
+
+
+
+--- Mon Jul 17 16:18:13 2023 ---
+
+
+
+--- Mon Jul 17 16:22:57 2023 ---
+
+
+
+--- Mon Jul 17 16:26:51 2023 ---
+
+
+
+--- Mon Jul 17 16:29:22 2023 ---
+
+
+
+--- Mon Jul 17 16:32:06 2023 ---
+
+
+
+--- Mon Jul 17 16:35:58 2023 ---
+
+
+
+--- Mon Jul 17 16:42:36 2023 ---
+
+
+
+--- Mon Jul 17 16:49:28 2023 ---
+
+
+
+--- Mon Jul 17 16:54:22 2023 ---
+
+
+
+--- Mon Jul 17 17:37:47 2023 ---
+
+
+
+--- Mon Jul 17 17:38:56 2023 ---
+
+
+
+--- Mon Jul 17 17:42:05 2023 ---
+
+
+
+--- Tue Jul 18 14:48:48 2023 ---
+
+
+
+--- Thu Jul 20 12:11:24 2023 ---
+
+12:11:24 [ERR] Could not load quest: ./data/quests/00095.eqf
+12:11:24 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'trainingroom' (Line 73)
+12:11:24 [ERR] Could not load quest: ./data/quests/00099.eqf
+12:11:24 [ERR] Syntax Error: State 'secret' already exists (Line 67)
+
+
+--- Thu Jul 20 12:12:17 2023 ---
+
+
+
+--- Thu Jul 20 12:21:17 2023 ---
+
+14:40:44 [ERR] Could not load quest: ./data/quests/00099.eqf
+14:40:44 [ERR] Syntax Error: State 'famegain' already exists (Line 157)
+
+
+--- Thu Jul 20 20:28:40 2023 ---
+
+
+
+--- Thu Jul 20 21:26:03 2023 ---
+
+
+
+--- Thu Jul 20 21:27:04 2023 ---
+
+
+
+--- Thu Jul 20 21:28:20 2023 ---
+
+
+
+--- Thu Jul 20 21:46:38 2023 ---
+
+
+
+--- Thu Jul 20 21:57:29 2023 ---
+
+
+
+--- Thu Jul 20 22:00:04 2023 ---
+
+
+
+--- Tue Jul 25 14:47:09 2023 ---
+
+
+
+--- Tue Jul 25 14:55:27 2023 ---
+
+
+
+--- Tue Jul 25 14:58:16 2023 ---
+
+
+
+--- Tue Jul 25 15:01:48 2023 ---
+
+
+
+--- Tue Jul 25 15:08:25 2023 ---
+
+
+
+--- Tue Jul 25 15:13:16 2023 ---
+
+
+
+--- Tue Jul 25 15:15:23 2023 ---
+
+
+
+--- Tue Jul 25 15:21:05 2023 ---
+
+
+
+--- Tue Jul 25 15:24:28 2023 ---
+
+
+
+--- Tue Jul 25 15:35:11 2023 ---
+
+16:04:30 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:04:30 [ERR] Runtime Error: Quest action recursion too deep
+16:04:56 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:04:56 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Tue Jul 25 16:06:33 2023 ---
+
+16:06:40 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:06:40 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Tue Jul 25 16:07:04 2023 ---
+
+16:07:17 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:07:17 [ERR] Runtime Error: Quest action recursion too deep
+16:07:35 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:07:35 [ERR] Runtime Error: Quest action recursion too deep
+free(): double free detected in tcache 2
+
+
+--- Tue Jul 25 17:03:58 2023 ---
+
+
+
+--- Tue Jul 25 19:47:41 2023 ---
+
+
+
+--- Tue Jul 25 20:31:55 2023 ---
+
+
+
+--- Tue Jul 25 20:45:06 2023 ---
+
+
+
+--- Tue Jul 25 20:49:42 2023 ---
+
+
+
+--- Tue Jul 25 20:54:51 2023 ---
+
+
+
+--- Tue Jul 25 20:55:48 2023 ---
+
+
+
+--- Tue Jul 25 20:57:07 2023 ---
+
+
+
+--- Tue Jul 25 20:59:20 2023 ---
+
+
+
+--- Wed Jul 26 09:13:57 2023 ---
+
+
+
+--- Wed Jul 26 09:21:17 2023 ---
+
+
+
+--- Wed Jul 26 09:27:16 2023 ---
+
+
+
+--- Wed Jul 26 09:36:57 2023 ---
+
+
+
+--- Wed Jul 26 09:40:53 2023 ---
+
+
+
+--- Wed Jul 26 09:45:37 2023 ---
+
+
+
+--- Wed Jul 26 09:55:09 2023 ---
+
+
+
+--- Wed Jul 26 09:58:33 2023 ---
+
+
+
+--- Wed Jul 26 13:22:57 2023 ---
+
+
+
+--- Wed Jul 26 13:31:49 2023 ---
+
+
+
+--- Wed Jul 26 13:36:49 2023 ---
+
+
+
+--- Wed Jul 26 13:39:01 2023 ---
+
+
+
+--- Wed Jul 26 13:41:45 2023 ---
+
+
+
+--- Wed Jul 26 13:53:40 2023 ---
+
+
+
+--- Wed Jul 26 16:10:05 2023 ---
+
+
+
+--- Wed Jul 26 16:12:26 2023 ---
+
+
+
+--- Wed Jul 26 16:16:05 2023 ---
+
+
+
+--- Wed Jul 26 16:17:40 2023 ---
+
+
+
+--- Wed Jul 26 16:36:29 2023 ---
+
+
+
+--- Wed Jul 26 16:39:48 2023 ---
+
+
+
+--- Wed Jul 26 16:49:01 2023 ---
+
+
+
+--- Wed Jul 26 16:50:47 2023 ---
+
+
+
+--- Wed Jul 26 17:10:44 2023 ---
+
+
+
+--- Wed Jul 26 18:27:30 2023 ---
+
+
+
+--- Wed Jul 26 18:32:56 2023 ---
+
+18:32:56 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Wed Jul 26 18:34:34 2023 ---
+
+18:34:34 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Wed Jul 26 18:35:38 2023 ---
+
+18:35:38 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Wed Jul 26 18:37:51 2023 ---
+
+18:37:51 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Wed Jul 26 18:40:56 2023 ---
+
+
+
+--- Wed Jul 26 18:42:04 2023 ---
+
+
+
+--- Wed Jul 26 18:52:22 2023 ---
+
+
+
+--- Wed Jul 26 18:55:04 2023 ---
+
+
+
+--- Wed Jul 26 19:01:48 2023 ---
+
+
+
+--- Thu Jul 27 07:50:49 2023 ---
+
+
+
+--- Sat Jul 29 18:32:48 2023 ---
+
+
+
+--- Sat Jul 29 19:14:31 2023 ---
+
+
+
+--- Sat Jul 29 19:20:28 2023 ---
+
+
+
+--- Sat Jul 29 19:27:27 2023 ---
+
+
+
+--- Sat Jul 29 19:27:50 2023 ---
+
+
+
+--- Sat Jul 29 19:34:40 2023 ---
+
+
+
+--- Sat Jul 29 20:22:36 2023 ---
+
+
+
+--- Sat Jul 29 20:27:16 2023 ---
+
+
+
+--- Sat Jul 29 20:33:18 2023 ---
+
+
+
+--- Sat Jul 29 20:35:19 2023 ---
+
+
+
+--- Sat Jul 29 20:43:16 2023 ---
+
+
+
+--- Sat Jul 29 20:51:14 2023 ---
+
+
+
+--- Sat Jul 29 21:01:10 2023 ---
+
+
+
+--- Sun Jul 30 05:55:54 2023 ---
+
+
+
+--- Sun Jul 30 05:55:58 2023 ---
+
+
+
+--- Sun Jul 30 05:57:02 2023 ---
+
+
+
+--- Sun Jul 30 06:06:31 2023 ---
+
+
+
+--- Sun Jul 30 06:10:28 2023 ---
+
+
+
+--- Sun Jul 30 06:20:14 2023 ---
+
+
+
+--- Sun Jul 30 06:25:15 2023 ---
+
+
+
+--- Sun Jul 30 06:26:16 2023 ---
+
+
+
+--- Sun Jul 30 06:32:07 2023 ---
+
+
+
+--- Sun Jul 30 06:50:42 2023 ---
+
+
+
+--- Sun Jul 30 06:54:44 2023 ---
+
+
+
+--- Sun Jul 30 06:56:21 2023 ---
+
+
+
+--- Sun Jul 30 09:46:18 2023 ---
+
+
+
+--- Sun Jul 30 09:48:03 2023 ---
+
+
+
+--- Sun Jul 30 09:49:41 2023 ---
+
+
+
+--- Sun Jul 30 10:40:43 2023 ---
+
+
+
+--- Sun Jul 30 10:41:20 2023 ---
+
+
+
+--- Mon Jul 31 05:47:58 2023 ---
+
+
+
+--- Mon Jul 31 05:50:17 2023 ---
+
+
+
+--- Mon Jul 31 05:57:19 2023 ---
+
+
+
+--- Mon Jul 31 06:00:49 2023 ---
+
+
+
+--- Mon Jul 31 06:13:48 2023 ---
+
+
+
+--- Mon Jul 31 13:05:08 2023 ---
+
+13:20:18 [ERR] Could not load quest: ./data/quests/00099.eqf
+13:20:18 [ERR] Syntax Error: Expected '(' after function-name. Got: identifier 'talkedtonpc' (Line 173)
+13:20:30 [ERR] Could not load quest: ./data/quests/00099.eqf
+13:20:30 [ERR] Syntax Error: Expected '(' after function-name. Got: identifier 'talkedtonpc' (Line 173)
+13:24:22 [ERR] Could not load quest: ./data/quests/00099.eqf
+13:24:22 [ERR] Syntax Error: Expected '(' after function-name. Got: identifier 'talkedtonpc' (Line 173)
+
+
+--- Thu Aug  3 18:48:46 2023 ---
+
+
+
+--- Thu Aug  3 18:54:17 2023 ---
+
+
+
+--- Thu Aug  3 18:56:57 2023 ---
+
+
+
+--- Thu Aug  3 19:03:57 2023 ---
+
+
+
+--- Thu Aug  3 19:07:06 2023 ---
+
+
+
+--- Thu Aug  3 19:10:05 2023 ---
+
+
+
+--- Thu Aug  3 19:11:44 2023 ---
+
+
+
+--- Thu Aug  3 19:27:15 2023 ---
+
+
+
+--- Thu Aug  3 19:29:31 2023 ---
+
+
+
+--- Thu Aug  3 19:33:01 2023 ---
+
+
+
+--- Thu Aug  3 19:38:09 2023 ---
+
+
+
+--- Thu Aug  3 19:45:18 2023 ---
+
+
+
+--- Thu Aug  3 19:49:10 2023 ---
+
+
+
+--- Thu Aug  3 19:52:46 2023 ---
+
+
+
+--- Thu Aug  3 19:57:21 2023 ---
+
+
+
+--- Thu Aug  3 20:00:10 2023 ---
+
+
+
+--- Thu Aug  3 20:04:07 2023 ---
+
+
+
+--- Thu Aug  3 20:06:50 2023 ---
+
+
+
+--- Thu Aug  3 20:09:58 2023 ---
+
+
+
+--- Thu Aug  3 20:14:38 2023 ---
+
+
+
+--- Mon Aug  7 08:40:48 2023 ---
+
+
+
+--- Mon Aug  7 08:56:49 2023 ---
+
+
+
+--- Mon Aug  7 08:59:28 2023 ---
+
+
+
+--- Mon Aug  7 09:00:28 2023 ---
+
+
+
+--- Mon Aug  7 09:03:25 2023 ---
+
+
+
+--- Mon Aug  7 10:36:19 2023 ---
+
+
+
+--- Mon Aug  7 11:00:05 2023 ---
+
+
+
+--- Mon Aug  7 11:01:39 2023 ---
+
+
+
+--- Mon Aug  7 11:02:43 2023 ---
+
+
+
+--- Mon Aug  7 11:04:11 2023 ---
+
+
+
+--- Mon Aug  7 11:11:30 2023 ---
+
+
+
+--- Mon Aug  7 11:15:50 2023 ---
+
+
+
+--- Mon Aug  7 11:17:30 2023 ---
+
+
+
+--- Mon Aug  7 11:17:34 2023 ---
+
+
+
+--- Mon Aug  7 11:19:44 2023 ---
+
+
+
+--- Mon Aug  7 11:20:59 2023 ---
+
+
+
+--- Mon Aug  7 11:23:11 2023 ---
+
+
+
+--- Mon Aug  7 11:24:55 2023 ---
+
+
+
+--- Mon Aug  7 11:28:56 2023 ---
+
+
+
+--- Mon Aug  7 11:31:53 2023 ---
+
+
+
+--- Mon Aug  7 11:34:08 2023 ---
+
+
+
+--- Mon Aug  7 12:06:41 2023 ---
+
+
+
+--- Mon Aug  7 12:09:29 2023 ---
+
+
+
+--- Mon Aug  7 12:39:17 2023 ---
+
+
+
+--- Mon Aug  7 13:16:09 2023 ---
+
+
+
+--- Mon Aug  7 13:33:14 2023 ---
+
+
+
+--- Mon Aug  7 13:34:35 2023 ---
+
+
+
+--- Mon Aug  7 13:35:38 2023 ---
+
+
+
+--- Mon Aug  7 13:39:07 2023 ---
+
+
+
+--- Mon Aug  7 13:40:22 2023 ---
+
+
+
+--- Mon Aug  7 13:50:10 2023 ---
+
+
+
+--- Mon Aug  7 13:52:57 2023 ---
+
+
+
+--- Mon Aug  7 13:54:10 2023 ---
+
+
+
+--- Mon Aug  7 14:18:31 2023 ---
+
+
+
+--- Mon Aug  7 14:46:14 2023 ---
+
+
+
+--- Mon Aug  7 14:46:22 2023 ---
+
+
+
+--- Mon Aug  7 14:53:54 2023 ---
+
+
+
+--- Mon Aug  7 14:54:02 2023 ---
+
+
+
+--- Mon Aug  7 15:03:05 2023 ---
+
+
+
+--- Mon Aug  7 15:05:25 2023 ---
+
+
+
+--- Mon Aug  7 15:09:03 2023 ---
+
+
+
+--- Mon Aug  7 15:16:09 2023 ---
+
+
+
+--- Mon Aug  7 15:20:22 2023 ---
+
+
+
+--- Mon Aug  7 15:25:51 2023 ---
+
+
+
+--- Mon Aug  7 15:27:33 2023 ---
+
+
+
+--- Mon Aug  7 15:30:00 2023 ---
+
+
+
+--- Mon Aug  7 15:43:41 2023 ---
+
+
+
+--- Mon Aug  7 15:48:13 2023 ---
+
+
+
+--- Mon Aug  7 15:53:24 2023 ---
+
+
+
+--- Mon Aug  7 15:55:58 2023 ---
+
+
+
+--- Mon Aug  7 15:59:00 2023 ---
+
+
+
+--- Mon Aug  7 16:04:45 2023 ---
+
+
+
+--- Mon Aug  7 16:07:48 2023 ---
+
+
+
+--- Mon Aug  7 16:11:54 2023 ---
+
+
+
+--- Mon Aug  7 16:52:22 2023 ---
+
+
+
+--- Mon Aug  7 18:29:43 2023 ---
+
+
+
+--- Mon Aug  7 18:45:06 2023 ---
+
+
+
+--- Mon Aug  7 18:48:46 2023 ---
+
+
+
+--- Mon Aug  7 18:51:31 2023 ---
+
+
+
+--- Tue Aug  8 16:13:49 2023 ---
+
+
+
+--- Tue Aug  8 16:17:53 2023 ---
+
+
+
+--- Tue Aug  8 16:27:31 2023 ---
+
+
+
+--- Tue Aug  8 16:35:18 2023 ---
+
+
+
+--- Tue Aug  8 16:41:46 2023 ---
+
+
+
+--- Tue Aug  8 16:49:24 2023 ---
+
+
+
+--- Tue Aug  8 16:53:28 2023 ---
+
+
+
+--- Tue Aug  8 17:02:55 2023 ---
+
+
+
+--- Tue Aug  8 17:04:58 2023 ---
+
+
+
+--- Tue Aug  8 17:14:35 2023 ---
+
+
+
+--- Tue Aug  8 18:37:07 2023 ---
+
+
+
+--- Tue Aug  8 18:43:10 2023 ---
+
+
+
+--- Tue Aug  8 19:44:55 2023 ---
+
+
+
+--- Wed Aug  9 16:46:18 2023 ---
+
+
+
+--- Wed Aug  9 17:25:55 2023 ---
+
+
+
+--- Fri Aug 11 14:43:24 2023 ---
+
+
+
+--- Fri Aug 11 15:30:43 2023 ---
+
+
+
+--- Fri Aug 11 15:53:50 2023 ---
+
+
+
+--- Fri Aug 11 16:47:13 2023 ---
+
+
+
+--- Fri Aug 11 17:26:43 2023 ---
+
+
+
+--- Fri Aug 11 17:38:14 2023 ---
+
+
+
+--- Fri Aug 11 17:41:58 2023 ---
+
+
+
+--- Fri Aug 11 17:44:02 2023 ---
+
+
+
+--- Wed Aug 16 16:08:08 2023 ---
+
+
+
+--- Wed Aug 16 16:14:20 2023 ---
+
+
+
+--- Wed Aug 16 16:54:44 2023 ---
+
+16:57:17 [ERR] NPC couldn't spawn anywhere valid!
+16:57:17 [ERR] NPC couldn't spawn anywhere valid!
+16:57:17 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 16 18:20:38 2023 ---
+
+
+
+--- Wed Aug 16 19:04:48 2023 ---
+
+
+
+--- Wed Aug 16 19:11:35 2023 ---
+
+
+
+--- Wed Aug 16 19:24:02 2023 ---
+
+
+
+--- Wed Aug 16 19:29:06 2023 ---
+
+
+
+--- Wed Aug 16 19:31:47 2023 ---
+
+
+
+--- Wed Aug 16 19:36:55 2023 ---
+
+
+
+--- Wed Aug 16 19:46:54 2023 ---
+
+
+
+--- Wed Aug 16 19:48:04 2023 ---
+
+
+
+--- Wed Aug 16 19:49:10 2023 ---
+
+
+
+--- Wed Aug 16 19:50:52 2023 ---
+
+
+
+--- Wed Aug 16 19:52:00 2023 ---
+
+
+
+--- Wed Aug 16 19:53:21 2023 ---
+
+
+
+--- Wed Aug 16 19:54:01 2023 ---
+
+
+
+--- Wed Aug 16 19:57:34 2023 ---
+
+
+
+--- Wed Aug 16 19:59:26 2023 ---
+
+
+
+--- Wed Aug 16 20:00:30 2023 ---
+
+
+
+--- Wed Aug 16 20:13:31 2023 ---
+
+15:08:02 [ERR] NPC couldn't spawn anywhere valid!
+15:08:02 [ERR] NPC couldn't spawn anywhere valid!
+15:08:02 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Fri Aug 18 17:44:04 2023 ---
+
+
+
+--- Fri Aug 18 17:44:29 2023 ---
+
+17:45:24 [ERR] Client caused an exception and was closed: 10.0.2.2.
+17:45:24 [ERR] Database_QueryFailed: 17 values for 18 columns
+
+
+--- Fri Aug 18 17:47:11 2023 ---
+
+17:47:26 [ERR] Client caused an exception and was closed: 10.0.2.2.
+17:47:26 [ERR] Database_QueryFailed: 17 values for 18 columns
+
+
+--- Fri Aug 18 17:48:03 2023 ---
+
+17:48:11 [ERR] Client caused an exception and was closed: 10.0.2.2.
+17:48:11 [ERR] Database_QueryFailed: 17 values for 18 columns
+
+
+--- Fri Aug 18 17:52:39 2023 ---
+
+
+
+--- Fri Aug 18 17:56:56 2023 ---
+
+
+
+--- Fri Aug 18 18:15:21 2023 ---
+
+
+
+--- Fri Aug 18 18:18:01 2023 ---
+
+
+
+--- Fri Aug 18 18:49:02 2023 ---
+
+18:49:03 [ERR] Could not install tables.
+18:49:03 [ERR] 
+
+
+--- Sun Aug 20 09:02:31 2023 ---
+
+
+
+--- Sun Aug 20 09:56:23 2023 ---
+
+
+
+--- Sun Aug 20 09:58:23 2023 ---
+
+
+
+--- Sun Aug 20 10:14:04 2023 ---
+
+
+
+--- Sun Aug 20 10:35:00 2023 ---
+
+10:40:01 [ERR] Timer callback caused an exception
+10:40:01 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Sun Aug 20 10:59:50 2023 ---
+
+11:04:51 [ERR] Timer callback caused an exception
+11:04:51 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Sun Aug 20 14:57:11 2023 ---
+
+15:02:13 [ERR] Timer callback caused an exception
+15:02:13 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Sun Aug 20 17:04:25 2023 ---
+
+17:09:27 [ERR] Timer callback caused an exception
+17:09:27 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Sun Aug 20 17:12:04 2023 ---
+
+17:17:04 [ERR] Timer callback caused an exception
+17:17:04 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Sun Aug 20 19:59:37 2023 ---
+
+19:59:37 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 19:59:39 2023 ---
+
+19:59:39 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 19:59:40 2023 ---
+
+19:59:40 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 19:59:40 2023 ---
+
+19:59:40 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 19:59:42 2023 ---
+
+19:59:42 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 19:59:44 2023 ---
+
+19:59:44 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 20:00:02 2023 ---
+
+20:00:02 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 20:00:04 2023 ---
+
+20:00:04 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 20:00:36 2023 ---
+
+20:00:36 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Sun Aug 20 20:06:01 2023 ---
+
+20:06:01 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Aug 21 09:36:29 2023 ---
+
+09:36:29 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Aug 21 09:37:06 2023 ---
+
+09:42:06 [ERR] Timer callback caused an exception
+09:42:06 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Mon Aug 21 11:10:59 2023 ---
+
+
+
+--- Mon Aug 21 11:18:36 2023 ---
+
+
+
+--- Mon Aug 21 11:20:28 2023 ---
+
+11:25:29 [ERR] Timer callback caused an exception
+11:25:29 [ERR] Runtime Error: Failed to create SLN request thread
+
+
+--- Mon Aug 21 12:10:42 2023 ---
+
+Exception during thread creation: Failed to create SLN request thread
+
+
+--- Mon Aug 21 16:14:17 2023 ---
+
+
+
+--- Wed Aug 23 12:13:00 2023 ---
+
+12:13:00 [ERR] Could not load quest: ./data/quests/00090.eqf
+12:13:00 [ERR] Syntax Error: No main-block in quest file. (Line 1)
+
+
+--- Wed Aug 23 12:13:23 2023 ---
+
+12:13:23 [ERR] Could not load quest: ./data/quests/00090.eqf
+12:13:23 [ERR] Syntax Error: No main-block in quest file. (Line 1)
+
+
+--- Wed Aug 23 12:17:13 2023 ---
+
+12:17:13 [ERR] Could not load quest: ./data/quests/00090.eqf
+12:17:13 [ERR] Syntax Error: No main-block in quest file. (Line 1)
+
+
+--- Wed Aug 23 12:35:08 2023 ---
+
+12:35:08 [ERR] Could not load quest: ./data/quests/00090.eqf
+12:35:08 [ERR] Syntax Error: No main-block in quest file. (Line 1)
+
+
+--- Wed Aug 23 12:36:28 2023 ---
+
+12:36:29 [ERR] Could not load quest: ./data/quests/00090.eqf
+12:36:29 [ERR] Syntax Error: No main-block in quest file. (Line 1)
+
+
+--- Wed Aug 23 12:50:31 2023 ---
+
+
+
+--- Wed Aug 23 14:37:03 2023 ---
+
+
+
+--- Wed Aug 23 14:38:47 2023 ---
+
+
+
+--- Wed Aug 23 14:46:25 2023 ---
+
+
+
+--- Wed Aug 23 14:48:41 2023 ---
+
+
+
+--- Wed Aug 23 15:06:39 2023 ---
+
+
+
+--- Wed Aug 23 15:21:28 2023 ---
+
+
+
+--- Wed Aug 23 15:23:33 2023 ---
+
+
+
+--- Wed Aug 23 15:24:20 2023 ---
+
+
+
+--- Wed Aug 23 15:31:34 2023 ---
+
+
+
+--- Wed Aug 23 15:32:42 2023 ---
+
+
+
+--- Wed Aug 23 15:35:59 2023 ---
+
+
+
+--- Wed Aug 23 15:39:54 2023 ---
+
+
+
+--- Wed Aug 23 16:02:43 2023 ---
+
+
+
+--- Wed Aug 23 16:10:07 2023 ---
+
+
+
+--- Wed Aug 23 16:13:16 2023 ---
+
+
+
+--- Wed Aug 23 16:16:25 2023 ---
+
+
+
+--- Wed Aug 23 16:17:35 2023 ---
+
+
+
+--- Wed Aug 23 16:33:08 2023 ---
+
+
+
+--- Wed Aug 23 16:35:08 2023 ---
+
+
+
+--- Wed Aug 23 16:37:51 2023 ---
+
+
+
+--- Wed Aug 23 16:40:00 2023 ---
+
+
+
+--- Wed Aug 23 16:43:10 2023 ---
+
+
+
+--- Wed Aug 23 16:44:27 2023 ---
+
+
+
+--- Wed Aug 23 16:48:01 2023 ---
+
+
+
+--- Wed Aug 23 16:50:23 2023 ---
+
+
+
+--- Wed Aug 23 16:53:58 2023 ---
+
+
+
+--- Wed Aug 23 16:56:34 2023 ---
+
+
+
+--- Wed Aug 23 16:59:27 2023 ---
+
+
+
+--- Wed Aug 23 17:02:04 2023 ---
+
+
+
+--- Wed Aug 23 17:02:58 2023 ---
+
+
+
+--- Wed Aug 23 17:09:42 2023 ---
+
+
+
+--- Wed Aug 23 17:11:57 2023 ---
+
+
+
+--- Wed Aug 23 17:29:48 2023 ---
+
+
+
+--- Thu Aug 24 15:33:38 2023 ---
+
+
+
+--- Fri Aug 25 16:12:33 2023 ---
+
+
+
+--- Fri Aug 25 16:16:56 2023 ---
+
+
+
+--- Fri Aug 25 16:18:37 2023 ---
+
+
+
+--- Fri Aug 25 16:39:50 2023 ---
+
+
+
+--- Fri Aug 25 16:45:21 2023 ---
+
+
+
+--- Fri Aug 25 16:50:47 2023 ---
+
+
+
+--- Fri Aug 25 16:55:50 2023 ---
+
+
+
+--- Fri Aug 25 17:03:09 2023 ---
+
+
+
+--- Sun Aug 27 16:23:56 2023 ---
+
+
+
+--- Sun Aug 27 16:34:15 2023 ---
+
+
+
+--- Sun Aug 27 16:40:11 2023 ---
+
+
+
+--- Sun Aug 27 16:42:35 2023 ---
+
+
+
+--- Sun Aug 27 16:48:31 2023 ---
+
+
+
+--- Sun Aug 27 16:57:00 2023 ---
+
+
+
+--- Sun Aug 27 17:06:38 2023 ---
+
+
+
+--- Sun Aug 27 17:11:31 2023 ---
+
+
+
+--- Sun Aug 27 17:45:34 2023 ---
+
+
+
+--- Sun Aug 27 17:48:18 2023 ---
+
+
+
+--- Sun Aug 27 17:49:43 2023 ---
+
+
+
+--- Sun Aug 27 17:50:33 2023 ---
+
+
+
+--- Sun Aug 27 17:51:56 2023 ---
+
+
+
+--- Sun Aug 27 17:53:30 2023 ---
+
+
+
+--- Sun Aug 27 18:16:04 2023 ---
+
+
+
+--- Sun Aug 27 18:21:15 2023 ---
+
+
+
+--- Sun Aug 27 18:27:50 2023 ---
+
+
+
+--- Sun Aug 27 18:35:41 2023 ---
+
+
+
+--- Sun Aug 27 18:40:52 2023 ---
+
+
+
+--- Sun Aug 27 18:47:02 2023 ---
+
+
+
+--- Sun Aug 27 21:17:46 2023 ---
+
+
+
+--- Mon Aug 28 09:40:23 2023 ---
+
+
+
+--- Mon Aug 28 09:48:27 2023 ---
+
+
+
+--- Mon Aug 28 09:59:02 2023 ---
+
+
+
+--- Mon Aug 28 10:15:41 2023 ---
+
+
+
+--- Mon Aug 28 10:54:58 2023 ---
+
+
+
+--- Mon Aug 28 10:56:49 2023 ---
+
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 11:02:26 2023 ---
+
+double free or corruption (fasttop)
+
+
+--- Mon Aug 28 11:06:10 2023 ---
+
+
+
+--- Mon Aug 28 11:15:22 2023 ---
+
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 11:33:46 2023 ---
+
+11:33:46 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Aug 28 11:33:59 2023 ---
+
+11:33:59 [ERR] Socket_BindFailed: Address already in use
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 11:54:57 2023 ---
+
+
+
+--- Mon Aug 28 11:54:59 2023 ---
+
+
+
+--- Mon Aug 28 11:55:57 2023 ---
+
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+double free or corruption (fasttop)
+free(): double free detected in tcache 2
+double free or corruption (fasttop)
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 12:37:59 2023 ---
+
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 13:00:27 2023 ---
+
+free(): double free detected in tcache 2
+
+
+--- Mon Aug 28 13:02:56 2023 ---
+
+
+
+--- Mon Aug 28 13:07:01 2023 ---
+
+
+
+--- Mon Aug 28 13:07:06 2023 ---
+
+
+
+--- Mon Aug 28 13:14:30 2023 ---
+
+
+
+--- Mon Aug 28 13:20:10 2023 ---
+
+
+
+--- Mon Aug 28 13:24:53 2023 ---
+
+
+
+--- Mon Aug 28 13:36:36 2023 ---
+
+
+
+--- Mon Aug 28 13:56:57 2023 ---
+
+
+
+--- Mon Aug 28 15:01:46 2023 ---
+
+
+
+--- Mon Aug 28 15:04:43 2023 ---
+
+
+
+--- Mon Aug 28 15:06:24 2023 ---
+
+
+
+--- Mon Aug 28 15:08:14 2023 ---
+
+
+
+--- Tue Aug 29 11:32:47 2023 ---
+
+11:42:25 [ERR] Could not load quest: ./data/quests/00089.eqf
+11:42:25 [ERR] Validation Error: Unknown quest state: resetquests (State: level12killed)
+
+
+--- Tue Aug 29 12:35:39 2023 ---
+
+
+
+--- Tue Aug 29 12:43:28 2023 ---
+
+
+
+--- Tue Aug 29 12:45:45 2023 ---
+
+
+
+--- Tue Aug 29 12:51:11 2023 ---
+
+
+
+--- Tue Aug 29 12:56:52 2023 ---
+
+
+
+--- Tue Aug 29 13:22:11 2023 ---
+
+
+
+--- Tue Aug 29 13:23:44 2023 ---
+
+
+
+--- Tue Aug 29 13:30:05 2023 ---
+
+
+
+--- Tue Aug 29 17:43:01 2023 ---
+
+17:44:43 [ERR] NPC couldn't spawn anywhere valid!
+17:44:43 [ERR] NPC couldn't spawn anywhere valid!
+10:52:03 [ERR] NPC couldn't spawn anywhere valid!
+10:52:03 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 10:53:07 2023 ---
+
+
+
+--- Wed Aug 30 11:09:23 2023 ---
+
+
+
+--- Wed Aug 30 11:23:37 2023 ---
+
+11:24:34 [ERR] NPC couldn't spawn anywhere valid!
+11:24:34 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:27:29 2023 ---
+
+11:28:18 [ERR] NPC couldn't spawn anywhere valid!
+11:28:18 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:32:07 2023 ---
+
+11:32:59 [ERR] NPC couldn't spawn anywhere valid!
+11:32:59 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:36:33 2023 ---
+
+11:37:31 [ERR] NPC couldn't spawn anywhere valid!
+11:37:31 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:38:53 2023 ---
+
+11:40:12 [ERR] NPC couldn't spawn anywhere valid!
+11:40:12 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:45:27 2023 ---
+
+11:46:25 [ERR] NPC couldn't spawn anywhere valid!
+11:46:25 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:47:17 2023 ---
+
+11:48:15 [ERR] NPC couldn't spawn anywhere valid!
+11:48:15 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 11:55:00 2023 ---
+
+11:56:02 [ERR] NPC couldn't spawn anywhere valid!
+11:56:02 [ERR] NPC couldn't spawn anywhere valid!
+11:56:02 [ERR] NPC couldn't spawn anywhere valid!
+11:56:02 [ERR] NPC couldn't spawn anywhere valid!
+11:56:03 [ERR] NPC couldn't spawn anywhere valid!
+11:56:03 [ERR] NPC couldn't spawn anywhere valid!
+11:56:03 [ERR] NPC couldn't spawn anywhere valid!
+11:56:03 [ERR] NPC couldn't spawn anywhere valid!
+11:56:04 [ERR] NPC couldn't spawn anywhere valid!
+11:56:04 [ERR] NPC couldn't spawn anywhere valid!
+11:56:04 [ERR] NPC couldn't spawn anywhere valid!
+11:56:04 [ERR] NPC couldn't spawn anywhere valid!
+11:56:05 [ERR] NPC couldn't spawn anywhere valid!
+11:56:05 [ERR] NPC couldn't spawn anywhere valid!
+11:56:05 [ERR] NPC couldn't spawn anywhere valid!
+11:56:05 [ERR] NPC couldn't spawn anywhere valid!
+11:56:06 [ERR] NPC couldn't spawn anywhere valid!
+11:56:06 [ERR] NPC couldn't spawn anywhere valid!
+11:56:06 [ERR] NPC couldn't spawn anywhere valid!
+11:56:06 [ERR] NPC couldn't spawn anywhere valid!
+11:56:07 [ERR] NPC couldn't spawn anywhere valid!
+11:56:07 [ERR] NPC couldn't spawn anywhere valid!
+11:56:07 [ERR] NPC couldn't spawn anywhere valid!
+11:56:07 [ERR] NPC couldn't spawn anywhere valid!
+11:56:08 [ERR] NPC couldn't spawn anywhere valid!
+11:56:08 [ERR] NPC couldn't spawn anywhere valid!
+11:56:08 [ERR] NPC couldn't spawn anywhere valid!
+11:56:08 [ERR] NPC couldn't spawn anywhere valid!
+11:56:09 [ERR] NPC couldn't spawn anywhere valid!
+11:56:09 [ERR] NPC couldn't spawn anywhere valid!
+11:56:09 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Wed Aug 30 12:00:01 2023 ---
+
+
+
+--- Wed Aug 30 12:08:49 2023 ---
+
+
+
+--- Wed Aug 30 12:12:30 2023 ---
+
+
+
+--- Wed Aug 30 12:15:58 2023 ---
+
+
+
+--- Wed Aug 30 12:24:14 2023 ---
+
+
+
+--- Wed Aug 30 12:27:43 2023 ---
+
+
+
+--- Wed Aug 30 12:30:42 2023 ---
+
+
+
+--- Wed Aug 30 12:32:48 2023 ---
+
+
+
+--- Wed Aug 30 16:20:59 2023 ---
+
+
+
+--- Wed Aug 30 16:33:58 2023 ---
+
+
+
+--- Wed Aug 30 16:46:39 2023 ---
+
+
+
+--- Wed Aug 30 17:02:05 2023 ---
+
+
+
+--- Wed Aug 30 17:22:34 2023 ---
+
+
+
+--- Wed Aug 30 17:27:49 2023 ---
+
+
+
+--- Wed Aug 30 17:54:35 2023 ---
+
+
+
+--- Wed Aug 30 20:02:42 2023 ---
+
+
+
+--- Wed Aug 30 20:57:08 2023 ---
+
+
+
+--- Wed Aug 30 21:04:45 2023 ---
+
+
+
+--- Wed Aug 30 21:11:55 2023 ---
+
+
+
+--- Wed Aug 30 21:15:41 2023 ---
+
+
+
+--- Wed Aug 30 21:21:45 2023 ---
+
+
+
+--- Wed Aug 30 21:43:40 2023 ---
+
+
+
+--- Thu Aug 31 06:14:27 2023 ---
+
+
+
+--- Thu Aug 31 06:15:00 2023 ---
+
+
+
+--- Thu Aug 31 06:38:23 2023 ---
+
+
+
+--- Thu Aug 31 06:42:42 2023 ---
+
+
+
+--- Thu Aug 31 06:53:11 2023 ---
+
+
+
+--- Thu Aug 31 07:08:33 2023 ---
+
+
+
+--- Thu Aug 31 08:11:30 2023 ---
+
+
+
+--- Thu Aug 31 08:34:20 2023 ---
+
+
+
+--- Thu Aug 31 08:38:53 2023 ---
+
+
+
+--- Thu Aug 31 08:43:28 2023 ---
+
+
+
+--- Thu Aug 31 08:44:31 2023 ---
+
+
+
+--- Thu Aug 31 08:45:21 2023 ---
+
+
+
+--- Thu Aug 31 08:48:02 2023 ---
+
+
+
+--- Thu Aug 31 08:49:43 2023 ---
+
+
+
+--- Thu Aug 31 08:54:08 2023 ---
+
+08:54:08 [ERR] Could not load quest: ./data/quests/00093.eqf
+08:54:08 [ERR] Validation Error: Action givespell requires at most 0 argument(s) (State: resetstats)
+
+
+--- Thu Aug 31 08:54:33 2023 ---
+
+
+
+--- Thu Aug 31 09:47:05 2023 ---
+
+
+
+--- Thu Aug 31 09:50:58 2023 ---
+
+
+
+--- Thu Aug 31 09:54:33 2023 ---
+
+
+
+--- Thu Aug 31 10:43:20 2023 ---
+
+
+
+--- Thu Aug 31 10:53:44 2023 ---
+
+
+
+--- Mon Sep  4 14:31:10 2023 ---
+
+
+
+--- Mon Sep  4 14:34:43 2023 ---
+
+
+
+--- Mon Sep  4 15:14:05 2023 ---
+
+
+
+--- Mon Sep  4 15:22:29 2023 ---
+
+
+
+--- Mon Sep  4 15:47:37 2023 ---
+
+
+
+--- Mon Sep  4 15:56:11 2023 ---
+
+
+
+--- Mon Sep  4 15:59:14 2023 ---
+
+
+
+--- Mon Sep  4 16:02:19 2023 ---
+
+
+
+--- Mon Sep  4 16:05:06 2023 ---
+
+
+
+--- Mon Sep  4 16:16:00 2023 ---
+
+
+
+--- Wed Sep  6 14:16:55 2023 ---
+
+
+
+--- Wed Sep  6 15:22:52 2023 ---
+
+
+
+--- Wed Sep  6 15:44:26 2023 ---
+
+
+
+--- Wed Sep  6 15:55:40 2023 ---
+
+
+
+--- Wed Sep  6 16:02:18 2023 ---
+
+
+
+--- Wed Sep  6 16:44:16 2023 ---
+
+
+
+--- Fri Sep  8 07:47:57 2023 ---
+
+
+
+--- Fri Sep  8 08:01:56 2023 ---
+
+
+
+--- Fri Sep  8 08:02:56 2023 ---
+
+
+
+--- Fri Sep  8 08:03:33 2023 ---
+
+
+
+--- Fri Sep  8 08:19:39 2023 ---
+
+
+
+--- Fri Sep  8 08:23:24 2023 ---
+
+
+
+--- Fri Sep  8 08:26:16 2023 ---
+
+
+
+--- Fri Sep  8 08:35:02 2023 ---
+
+
+
+--- Fri Sep  8 08:38:58 2023 ---
+
+
+
+--- Fri Sep  8 08:41:05 2023 ---
+
+
+
+--- Fri Sep  8 08:45:03 2023 ---
+
+
+
+--- Fri Sep  8 08:50:03 2023 ---
+
+
+
+--- Fri Sep  8 09:10:51 2023 ---
+
+
+
+--- Fri Sep  8 09:11:43 2023 ---
+
+
+
+--- Fri Sep  8 09:14:09 2023 ---
+
+
+
+--- Fri Sep  8 09:16:26 2023 ---
+
+
+
+--- Fri Sep  8 09:17:51 2023 ---
+
+
+
+--- Fri Sep  8 09:23:44 2023 ---
+
+
+
+--- Fri Sep  8 09:24:37 2023 ---
+
+
+
+--- Fri Sep  8 09:24:59 2023 ---
+
+
+
+--- Fri Sep  8 09:25:49 2023 ---
+
+
+
+--- Fri Sep  8 09:27:28 2023 ---
+
+
+
+--- Fri Sep  8 09:34:30 2023 ---
+
+
+
+--- Fri Sep  8 09:36:00 2023 ---
+
+
+
+--- Fri Sep  8 09:37:38 2023 ---
+
+
+
+--- Fri Sep  8 17:09:56 2023 ---
+
+
+
+--- Fri Sep  8 17:40:07 2023 ---
+
+
+
+--- Fri Sep  8 18:02:58 2023 ---
+
+
+
+--- Fri Sep  8 18:07:45 2023 ---
+
+
+
+--- Mon Sep 11 04:04:06 2023 ---
+
+
+
+--- Mon Sep 11 04:05:49 2023 ---
+
+
+
+--- Mon Sep 11 04:06:57 2023 ---
+
+
+
+--- Mon Sep 11 04:08:15 2023 ---
+
+
+
+--- Mon Sep 11 04:09:39 2023 ---
+
+
+
+--- Mon Sep 11 04:11:13 2023 ---
+
+
+
+--- Mon Sep 11 04:13:15 2023 ---
+
+
+
+--- Mon Sep 11 04:50:19 2023 ---
+
+
+
+--- Mon Sep 11 04:52:44 2023 ---
+
+
+
+--- Mon Sep 11 04:55:55 2023 ---
+
+
+
+--- Mon Sep 11 05:20:34 2023 ---
+
+
+
+--- Mon Sep 11 05:22:58 2023 ---
+
+
+
+--- Mon Sep 11 05:43:32 2023 ---
+
+
+
+--- Mon Sep 11 05:44:22 2023 ---
+
+
+
+--- Mon Sep 11 05:50:35 2023 ---
+
+
+
+--- Mon Sep 11 05:52:31 2023 ---
+
+
+
+--- Mon Sep 11 05:53:19 2023 ---
+
+
+
+--- Mon Sep 11 05:54:03 2023 ---
+
+
+
+--- Mon Sep 11 05:55:21 2023 ---
+
+
+
+--- Mon Sep 11 05:56:22 2023 ---
+
+
+
+--- Mon Sep 11 05:57:59 2023 ---
+
+
+
+--- Mon Sep 11 06:00:16 2023 ---
+
+
+
+--- Mon Sep 11 11:24:11 2023 ---
+
+
+
+--- Mon Sep 11 15:38:12 2023 ---
+
+
+
+--- Mon Sep 11 15:38:56 2023 ---
+
+
+
+--- Mon Sep 11 15:39:09 2023 ---
+
+
+
+--- Mon Sep 11 15:39:45 2023 ---
+
+
+
+--- Mon Sep 11 15:42:50 2023 ---
+
+
+
+--- Tue Sep 12 14:12:18 2023 ---
+
+
+
+--- Tue Sep 12 15:16:02 2023 ---
+
+
+
+--- Tue Sep 12 15:28:02 2023 ---
+
+
+
+--- Tue Sep 12 15:28:31 2023 ---
+
+
+
+--- Tue Sep 12 15:28:38 2023 ---
+
+
+
+--- Tue Sep 12 15:29:22 2023 ---
+
+
+
+--- Tue Sep 12 15:31:43 2023 ---
+
+
+
+--- Tue Sep 12 15:32:37 2023 ---
+
+
+
+--- Tue Sep 12 15:35:31 2023 ---
+
+
+
+--- Tue Sep 12 15:38:00 2023 ---
+
+
+
+--- Tue Sep 12 15:39:42 2023 ---
+
+
+
+--- Tue Sep 12 15:41:12 2023 ---
+
+
+
+--- Tue Sep 12 15:53:56 2023 ---
+
+
+
+--- Tue Sep 12 15:55:17 2023 ---
+
+
+
+--- Tue Sep 12 16:06:01 2023 ---
+
+
+
+--- Tue Sep 12 16:09:46 2023 ---
+
+
+
+--- Thu Sep 14 07:16:47 2023 ---
+
+
+
+--- Thu Sep 14 07:17:51 2023 ---
+
+
+
+--- Thu Sep 14 07:22:41 2023 ---
+
+
+
+--- Thu Sep 14 07:34:29 2023 ---
+
+
+
+--- Thu Sep 14 08:21:00 2023 ---
+
+
+
+--- Thu Sep 14 08:23:14 2023 ---
+
+
+
+--- Thu Sep 14 08:24:52 2023 ---
+
+
+
+--- Thu Sep 14 08:25:30 2023 ---
+
+
+
+--- Thu Sep 14 08:26:00 2023 ---
+
+
+
+--- Thu Sep 14 08:26:40 2023 ---
+
+
+
+--- Thu Sep 14 08:30:23 2023 ---
+
+
+
+--- Thu Sep 14 08:30:51 2023 ---
+
+
+
+--- Thu Sep 14 08:32:51 2023 ---
+
+
+
+--- Thu Sep 14 08:33:59 2023 ---
+
+
+
+--- Thu Sep 14 11:20:19 2023 ---
+
+
+
+--- Thu Sep 14 12:04:23 2023 ---
+
+
+
+--- Thu Sep 14 12:12:29 2023 ---
+
+
+
+--- Thu Sep 14 12:24:41 2023 ---
+
+
+
+--- Thu Sep 14 12:37:46 2023 ---
+
+
+
+--- Thu Sep 14 12:41:20 2023 ---
+
+
+
+--- Thu Sep 14 12:46:00 2023 ---
+
+
+
+--- Thu Sep 14 12:49:46 2023 ---
+
+
+
+--- Thu Sep 14 13:30:58 2023 ---
+
+
+
+--- Thu Sep 14 13:31:43 2023 ---
+
+
+
+--- Thu Sep 14 13:34:44 2023 ---
+
+
+
+--- Thu Sep 14 13:35:42 2023 ---
+
+
+
+--- Thu Sep 14 13:37:00 2023 ---
+
+
+
+--- Thu Sep 14 13:38:51 2023 ---
+
+
+
+--- Thu Sep 14 13:52:25 2023 ---
+
+
+
+--- Thu Sep 14 13:54:11 2023 ---
+
+
+
+--- Thu Sep 14 13:54:55 2023 ---
+
+
+
+--- Thu Sep 14 14:00:39 2023 ---
+
+
+
+--- Thu Sep 14 14:12:23 2023 ---
+
+
+
+--- Thu Sep 14 15:12:05 2023 ---
+
+
+
+--- Thu Sep 14 15:38:30 2023 ---
+
+15:38:30 [ERR] Could not load quest: ./data/quests/00085.eqf
+15:38:30 [ERR] Validation Error: Action addnpcbox requires at most 2 argument(s) (State: test)
+
+
+--- Thu Sep 14 15:39:17 2023 ---
+
+15:39:18 [ERR] Could not load quest: ./data/quests/00085.eqf
+15:39:18 [ERR] Validation Error: Action addnpcbox requires at most 2 argument(s) (State: test)
+
+
+--- Thu Sep 14 15:39:30 2023 ---
+
+
+
+--- Thu Sep 14 15:41:39 2023 ---
+
+
+
+--- Thu Sep 14 15:43:14 2023 ---
+
+
+
+--- Thu Sep 14 15:44:05 2023 ---
+
+
+
+--- Thu Sep 14 15:46:09 2023 ---
+
+
+
+--- Thu Sep 14 15:47:22 2023 ---
+
+
+
+--- Thu Sep 14 15:48:25 2023 ---
+
+
+
+--- Thu Sep 14 15:50:03 2023 ---
+
+
+
+--- Thu Sep 14 15:50:47 2023 ---
+
+
+
+--- Thu Sep 14 15:51:36 2023 ---
+
+
+
+--- Thu Sep 14 15:54:05 2023 ---
+
+
+
+--- Thu Sep 14 15:55:00 2023 ---
+
+
+
+--- Thu Sep 14 15:55:40 2023 ---
+
+
+
+--- Thu Sep 14 15:59:59 2023 ---
+
+
+
+--- Thu Sep 14 16:02:11 2023 ---
+
+16:10:02 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:10:02 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 16:10:48 2023 ---
+
+
+
+--- Thu Sep 14 16:27:46 2023 ---
+
+16:28:23 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:28:23 [ERR] Runtime Error: Quest action recursion too deep
+16:28:55 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:28:55 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 16:29:04 2023 ---
+
+16:36:10 [ERR] Client caused an exception and was closed: 10.0.2.2.
+16:36:10 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 16:36:26 2023 ---
+
+
+
+--- Thu Sep 14 18:21:58 2023 ---
+
+18:21:58 [ERR] Could not load quest: ./data/quests/00099.eqf
+18:21:58 [ERR] Syntax Error: State 'energy' already exists (Line 434)
+
+
+--- Thu Sep 14 18:22:20 2023 ---
+
+18:22:20 [ERR] Could not load quest: ./data/quests/00099.eqf
+18:22:20 [ERR] Syntax Error: State 'craftshield' already exists (Line 494)
+
+
+--- Thu Sep 14 18:22:48 2023 ---
+
+18:22:48 [ERR] Could not load quest: ./data/quests/00099.eqf
+18:22:48 [ERR] Syntax Error: Expected '(' after function-name. Got: identifier 'entermap' (Line 505)
+
+
+--- Thu Sep 14 18:23:17 2023 ---
+
+
+
+--- Thu Sep 14 18:28:59 2023 ---
+
+18:53:56 [ERR] Could not load quest: ./data/quests/00085.eqf
+18:53:56 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'portalloc' (Line 43)
+19:00:11 [ERR] Could not load quest: ./data/quests/00085.eqf
+19:00:11 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'portalloc' (Line 46)
+19:12:35 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:12:35 [ERR] Runtime Error: Quest action recursion too deep
+19:16:22 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:16:22 [ERR] Runtime Error: Quest action recursion too deep
+19:16:54 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:16:54 [ERR] Runtime Error: Quest action recursion too deep
+19:23:21 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:23:21 [ERR] Runtime Error: Quest action recursion too deep
+19:24:37 [ERR] Could not load quest: ./data/quests/00085.eqf
+19:24:37 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'checkcord' (Line 13)
+19:24:58 [ERR] Could not load quest: ./data/quests/00085.eqf
+19:24:58 [ERR] Syntax Error: Expected function-argument in function-argument-list. Got: identifier 'electrifyfirstime' (Line 14)
+19:28:21 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:28:21 [ERR] Runtime Error: Quest action recursion too deep
+19:50:56 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:50:56 [ERR] Runtime Error: Quest action recursion too deep
+19:52:44 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:52:44 [ERR] Runtime Error: Quest action recursion too deep
+19:54:31 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:54:31 [ERR] Runtime Error: Quest action recursion too deep
+19:55:45 [ERR] Client caused an exception and was closed: 10.0.2.2.
+19:55:45 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 20:02:24 2023 ---
+
+20:02:45 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:02:45 [ERR] Runtime Error: Quest action recursion too deep
+20:03:49 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:03:49 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 20:18:24 2023 ---
+
+
+
+--- Thu Sep 14 20:23:14 2023 ---
+
+
+
+--- Thu Sep 14 20:28:17 2023 ---
+
+20:28:28 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:28:28 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 20:30:56 2023 ---
+
+20:31:08 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:31:08 [ERR] Runtime Error: Quest action recursion too deep
+20:31:39 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:31:39 [ERR] Runtime Error: Quest action recursion too deep
+20:32:15 [ERR] Client caused an exception and was closed: 10.0.2.2.
+20:32:15 [ERR] Runtime Error: Quest action recursion too deep
+
+
+--- Thu Sep 14 20:32:24 2023 ---
+
+
+
+--- Thu Sep 14 20:58:57 2023 ---
+
+
+
+--- Thu Sep 14 20:59:07 2023 ---
+
+21:10:13 [ERR] NPC couldn't spawn anywhere valid!
+
+
+--- Fri Sep 15 06:54:48 2023 ---
+
+
+
+--- Sun Sep 17 12:31:30 2023 ---
+
+
+
+--- Sun Sep 17 12:31:53 2023 ---
+
+
+
+--- Sun Sep 17 12:48:42 2023 ---
+
+
+
+--- Sun Sep 17 12:48:49 2023 ---
+
+
+
+--- Sun Sep 17 13:02:17 2023 ---
+
+
+
+--- Sun Sep 17 13:04:13 2023 ---
+
+
+
+--- Sun Sep 17 14:24:38 2023 ---
+
+
+
+--- Sun Sep 17 15:11:55 2023 ---
+
+
+
+--- Sun Sep 17 15:12:36 2023 ---
+
+
+
+--- Sun Sep 17 15:17:44 2023 ---
+
+
+
+--- Sun Sep 17 15:22:31 2023 ---
+
+
+
+--- Mon Sep 18 07:54:38 2023 ---
+
+
+
+--- Mon Sep 18 07:56:49 2023 ---
+
+
+
+--- Mon Sep 18 07:57:47 2023 ---
+
+
+
+--- Mon Sep 18 07:58:40 2023 ---
+
+
+
+--- Mon Sep 18 08:01:25 2023 ---
+
+
+
+--- Mon Sep 18 08:02:02 2023 ---
+
+
+
+--- Mon Sep 18 08:04:14 2023 ---
+
+
+
+--- Mon Sep 18 08:37:58 2023 ---
+
+08:38:04 [ERR] Client caused an exception and was closed: 10.0.2.2.
+08:38:04 [ERR] Database_QueryFailed: Unknown column 'bestfame' in 'field list'
+                                    
+
+--- Mon Sep 18 10:55:21 2023 ---
+
+10:55:21 [ERR] Database_OpenFailed: 
+
+
+--- Mon Sep 18 10:55:35 2023 ---
+
+10:55:35 [ERR] Database_OpenFailed: 
+
+
+--- Mon Sep 18 10:56:28 2023 ---
+
+10:56:29 [ERR] Could not install tables.
+10:56:29 [ERR] 
+
+
+--- Mon Sep 18 10:56:31 2023 ---
+
+
+
+--- Mon Sep 18 10:59:33 2023 ---
+
+
+
+--- Mon Sep 18 11:30:08 2023 ---
+
+
+
+--- Mon Sep 18 11:36:26 2023 ---
+
+
+
+--- Mon Sep 18 11:36:57 2023 ---
+
+
+
+--- Mon Sep 18 11:57:00 2023 ---
+
+
+
+--- Mon Sep 18 12:02:29 2023 ---
+
+
+
+--- Mon Sep 18 12:03:04 2023 ---
+
+
+
+--- Mon Sep 18 12:03:16 2023 ---
+
+
+
+--- Mon Sep 18 12:04:19 2023 ---
+
+
+
+--- Mon Sep 18 12:08:27 2023 ---
+
+
+
+--- Mon Sep 18 13:07:05 2023 ---
+
+
+
+--- Mon Sep 18 13:58:51 2023 ---
+
+
+
+--- Mon Sep 18 14:10:00 2023 ---
+
+
+
+--- Mon Sep 18 14:11:28 2023 ---
+
+
+
+--- Mon Sep 18 14:12:41 2023 ---
+
+
+
+--- Mon Sep 18 14:31:16 2023 ---
+
+
+
+--- Mon Sep 18 14:40:17 2023 ---
+
+
+
+--- Mon Sep 18 14:42:00 2023 ---
+
+
+
+--- Mon Sep 18 14:55:00 2023 ---
+
+
+
+--- Mon Sep 18 15:05:19 2023 ---
+
+
+
+--- Mon Sep 18 15:15:40 2023 ---
+
+
+
+--- Mon Sep 18 15:17:07 2023 ---
+
+
+
+--- Mon Sep 18 15:17:58 2023 ---
+
+
+
+--- Mon Sep 18 15:19:25 2023 ---
+
+15:19:39 [ERR] Client caused an exception and was closed: 10.0.2.2.
+15:19:39 [ERR] Database_QueryFailed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `characters` WHERE `admin` <= 0 ORDER BY `fame` DESC, `level` DESC LIMIT 10' at line 1
+
+
+--- Mon Sep 18 15:20:22 2023 ---
+
+
+
+--- Mon Sep 18 18:51:45 2023 ---
+
+18:51:45 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Mon Sep 18 18:53:39 2023 ---
+
+18:53:39 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Mon Sep 18 18:53:50 2023 ---
+
+18:53:50 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Mon Sep 18 18:54:03 2023 ---
+
+18:54:03 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:01:36 2023 ---
+
+08:01:36 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:15:41 2023 ---
+
+08:15:41 [ERR] Database_OpenFailed: 
+
+
+--- Wed Sep 20 08:16:22 2023 ---
+
+08:16:22 [ERR] Could not install tables.
+08:16:22 [ERR] 
+
+
+--- Wed Sep 20 08:16:24 2023 ---
+
+
+
+--- Wed Sep 20 08:19:28 2023 ---
+
+08:19:28 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:31 2023 ---
+
+08:19:31 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:32 2023 ---
+
+08:19:32 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:33 2023 ---
+
+08:19:33 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:33 2023 ---
+
+08:19:33 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:36 2023 ---
+
+08:19:36 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:19:37 2023 ---
+
+08:19:37 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Wed Sep 20 08:20:10 2023 ---
+
+
+
+--- Wed Sep 20 08:21:14 2023 ---
+
+
+
+--- Wed Sep 20 08:23:40 2023 ---
+
+
+
+--- Wed Sep 20 08:31:46 2023 ---
+
+
+
+--- Wed Sep 20 09:02:47 2023 ---
+
+
+
+--- Wed Sep 20 09:30:27 2023 ---
+
+
+
+--- Wed Sep 20 09:32:09 2023 ---
+
+
+
+--- Wed Sep 20 09:34:26 2023 ---
+
+
+
+--- Wed Sep 20 10:35:16 2023 ---
+
+
+
+--- Wed Sep 20 10:37:40 2023 ---
+
+
+
+--- Wed Sep 20 10:46:06 2023 ---
+
+
+
+--- Wed Sep 20 10:55:10 2023 ---
+
+
+
+--- Wed Sep 20 11:03:15 2023 ---
+
+
+
+--- Wed Sep 27 10:46:27 2023 ---
+
+
+
+--- Wed Sep 27 11:03:03 2023 ---
+
+
+
+--- Wed Sep 27 13:30:22 2023 ---
+
+
+
+--- Wed Sep 27 13:32:37 2023 ---
+
+
+
+--- Wed Sep 27 13:36:56 2023 ---
+
+
+
+--- Wed Sep 27 13:40:58 2023 ---
+
+
+
+--- Sun Oct  8 04:04:06 2023 ---
+
+04:04:06 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Sun Oct  8 04:05:17 2023 ---
+
+04:05:17 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Sun Oct  8 04:05:28 2023 ---
+
+
+
+--- Mon Oct  9 04:52:13 2023 ---
+
+
+
+--- Wed Oct 11 08:24:46 2023 ---
+
+
+
+--- Wed Oct 11 09:35:16 2023 ---
+
+
+
+--- Wed Oct 11 09:44:39 2023 ---
+
+
+
+--- Wed Oct 11 09:46:38 2023 ---
+
+
+
+--- Wed Oct 11 09:46:46 2023 ---
+
+
+
+--- Wed Oct 11 09:52:52 2023 ---
+
+
+
+--- Wed Oct 11 09:54:44 2023 ---
+
+
+
+--- Wed Oct 11 10:02:02 2023 ---
+
+
+
+--- Wed Oct 11 10:02:18 2023 ---
+
+
+
+--- Wed Oct 11 10:04:16 2023 ---
+
+
+
+--- Wed Oct 11 10:04:23 2023 ---
+
+
+
+--- Wed Oct 11 10:07:21 2023 ---
+
+
+
+--- Wed Oct 11 10:09:36 2023 ---
+
+
+
+--- Wed Oct 11 10:14:21 2023 ---
+
+
+
+--- Wed Oct 11 10:17:45 2023 ---
+
+
+
+--- Wed Oct 11 10:43:56 2023 ---
+
+
+
+--- Wed Oct 11 10:45:07 2023 ---
+
+
+
+--- Mon Oct 16 07:38:01 2023 ---
+
+07:38:01 [ERR] Database_OpenFailed: Access denied for user 'root'@'localhost'
+
+
+--- Mon Oct 16 07:38:15 2023 ---
+
+
+
+--- Mon Oct 16 08:28:04 2023 ---
+
+
+
+--- Thu Nov  9 17:48:19 2023 ---
+
+17:48:19 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Thu Nov  9 17:48:23 2023 ---
+
+17:48:23 [ERR] Socket_BindFailed: Address already in use
+
+
+--- Mon Oct 30 12:13:56 2023 ---
+
+
+
+--- Thu Nov  9 17:51:06 2023 ---
+
+
+
+--- Thu Nov  9 18:32:34 2023 ---
+
+12:31:36 [ERR] Could not load quest: ./data/quests/00093.eqf
+12:31:36 [ERR] Syntax Error: Expected '(' after function-name. Got: identifier 'removeitem' (Line 36)
+
+
+--- Sun Dec 10 12:53:19 2023 ---
+
+
+
+--- Sun Dec 10 13:09:12 2023 ---
+
+
+
+--- Wed Dec 20 07:58:09 2023 ---
+

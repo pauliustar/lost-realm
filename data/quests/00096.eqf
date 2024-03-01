@@ -1,0 +1,124 @@
+main
+{
+        questname   "The Trial of Accuracy"
+        version  1.0
+}
+
+
+state begin
+{
+        desc        "[Trial] The Trial of Accuracy"
+
+        if DoneDaily(3) SetState("ResetQuest");
+        else SetState("QuestStart");
+}
+state QuestStart
+{
+        desc        "[Trial] The Trial of Accuracy"
+}
+state ResetQuest
+{
+        desc        "[Trial] The Trial of Accuracy"
+
+        action SetQuestState(97, "AlreadyCompleted");
+}
+state Quest
+{
+        desc        "[Trial] The Trial of Accuracy"
+
+        action SetCoord(4,28,27);
+        action SetQuestState(97, "Menu");
+
+        rule IsQuestState(97, "Menu") goto Gatekeeper
+}
+state Gatekeeper
+{
+        desc        "[Trial - Accuracy] Talk to Gatekeeper"
+
+        action     AddNpcText(96, "[The Trial of Accuracy] Are you ready to start?");
+
+        action     addNpcInput(96, 1, "Start trial");
+        action     addNpcInput(96, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartFirePartyCheck
+        rule       InputNpc(2) goto Exit
+}
+state Exit
+{
+        action SetCoord(2,20,15);
+        action Reset();
+}
+state StartFirePartyCheck
+{
+
+        if PartyMembers(2) SetState("TooManyPartyMembers");
+        else SetState("Trial");
+}
+state TooManyPartyMembers
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(96, "There is too many party members to start this trial!");
+        rule         TalkedToNpc(96) goto Gatekeeper        
+}
+state Trial
+{
+
+        action SetCoord(4,2,24);
+        action SetState("Wave1");
+}
+state Wave1
+{
+        desc        "[Wave 1] Kill 1 Beast"
+
+        rule KilledNpcs(15, 1) goto Wave2
+        rule PartyMembers(2) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Wave2
+{
+        desc        "[Wave 2] Kill 2 Beasts"
+
+        action SetCoord(4,26,5);
+
+        rule KilledNpcs(15, 2) goto Wave3
+        rule PartyMembers(2) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Wave3
+{
+        desc        "[Wave 3] Kill 4 Beasts"
+
+        action SetCoord(4,4,3);
+
+        rule KilledNpcs(15, 4) goto Completed
+        rule PartyMembers(2) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Completed
+{
+        
+        action SetCoord(2,20,15);
+        action GiveEXP(1500);
+        action GiveFame(1);
+        action AddNpcPM("[Completed] The Trial of Accuracy", "Experience gained: 1500 | Fame earned: 1");
+        action Heal(100, 0);
+
+        action ResetDaily();
+}
+state Death
+{
+        action SetState("Failed");
+        action Warp(4,15,13);
+}
+state Failed
+{
+        desc        "[Wave 1] Failed!"
+
+        action     AddNpcText(96, "[The Trial of Accuracy] You failed.. All progress is lost.");
+
+        action     addNpcInput(96, 1, "Start again");
+        action     addNpcInput(96, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartFirePartyCheck
+        rule       InputNpc(2) goto Exit
+}

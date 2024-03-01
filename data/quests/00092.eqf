@@ -1,0 +1,50 @@
+main
+{
+        questname   "Level [1-5] Rewards"
+        version  1.0
+        hidden
+}
+state begin
+{
+        rule StatGreater("level", 0) goto Level1
+}
+state Level1
+{
+        action  GiveStat("str", 2);
+        action  GiveStat("cha", 2);
+        action  GiveStat("agi", 2);
+        action  GiveStat("con", 2);
+        rule StatGreater("level", 1) goto Level2
+}
+state Level2
+{
+        action  GiveStat("str", 2);
+        action  GiveStat("cha", 2);
+        action  GiveStat("agi", 2);
+        action  GiveStat("con", 2);
+        rule StatGreater("level", 2) goto  Level3
+}
+state Level3
+{
+        action  GiveStat("str", 2);
+        action  GiveStat("cha", 2);
+        action  GiveStat("agi", 2);
+        action  GiveStat("con", 2);
+        rule StatGreater("level", 3) goto  Level4
+}
+state Level4
+{
+        action  GiveStat("str", 2);
+        action  GiveStat("cha", 2);
+        action  GiveStat("agi", 2);
+        action  GiveStat("con", 2);
+        rule StatGreater("level", 4) goto  Level5
+}
+state Level5
+{
+        action  GiveStat("str", 2);
+        action  GiveStat("cha", 2);
+        action  GiveStat("agi", 2);
+        action  GiveStat("con", 2);
+        action  End();
+}

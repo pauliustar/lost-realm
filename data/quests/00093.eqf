@@ -1,0 +1,334 @@
+main
+{
+        questname   "Statistics Management"
+        version  1.0
+        hidden
+}
+
+
+state begin
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "How may I help?");
+
+        action addNpcInput(93, 1, "Recover health");
+        action addNpcInput(93, 2, "Select a class [Lvl. 6]");
+        action addNpcInput(93, 3, "Reset stats [Lvl. 6] [Cost: 50G]");
+
+        rule InputNpc(1) goto HpRecovery
+        rule InputNpc(2) goto StatClassesLevelCheck
+        rule InputNpc(3) goto ResetStatsLevel
+        rule TalkedToNpc(93) goto ResetQ
+}
+state ResetStatsLevel
+{
+        if IsLevel(6) SetState("ResetStatsFame");
+        else SetState("NoLevel");
+}
+state ResetStatsFame
+{
+        if GotItems(1, 50) SetState("ResetStats");
+        else SetState("NoGold");
+}
+state ResetStats
+{
+        action RemoveItem(1, 50);
+        action ResetStats();
+        action GiveSpell(2);
+        action Reset();
+}
+state HpRecovery
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Select amount of HP to recover to");
+
+        action addNpcInput(93, 1, "Recover to 35% HP [5 Soul Essence]");
+        action addNpcInput(93, 2, "Recover to 60% HP [8 Soul Essence]");
+        action addNpcInput(93, 3, "Recover to 80% HP [10 Soul Essence]");
+        action addNpcInput(93, 4, "Exit");
+
+        rule TalkedToNpc(93) goto ResetQ
+
+        rule InputNpc(1) goto HealthCheck35
+        rule InputNpc(2) goto HealthCheck60
+        rule InputNpc(3) goto HealthCheck80
+        rule InputNpc(4) goto ResetQ
+}
+state StatClassesLevelCheck
+{
+        if IsLevel(6) SetState("StatClasses");
+        else SetState("NoLevel");
+}
+state StatClasses
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Click on each individual class to read more about it");
+
+        action addNpcInput(93, 1, "Tank");
+        action addNpcInput(93, 2, "Berserker");
+        action addNpcInput(93, 3, "Assassin");
+        action addNpcInput(93, 4, "Balanced");
+        action addNpcInput(93, 5, "Exit");
+
+        rule TalkedToNpc(93) goto ResetQ
+
+        rule InputNpc(1) goto Defense
+        rule InputNpc(2) goto Attack
+        rule InputNpc(3) goto Accuracy
+        rule InputNpc(4) goto Balanced
+        rule InputNpc(5) goto ResetQ
+
+}
+state Balanced
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Explorer class distributes stats equally. Stats table: STR+3=1DMG | CHA/DEX+3=1ACC | AGI+3=1EVA | CON+3=1DEF");
+
+        action addNpcInput(93, 1, "Change class");
+        action addNpcInput(93, 2, "Exit");
+
+        rule InputNpc(1) goto SetBalanced
+        rule InputNpc(2) goto ResetQ
+
+}
+state SetBalanced
+{
+        desc        "Talk to Josh"
+
+        action SetClass(1);        
+
+        action     AddNpcText(93, "Your class has been changed to Explorer.");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+state Defense
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Tank class primarly focuses on CON and AGI. Stats table: STR+5=1DMG | CHA/DEX+5=1ACC | AGI+1=1EVA | CON+1=1DEF");
+
+        action addNpcInput(93, 1, "Change class [Cost: 5 Fame]");
+        action addNpcInput(93, 2, "Exit");
+
+        rule InputNpc(1) goto ClassCheckDefence
+        rule InputNpc(2) goto ResetQ
+
+}
+
+state ClassCheckDefence
+{
+        if IsClass(2) goto AlreadyThisClass
+        else SetState("FameCheckDefence")
+}
+
+state FameCheckDefence
+{
+        if HasFame(5) SetState("RemoveFameDefence");
+        else SetState("NoFame");
+}
+
+state RemoveFameDefence
+{
+        desc        "Talk to Josh"
+
+        action RemoveFame(5);
+        action SetClass(2);        
+
+        action     AddNpcText(93, "Your class has been changed to Tank.");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+
+state Attack
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Berserker class primarly focuses on STR and CHA/DEX. Stats table: STR+1=1DMG | CHA/DEX+3=1ACC | AGI+3=1EVA | CON+5=1DEF");
+
+        action addNpcInput(93, 1, "Change class [Cost: 5 Fame]");
+        action addNpcInput(93, 2, "Exit");
+
+        rule InputNpc(1) goto ClassCheckAttack
+        rule InputNpc(2) goto ResetQ
+
+}
+
+state ClassCheckAttack
+{
+        if IsClass(3) goto AlreadyThisClass
+        else SetState("FameCheckAttack")
+}
+
+state FameCheckAttack
+{
+        if HasFame(5) SetState("RemoveFameAttack");
+        else SetState("NoFame");
+}
+
+state RemoveFameAttack
+{
+        desc        "Talk to Josh"
+
+        action RemoveFame(5);
+        action SetClass(3);        
+
+        action     AddNpcText(93, "Your class has been changed to Berserker.");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+
+state Accuracy
+{
+        desc       "Talk to Josh"
+
+        action     AddNpcText(93, "Assassin class has a 35% Critical rate instead of 5%. It primarly focuses on AGI and CHA/DEX. Stats table: STR+2=1DMG | CHA/DEX+2=1ACC | AGI+4=1EVA | CON+4=1DEF");
+
+        action addNpcInput(93, 1, "Change class [Cost: 5 Fame]");
+        action addNpcInput(93, 2, "Exit");
+
+        rule InputNpc(1) goto ClassCheckAccuracy
+        rule InputNpc(2) goto ResetQ
+
+}
+
+state ClassCheckAccuracy
+{
+        if IsClass(4) goto AlreadyThisClass
+        else SetState("FameCheckAccuracy")
+}
+
+state FameCheckAccuracy
+{
+        if HasFame(5) SetState("RemoveFameAccuracy");
+        else SetState("NoFame");
+}
+
+state RemoveFameAccuracy
+{
+        desc        "Talk to Josh"
+
+        action RemoveFame(5);
+        action SetClass(4);        
+
+        action     AddNpcText(93, "Your class has been changed to Assassin.");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+
+state AlreadyThisClass
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "You can't change to the same class!");
+
+        rule TalkedToNpc(93) goto ResetQ        
+}
+
+state NoFame
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "Not enough fame to perform this action!");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+state NoGold
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "Not enough gold to perform this action!");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+state NoLevel
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "You need to be level 6 to use this action.");
+
+        rule TalkedToNpc(93) goto ResetQ
+}
+
+state HealthCheck35
+{
+        if HasHealth(35) SetState("SoulCheck35");
+        else SetState("NoBenefit");
+}
+state HealthCheck60
+{
+        if HasHealth(60) SetState("SoulCheck60");
+        else SetState("NoBenefit");
+}
+state HealthCheck80
+{
+        if HasHealth(80) SetState("SoulCheck80");
+        else SetState("NoBenefit");
+}
+state SoulCheck35
+{
+        desc        "Talk to Josh"
+
+        if GotItems(14, 5) SetState("Heal35");
+        else SetState("NoSoul");
+}
+state SoulCheck60
+{
+        desc        "Talk to Josh"
+
+        if GotItems(14, 8) SetState("Heal60");
+        else SetState("NoSoul");
+}
+state SoulCheck80
+{
+        desc        "Talk to Josh"
+
+        if GotItems(14, 10) SetState("Heal80");
+        else SetState("NoSoul");
+}
+state Heal35
+{
+        desc        "Talk to Josh"
+
+        action      Heal(35, 5);
+        action      Reset();
+      
+}
+state Heal60
+{
+        desc        "Talk to Josh"
+
+        action      Heal(60, 8);
+        action      Reset();    
+
+}
+state Heal80
+{
+        desc        "Talk to Josh"
+
+        action      Heal(80, 10);
+        action      Reset();   
+      
+}
+state NoBenefit
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "There is no benefit for you to use this action right now.."); 
+        rule TalkedToNpc(93) goto ResetQ
+}
+state NoSoul
+{
+        desc        "Talk to Josh"
+
+        action     AddNpcText(93, "You need more souls to perform this action.."); 
+        rule TalkedToNpc(93) goto ResetQ
+}
+
+state ResetQ
+{
+        action Reset();
+}

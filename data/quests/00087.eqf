@@ -1,0 +1,130 @@
+main
+{
+        questname   "Single-Kill Targets"
+        version  1.0
+}
+
+state begin
+{
+        desc        "Talk to Lucien"
+        action SetState("Menu");
+}
+
+state Menu
+{
+        desc        "[Contracts] Inactive"
+
+        action     AddNpcText(87, "Click on a monster name to see more information about the contract.");
+
+        action     addNpcInput(87, 1, "Novice Sentinel");
+        action     addNpcInput(87, 2, "Veteran Defender");
+        action     addNpcInput(87, 3, "Elite Guardian");
+
+        rule       InputNpc(1) goto NoviceInfo
+        rule       InputNpc(2) goto VeteranInfo
+        rule       InputNpc(3) goto EliteInfo
+}
+
+state NoviceInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(87, "Kills to reward: 10 (EXP: 800 | Gold: 10)");
+
+        action     addNpcInput(87, 1, "Start Infinite Loop");
+        action     addNpcInput(87, 2, "Exit");
+
+        rule       InputNpc(1) goto NoviceInfinite
+        rule       InputNpc(2) goto Menu
+}
+
+state NoviceInfinite
+{
+        desc        "[Contract] Novice Sentinel | Kill 10"
+
+        action     AddNpcText(87, "[Contract] Kill 10 Novice Sentinel");
+
+        action     addNpcInput(87, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(46, 10) goto NoviceRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state NoviceRewardInfinite
+{
+        action ShowHint("[Contract] Novice Sentinel Completed - Experience earned: 800 | Gold: 10");
+        action PlaySound(12);
+        action GiveEXP(800);
+        action GiveItem(1, 10);
+        action SetState("NoviceInfinite");
+}
+
+state VeteranInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(87, "Kills to reward: 8 (EXP: 1250 | Gold: 15)");
+
+        action     addNpcInput(87, 1, "Start Infinite Loop");
+        action     addNpcInput(87, 2, "Exit");
+
+        rule       InputNpc(1) goto VeteranInfinite
+        rule       InputNpc(2) goto Menu
+}
+
+state VeteranInfinite
+{
+        desc        "[Contract] Veteran Defender | Kill 8"
+
+        action     AddNpcText(87, "[Contract] Kill 8 Veteran Defender");
+
+        action     addNpcInput(87, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(47, 8) goto VeteranRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state VeteranRewardInfinite
+{
+        action ShowHint("[Contract] Veteran Defender Completed - Experience earned: 1250 | Gold: 15");
+        action PlaySound(12);
+        action GiveEXP(1250);
+        action GiveItem(1, 15);
+        action SetState("VeteranInfinite");
+}
+
+state EliteInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(87, "Kills to reward: 6 (EXP: 1500 | Gold: 18)");
+
+        action     addNpcInput(87, 1, "Start Infinite Loop");
+        action     addNpcInput(87, 2, "Exit");
+
+        rule       InputNpc(1) goto EliteInfinite
+        rule       InputNpc(2) goto Menu
+}
+
+state EliteInfinite
+{
+        desc        "[Contract] Elite Guardian | Kill 6"
+
+        action     AddNpcText(87, "[Contract] Kill 6 Elite Guardian");
+
+        action     addNpcInput(87, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(48, 6) goto EliteRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state EliteRewardInfinite
+{
+        action ShowHint("[Contract] Elite Guardian Completed - Experience earned: 1500 | Gold: 18");
+        action PlaySound(12);
+        action GiveEXP(1500);
+        action GiveItem(1, 18);
+        action SetState("EliteInfinite");
+}
+
+state ResetQuest
+{
+        action Reset();
+}

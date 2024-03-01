@@ -1,0 +1,134 @@
+main
+{
+        questname   "The Trial of Endurance"
+        version  1.0
+}
+
+
+state begin
+{
+        desc        "[Trial] The Trial of Endurance"
+
+        if DoneDaily(3) SetState("ResetQuest");
+        else SetState("QuestStart");
+}
+state QuestStart
+{
+        desc        "[Trial] The Trial of Endurance"
+}
+state ResetQuest
+{
+        desc        "[Trial] The Trial of Endurance"
+
+        action SetQuestState(97, "AlreadyCompleted");
+}
+state Quest
+{
+        desc        "[Trial] The Trial of Endurance"
+
+        action SetCoord(14,32,29);
+        action SetQuestState(97, "Menu");
+
+        rule IsQuestState(97, "Menu") goto Gatekeeper
+}
+state Gatekeeper
+{
+        desc        "[Trial - Endurance] Talk to Gatekeeper"
+
+        action     AddNpcText(88, "[The Trial of Endurance] Are you ready to start?");
+
+        action     addNpcInput(88, 1, "Start trial");
+        action     addNpcInput(88, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartEndurancePartyCheck
+        rule       InputNpc(2) goto Exit
+}
+state Exit
+{
+        action SetCoord(2,20,15);
+        action Reset();
+}
+state StartEndurancePartyCheck
+{
+
+        if PartyMembers(3) SetState("TooManyPartyMembers");
+        else SetState("Trial");
+}
+state TooManyPartyMembers
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(88, "There is too many party members to start this trial!");
+        rule         TalkedToNpc(88) goto Gatekeeper        
+}
+state Trial
+{
+
+        action SetCoord(14,52,52);
+        action SetState("Wave1");
+}
+state Wave1
+{
+        desc        "[Wave 1] Kill 2 Beasts"
+
+        rule KilledNpcs(45, 2) goto Wave2
+        rule PartyMembers(3) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Wave2
+{
+        desc        "[Wave 2] Kill 4 Beasts"
+
+        action SetCoord(14,6,52);
+
+        rule KilledNpcs(45, 4) goto Wave3
+        rule PartyMembers(3) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Wave3
+{
+        desc        "[Wave 3] Kill 8 Beasts"
+
+        action SetCoord(14,7,6);
+
+        rule KilledNpcs(45, 8) goto Wave4
+        rule PartyMembers(3) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Wave4
+{
+        desc        "[Wave 4] Kill 16 Beasts"
+
+        action SetCoord(14,52,7);
+
+        rule KilledNpcs(45, 16) goto Completed
+        rule PartyMembers(3) goto Death
+        rule EnterCoord(1,13,14) goto Death
+}
+state Completed
+{
+        
+        action SetCoord(2,20,15);
+        action GiveEXP(5000);
+        action GiveFame(1);
+        action AddNpcPM("[Completed] The Trial of Endurance", "Experience gained: 5000 | Fame earned: 1");
+        action Heal(100, 0);
+
+        action ResetDaily();
+}
+state Death
+{
+        action SetState("Failed");
+        action Warp(14,32,29);       
+}
+state Failed
+{
+        desc        "[Wave 1] Failed!"
+
+        action     AddNpcText(88, "[The Trial of Endurance] You failed.. All progress is lost.");
+
+        action     addNpcInput(88, 1, "Start again");
+        action     addNpcInput(88, 2, "Leave this area");
+
+        rule       InputNpc(1) goto StartEndurancePartyCheck
+        rule       InputNpc(2) goto Exit
+}

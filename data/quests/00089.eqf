@@ -1,0 +1,175 @@
+main
+{
+        questname   "Cave Duty"
+        version  1.0
+}
+
+state begin
+{
+        desc        "Talk to Cave Guard"
+
+        action     AddNpcText(89, "We are under attack! Please help.. Clear one of the following monsters for a reward");
+
+        action     addNpcInput(89, 1, "Level 8 Skeletons");
+        action     addNpcInput(89, 2, "Level 10 Skeletons");
+        action     addNpcInput(89, 3, "Level 12 Skeletons");
+
+        rule       InputNpc(1) goto Level8
+        rule       InputNpc(2) goto Level10 
+        rule       InputNpc(3) goto Level12 
+}
+
+state Level8
+{
+        desc        "Talk to Cave Guard"
+
+        action     AddNpcText(89, "Kill Amount: 15 | Bone req. to complete: 5 | EXP Reward: 1000");
+
+        action     addNpcInput(89, 1, "Start infinite loop");
+        action     addNpcInput(89, 2, "Exit");
+
+        rule       InputNpc(1) goto Level8inf
+        rule       InputNpc(2) goto ResetQuest
+}
+
+state Level10
+{
+        desc        "Talk to Cave Guard"
+
+        action     AddNpcText(89, "Kill Amount: 10 | Bone req. to complete: 10 | EXP Reward: 2500");
+
+        action     addNpcInput(89, 1, "Start infinite loop");
+        action     addNpcInput(89, 2, "Exit");
+
+        rule       InputNpc(1) goto Level10inf
+        rule       InputNpc(2) goto ResetQuest
+}
+
+state Level12
+{
+        desc        "Talk to Cave Guard"
+
+        action     AddNpcText(89, "Kill Amount: 5 | Bone req. to complete: 20 | EXP Reward: 4500");
+
+        action     addNpcInput(89, 1, "Start infinite loop");
+        action     addNpcInput(89, 2, "Exit");
+
+        rule       InputNpc(1) goto Level12inf
+        rule       InputNpc(2) goto ResetQuest
+}
+
+state Level8inf
+{
+        desc        "Kill 15 Level 8 Skeletons"
+        
+        action ShowHint("Kill 15 Level 8 Skeletons");
+
+        action     AddNpcText(89, "Kill 15 Level 8 Skeletons");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule KilledNpcs(34, 15) goto Level8Killed
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level10inf
+{
+        desc        "Kill 10 Level 10 Skeletons"
+        
+        action ShowHint("Kill 10 Level 10 Skeletons");
+
+        action     AddNpcText(89, "Kill 10 Level 10 Skeletons");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule KilledNpcs(35, 10) goto Level10Killed
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level12inf
+{
+        desc        "Kill 5 Level 12 Skeleton"
+        
+        action ShowHint("Kill 5 Level 12 Skeleton");
+
+        action     AddNpcText(89, "Kill 5 Level 12 Skeletons");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule KilledNpcs(36, 5) goto Level12Killed
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level8Killed
+{
+        desc        "Get 5 Bones"
+        
+        action ShowHint("Get 5 Bones");
+
+        action     AddNpcText(89, "I'm not just taking your word for it.. Give me 5 bones to prove it!");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule GotItems(67, 5) goto Level8Reward
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level10Killed
+{
+        desc        "Get 10 Bones"
+        
+        action ShowHint("Get 10 Bones");
+
+        action     AddNpcText(89, "I'm not just taking your word for it.. Give me 10 bones to prove it!");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule GotItems(67, 10) goto Level10Reward
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level12Killed
+{
+        desc        "Get 20 Bones"
+        
+        action ShowHint("Get 20 Bones");
+
+        action     AddNpcText(89, "I'm not just taking your word for it.. Give me 20 bones to prove it!");
+
+        action     addNpcInput(89, 1, "Abandon");
+
+        rule GotItems(67, 20) goto Level12Reward
+        rule       InputNpc(1) goto ResetQuest
+}
+
+state Level8Reward
+{
+        action ShowHint("Cave Duty completed - Experience earned: 1000");
+        action PlaySound(12);
+        action GiveEXP(1000);
+        action RemoveItem(67, 5);
+        action SetState("Level8inf");
+}
+
+state Level10Reward
+{
+        action ShowHint("Cave Duty completed - Experience earned: 2500");
+        action PlaySound(12);
+        action GiveEXP(2500);
+        action RemoveItem(67, 10);
+        action SetState("Level10inf");
+}
+
+state Level12Reward
+{
+        action ShowHint("Cave Duty completed - Experience earned: 4500");
+        action PlaySound(12);
+        action GiveEXP(4500);
+        action RemoveItem(67, 20);
+        action SetState("Level12inf");
+}
+
+state ResetQuest
+{
+        action Reset();
+}

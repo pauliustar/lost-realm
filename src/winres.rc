@@ -1,0 +1,6 @@
+/* winres.rc */
+
+#include "../src/eoserv_windows.h"
+
+MAINICON ICON "icon.ico"
+

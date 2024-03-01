@@ -1,0 +1,55 @@
+main
+{
+        questname   "Menu 20"
+        version  1.0
+        hidden
+}
+
+state begin
+{
+        desc        "Talk to Lily"
+
+        action     AddNpcText(81, "Hey there [name], ready to get to next level?");
+
+        action     AddNpcInput(81, 1, "Forest of Darkness");
+
+        rule         InputNpc(1) goto Abyssal
+}
+state Level
+{
+        desc        "Talk to Lily"
+
+        action     AddNpcText(81, "You don't have level required to enter this area.");
+
+        rule TalkedToNpc(81) goto ResetQ       
+}
+state ResetQ
+{
+        action Reset();
+}
+state Abyssal
+{
+
+        action     SetCoord(20,16,18);
+
+        rule EnterCoord(20,16,18) goto Menu
+}
+
+state Menu
+{
+        desc        "[Training]"
+
+        action     AddNpcText(81, "Want to leave?");
+        action     AddNpcInput(81, 1, "Yes, get me back to Secret Lair");
+
+        rule         InputNpc(1) goto Exit
+        rule EnterMap(2) goto begin
+}
+
+state Exit
+{
+
+        action     SetCoord(18,8,18);
+
+        action Reset();
+}

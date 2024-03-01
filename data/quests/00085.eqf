@@ -1,0 +1,57 @@
+main
+{
+   questname  "Secret Passage"
+   version      1.0
+   hidden
+}
+state begin
+{
+
+}
+state Start
+{
+   rule IsWearing(109) goto CheckCord
+   rule NotWearing(109) goto CheckCordNot
+}
+state CheckCordNot
+{
+   rule EnterCoord(15,19,17) goto ElectrifyFirsTime
+   rule IsWearing(109) goto CheckCord
+}
+state CheckCord
+{
+   rule EnterCoord(15,19,17) goto EnterPassage
+   rule NotWearing(109) goto CheckCordNot
+}
+state EnterPassage
+{
+   action Warp(16,1,3);
+   action SetState("Start");
+}
+state ForbiddenAccess
+{
+   action AddNpcBox("Secret Passage", "You try to walk in, but nothing happens.. Electricity flows through you..");
+   
+   rule EnterCoord(15,20,17) goto Electrify
+   rule EnterCoord(15,19,18) goto Electrify
+}
+state ForbiddenAccessShadow
+{
+   action AddNpcBox("Secret Passage", "You try to walk in, but nothing happens.. Electricity flows through you.. Report back to the Shadow.");
+
+   action SetQuestState(99, "EnergyInvestigated");
+   
+   rule EnterCoord(15,20,17) goto Electrify
+   rule EnterCoord(15,19,18) goto Electrify
+}
+state Electrify
+{
+   action PlayEffect(17);
+   action SetState("Start");
+}
+state ElectrifyFirsTime
+{
+   action PlayEffect(17);
+   if IsQuestState(99, "PortalLoc") SetState("ForbiddenAccessShadow");
+   else SetState("ForbiddenAccess");
+}

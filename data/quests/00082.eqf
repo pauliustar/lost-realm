@@ -1,0 +1,22 @@
+main
+{
+   questname  "Lost Realm Guard"
+   version      1.0
+   hidden
+}
+
+state begin
+{
+   desc         "Talk to Guard"
+
+   action       AddNpcText(82, "Thanks for helping securing the area [name]! We are continuing further investigation..");
+
+   rule TalkedToNpc(82) goto Reset
+}
+
+state Reset
+{
+   desc         "Talk to Guard"
+
+   action       Reset();
+}

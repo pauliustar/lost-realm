@@ -1,0 +1,166 @@
+main
+{
+        questname   "Trials"
+        version  1.0
+        hidden
+}
+
+state begin
+{
+
+        if IsLevel(3) SetState("Intro");
+        else SetState("Level");
+}
+state Level
+{
+        desc        "Talk to Gerald"
+
+        action     AddNpcText(97, "[name], I sense your weakness from afar. Come back to me when you are level 3.");
+
+        rule         TalkedToNpc(97) goto LevelCheck
+}
+
+state LevelCheck
+{
+        desc        "Talk to Gerald"
+
+        if IsLevel(3) SetState("Intro");
+        else Reset();
+}
+state Intro
+{
+        desc        "Talk to Gerald"
+
+        action     AddNpcText(97, "Welcome! Ready to prove yourself? Please note that trials do not result in permanent death, you don't lose your items!");
+
+        action     addNpcInput(97, 1, "Right.. Can't die. Got it.");
+
+        rule       InputNpc(1) goto Menu
+}
+state Menu
+{
+        desc        "[Trials]"
+
+        action     AddNpcText(97, "[INFO] Read more by selecting a specific trial:");
+
+        action     addNpcInput(97, 1, "The Trial of Accuracy [Level: 3]");
+        action     addNpcInput(97, 2, "The Trial of Endurance [Level: 8]");
+        action     addNpcInput(97, 3, "The Trial of Luck [Level: 16]");           
+
+        rule       InputNpc(1) goto Fire
+        rule       InputNpc(2) goto LevelCheckEndurance
+        rule       InputNpc(3) goto LevelCheckLuck
+}
+state NeedLevel
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(97, "You need a higher level to start this Trial..");
+        rule         TalkedToNpc(97) goto Menu        
+}
+state AlreadyCompleted
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(97, "You have reached your daily limit for this Trial today..");
+        rule         TalkedToNpc(97) goto Menu        
+}
+state Fire
+{
+        desc        "The Trial of Accuracy"
+
+        action     SetQuestState(96, "begin");
+        action     AddNpcText(97, "[Trial Info] Levels: 3 | Starting Monsters: 1 | Level Multiplier: 2 | Rewards: 1 Fame and 1500 EXP | Max Party: 1 | Daily Limit: 3");
+
+        action     addNpcInput(97, 1, "Start Trial");
+        action     addNpcInput(97, 2, "Exit");
+
+
+        rule       InputNpc(1) goto StartFirePartyCheck
+        rule       InputNpc(2) goto Menu
+}
+state StartFirePartyCheck
+{
+
+        if PartyMembers(2) SetState("TooManyPartyMembers");
+        else SetState("StartFire");
+}
+state StartFire
+{
+
+        if IsQuestState(96, "ResetQuest") SetState("Menu");
+        elseif IsQuestState(96, "QuestStart") SetQuestState(96, "Quest");
+        else StartQuest(96, "Quest");
+}
+state LevelCheckEndurance
+{
+        desc        "Talk to Gerald"
+
+        if IsLevel(8) SetState("Endurance");
+        else SetState("NeedLevel");
+}
+state Endurance
+{
+        desc        "The Trial of Endurance"
+
+        action     SetQuestState(88, "begin");
+        action     AddNpcText(97, "[Trial Info] Levels: 4 | Starting Monsters: 2 | Level Multiplier: 2 | Modifiers: HP Drain | Rewards: 1 Fame and 5000 EXP | Max Party: 2 | Daily Limit: 3");
+
+        action     addNpcInput(97, 1, "Start Trial");
+        action     addNpcInput(97, 2, "Exit");
+
+
+        rule       InputNpc(1) goto StartEndurancePartyCheck
+        rule       InputNpc(2) goto Menu
+}
+state StartEndurancePartyCheck
+{
+
+        if PartyMembers(3) SetState("TooManyPartyMembers");
+        else SetState("StartEndurance");
+}
+state StartEndurance
+{
+
+        if IsQuestState(88, "ResetQuest") SetState("Menu");
+        elseif IsQuestState(88, "QuestStart") SetQuestState(88, "Quest");
+        else StartQuest(88, "Quest");
+}
+state TooManyPartyMembers
+{
+        desc        "Talk to Gerald"
+        action     AddNpcText(97, "There is too many party members to start this trial!");
+        rule         TalkedToNpc(97) goto Menu        
+}
+state LevelCheckLuck
+{
+        desc        "Talk to Gerald"
+
+        if IsLevel(16) SetState("Luck");
+        else SetState("NeedLevel");
+}
+state Luck
+{
+        desc        "The Trial of Endurance"
+
+        action     SetQuestState(83, "begin");
+        action     AddNpcText(97, "[Trial Info] Levels: 1 | Success condition: Get 1 Luck Essence and test your luck! | Rewards: 2 Fame and 15000 EXP | Max Party: 1 | Daily Limit: 3");
+
+        action     addNpcInput(97, 1, "Start Trial");
+        action     addNpcInput(97, 2, "Exit");
+
+
+        rule       InputNpc(1) goto StartLuckPartyCheck
+        rule       InputNpc(2) goto Menu
+}
+state StartLuckPartyCheck
+{
+
+        if PartyMembers(2) SetState("TooManyPartyMembers");
+        else SetState("StartLuck");
+}
+state StartLuck
+{
+
+        if IsQuestState(83, "ResetQuest") SetState("Menu");
+        elseif IsQuestState(83, "QuestStart") SetQuestState(83, "Quest");
+        else StartQuest(83, "Quest");
+}

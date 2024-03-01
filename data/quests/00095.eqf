@@ -1,0 +1,195 @@
+main
+{
+        questname   "Single-Kill Targets"
+        version  1.0
+}
+
+state begin
+{
+        desc        "Talk to Lucien"
+        action SetState("Menu");
+}
+
+state Menu
+{
+        desc        "[Contracts] Inactive"
+
+        action     AddNpcText(95, "Click on a monster name to see more information about the contract.");
+
+        action     addNpcInput(95, 1, "Mimicry");
+        action     addNpcInput(95, 2, "Chimera");
+        action     addNpcInput(95, 3, "Eryngi");
+
+        rule       InputNpc(1) goto MimicryInfo
+        rule       InputNpc(2) goto ChimeraInfo
+        rule       InputNpc(3) goto EryngiInfo
+}
+
+state MimicryInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(95, "Kills to reward: 8 (EXP: 150 | Gold: 1)");
+
+        action     addNpcInput(95, 1, "Start");
+        action     addNpcInput(95, 2, "Exit");
+
+        rule       InputNpc(1) goto Mimicry
+        rule       InputNpc(2) goto Menu
+}
+
+state Mimicry
+{
+        desc        "[Active Contract] Mimicry | Kill 8"
+
+        action     AddNpcText(95, "[Contracts] Kill 8 Mimicry");
+
+        action     addNpcInput(95, 1, "Turn on infinite loop");
+        action     addNpcInput(95, 2, "Abandon");
+
+        rule KilledNpcs(1, 8) goto MimicryReward
+        rule       InputNpc(1) goto MimicryInfinite
+        rule       InputNpc(2) goto ResetQuest
+}
+state MimicryInfinite
+{
+        desc        "[Infinite Contract] Mimicry | Kill 8"
+
+        action     AddNpcText(95, "[Infinite Contract] Kill 8 Mimicry");
+
+        action     addNpcInput(95, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(1, 8) goto MimicryRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state MimicryRewardInfinite
+{
+        action ShowHint("[Infinite Contract] Mimicry Completed - Experience earned: 150 | Gold: 1");
+        action PlaySound(12);
+        action GiveEXP(150);
+        action GiveItem(1, 1);
+        action SetState("MimicryInfinite");
+        if IsQuestState(99, "Mimicry") SetQuestState(99, "LevelUp");
+}
+state MimicryReward
+{
+        if IsQuestState(99, "Mimicry") SetQuestState(99, "LevelUp");
+        action ShowHint("[Contract] Mimicry Completed - Experience earned: 150 | Gold: 1");
+        action PlaySound(12);
+        action GiveEXP(150);
+        action GiveItem(1, 1);
+        action SetState("ResetQuest");
+}
+
+state ChimeraInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(95, "Kills to reward: 5 (EXP: 300 | Gold: 5)");
+
+        action     addNpcInput(95, 1, "Start");
+        action     addNpcInput(95, 2, "Exit");
+
+        rule       InputNpc(1) goto Chimera
+        rule       InputNpc(2) goto Menu
+}
+
+state Chimera
+{
+        desc        "[Active Contract] Chimera | Kill 5"
+
+        action     AddNpcText(95, "[Active Contract] Kill 5 Chimera");
+
+        action     addNpcInput(95, 1, "Turn on infinite loop");
+        action     addNpcInput(95, 2, "Abandon");
+
+        rule KilledNpcs(2, 5) goto ChimeraReward
+        rule       InputNpc(1) goto ChimeraInfinite
+        rule       InputNpc(2) goto ResetQuest
+
+}
+state ChimeraInfinite
+{
+        desc        "[Infinite Contract] Chimera | Kill 5"
+
+        action     AddNpcText(95, "[Infinite Contract] Kill 5 Chimera");
+
+        action     addNpcInput(95, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(2, 5) goto ChimeraRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state ChimeraRewardInfinite
+{
+        action ShowHint("[Infinite Contract] Chimera Completed - Experience earned: 300 | Gold: 5");
+        action PlaySound(12);
+        action GiveEXP(300);
+        action GiveItem(1, 5);
+        action SetState("ChimeraInfinite");
+}
+state ChimeraReward
+{
+        action ShowHint("[Contract] Chimera Completed - Experience earned: 300 | Gold: 5");
+        action PlaySound(12);
+        action GiveEXP(300);
+        action GiveItem(1, 5);
+        action SetState("ResetQuest");
+}
+
+state EryngiInfo
+{
+        desc        "[Contracts]"
+
+        action     AddNpcText(95, "Kills to reward: 3 (EXP: 550 | Gold: 8)");
+
+        action     addNpcInput(95, 1, "Start");
+        action     addNpcInput(95, 2, "Exit");
+
+        rule       InputNpc(1) goto Eryngi
+        rule       InputNpc(2) goto Menu
+}
+
+state Eryngi
+{
+        desc        "[Active Contract] Eryngi | Kill 3"
+
+        action     AddNpcText(95, "[Active Contract] Kill 3 Eryngi");
+        action     addNpcInput(95, 1, "Turn on infinite loop");
+        action     addNpcInput(95, 2, "Abandon");
+
+        rule KilledNpcs(3, 3) goto EryngiReward
+        rule       InputNpc(1) goto EryngiInfinite
+        rule       InputNpc(2) goto ResetQuest
+}
+state EryngiInfinite
+{
+        desc        "[Infinite Contract] Eryngi | Kill 3"
+
+        action     AddNpcText(95, "[Infinite Contract] Kill 3 Eryngi");
+
+        action     addNpcInput(95, 1, "Stop loop [Resets progress]");
+
+        rule KilledNpcs(3, 3) goto EryngiRewardInfinite
+        rule       InputNpc(1) goto ResetQuest
+}
+state EryngiRewardInfinite
+{
+        action ShowHint("[Infinite Contract] Eryngi Completed - Experience earned: 550 | Gold: 8");
+        action PlaySound(12);
+        action GiveEXP(550);
+        action GiveItem(1, 8);
+        action SetState("EryngiInfinite");
+}
+state EryngiReward
+{
+        action ShowHint("[Contract] Eryngi Completed - Experience earned: 550 | Gold: 8");
+        action PlaySound(12);
+        action GiveEXP(550);
+        action GiveItem(1, 8);
+        action SetState("ResetQuest");
+}
+
+state ResetQuest
+{
+        action Reset();
+}

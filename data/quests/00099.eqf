@@ -1,0 +1,600 @@
+main
+{
+   questname  "Lost Realm"
+   version      1.0 
+}
+state begin
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "...");
+
+   action addNpcInput(99, 1, "Death told me to send you his regards");
+
+   rule InputNpc(1) goto Intro
+}
+
+state Intro
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Ahaha.. He got you!");
+
+   action addNpcInput(99, 1, "I don't understand..");
+
+   rule InputNpc(1) goto MoreInfo
+}
+state MoreInfo
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "That is just an old guard dressed like one. Altough, I do also welcome you to the Lost Realm");
+
+   action addNpcInput(99, 1, "I still don't understand this place..");
+
+   rule InputNpc(1) goto Advice
+}
+state Advice
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "This is a place where proven warriors have a chance to be sent back to the living.. They will let you know when you are ready to leave.");
+
+   action addNpcInput(99, 1, "Who is 'they'?");
+
+   rule InputNpc(1) goto Secret
+}
+state Secret
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "You'll get to know in due time...Now, are you ready to fight back for your life?");
+
+   action addNpcInput(99, 1, "But I don't know what to do!");
+
+   rule InputNpc(1) goto Training
+}
+state Training
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I'll help as much as I can.. Go and talk to Master Pao, he can move you to Abyssal Crucible, find Lucien there");
+
+   action addNpcInput(99, 1, "Who is Lucien?");
+
+   rule InputNpc(1) goto Contracts
+}
+state Contracts
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "He provides contracts that allow you to get stronger. It's a much faster way to level up here..");
+
+   action addNpcInput(99, 1, "Okay, I'll see if I can find him");
+
+   rule InputNpc(1) goto TrainingRoom
+}
+state TrainingRoom
+{
+   desc         "Talk to Master Pao, find Lucien"
+
+   action       AddNpcText(99, "Goodluck [name], come back to me when you complete your first Mimicry contract.");
+
+   rule         EnterCoord(3,12,6) goto Mimicry    
+}
+state Mimicry
+{
+   desc         "Complete Mimicry Contract"
+
+   action       AddNpcText(99, "Goodluck [name], come back to me when you complete your first Mimicry contract.");   
+}
+state LevelUp
+{
+   desc         "Reach Level 2"
+
+   action ShowHint("You gained 600 EXP for completing Shadows task!");
+   action GiveEXP(600);
+
+   action       AddNpcText(99, "Good work [name]. We will need to do much more though.. Come back to me when you reach level 2.");
+
+   rule         IsLevel(2) goto Level2 
+}
+state Level2
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Congrats on your level up! Every 2 levels you will be granted an additional skill point.");
+   
+   rule TalkedToNpc(99) goto SkillLevel
+}
+state SkillLevel
+{
+   desc "Level up Rejuvenation"
+
+   action AddNPcText(99, "For now, level up your 'Rejuvenation' skill to level 1");
+
+   action addNpcInput(99, 1, "I did it!");
+
+   rule InputNpc(1) goto CheckLeveledSkill
+}
+state CheckLeveledSkill
+{
+   desc "Level Check"
+
+   if GotSpell(2, 1) SetState("Level3"); 
+   else SetState("SkillLevel");
+}
+state Level3
+{
+   desc         "Reach Level 3"
+
+   action ShowHint("You gained 2000 EXP for completing Shadows task!");
+   action GiveEXP(2000);   
+
+   action       AddNpcText(99, "Great! Each added point on rejuvenation will grant you +1 heal, however it will also cost +1 mana point to use. Now.. let's reach level 3.");
+
+   rule         IsLevel(3) goto Level3Reached 
+}
+state Level3Reached
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 3000 EXP for completing Shadows task!");
+   action GiveEXP(3000);
+
+   action       AddNpcText(99, "I've been hearing more about you lately, however, to get noticed here you need to start collecting fame..");
+
+   action addNpcInput(99, 1, "Fame? What is it?");
+
+   rule InputNpc(1) goto Fame
+}
+state Fame
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Fame defines how well know you are in the lost realm.. The more fame, the more possibilities will open");
+
+   action addNpcInput(99, 1, "How do I get famous?");
+
+   rule InputNpc(1) goto FameGain
+}
+
+state FameGain
+{
+   desc         "Get 1 Fame"
+
+   action       AddNpcText(99, "Well.. To start, Gerald could help. He always has challenging trials for brave ones! Come back to me when you get some fame..");
+
+   if HasFame(1) SetState("PlusFame");
+   else AddNpcInput(99, 1, "How do I beat the accuracy trial?");
+
+   rule InputNpc(1) goto Alchemist
+}
+state Alchemist
+{
+   desc         "Get 1 Fame"
+
+   action       AddNpcText(99, "Find Alchemist Adara, I'm sure she has something helpful..");
+
+   if HasFame(1) SetState("PlusFame");
+
+   rule TalkedToNpc(99) goto FameGain
+}
+state FameCheck
+{
+   if HasFame(1) SetState("PlusFame");
+   else SetState("FameGain");
+}
+state PlusFame
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 4000 EXP for completing Shadows task!");
+   action GiveEXP(4000);   
+
+   action       AddNpcText(99, "Well done! Now that everyone start to know you better, you should keep training.. !");
+   
+   action addNpcInput(99, 1, "Why?");
+
+   rule InputNpc(1) goto Level5
+}
+state Level5
+{
+   desc         "Reach Level 5"
+
+   action       AddNpcText(99, "There is still much to learn. You should reach level 5 first. ");
+
+   rule         IsLevel(5) goto Level5Reached 
+}
+state Level5Reached 
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 4000 EXP for completing Shadows task!");
+   action GiveEXP(4000);   
+
+   action       AddNpcText(99, "Good job! For this next one.. I will need you to do your best.");
+
+   rule         TalkedToNpc(99) goto Dungeon 
+}
+state Dungeon 
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "There is a secret place.. A library hunted by the worst demons out here! Death is guaranteed in that place.. Keep Leveling and once you feel ready, you can try, but I warn you, there is no way out of that place if you are too weak!");
+
+   rule         TalkedToNpc(99) goto DungeonAdvice 
+}
+
+state DungeonAdvice 
+{
+   desc         "Enter Dungeon - [Secret Library]"
+
+   action       AddNpcText(99, "Once you reach Level 6, you will be granted your first stat point. Keep leveling up and stacking them on the stats that you feel necessary. Old man Josh can tell you all abou the stats and how they work in different aspect focused classes");
+
+   rule EnterCoord(6,27,24) goto EnteredDungeon
+}
+state EnteredDungeon 
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 6500 EXP for completing Shadows task!");
+   action GiveEXP(6500);  
+
+   action       AddNpcText(99, "So you've been there? I can't believe it. Though.. This is not the end. I still need you to get stronger..");
+
+   rule         TalkedToNpc(99) goto DoneForNow
+}
+state DoneForNow 
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "There is some strange things going on in the Lost Realm. You're still to weak to help me, get to level 7");
+
+   rule         IsLevel(7) goto Level7Reached 
+}
+state Level7Reached 
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 10000 EXP for completing Shadows task!");
+   action GiveEXP(10000);  
+
+   action       AddNpcText(99, "Good job [name]. Now that you have reached level 7, you can help me with the next task..");
+
+   action addNpcInput(99, 1, "Tell me about it");
+
+   rule InputNpc(1) goto UnstableCave
+}
+
+state UnstableCave
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "My sources tell me.. There is a cave in Temporal Nexus. Something strange is going on with the energy levels there..");
+
+   action addNpcInput(99, 1, "What is wrong?");
+
+   rule InputNpc(1) goto UnstableCaveKills
+}
+
+state UnstableCaveKills
+{
+   desc         "Kill 25 Skeletons"
+
+   action       AddNpcText(99, "I don't know yet.. It's full of skeletons! This is where you come in though, please, clear the cave for investigation.");
+
+   rule KilledNpcs(34, 25) goto Anomaly
+}
+state Anomaly
+{
+   desc          "Talk to Shadow"
+
+   action ShowHint("You gained 10000 EXP for completing Shadows task!");
+   action GiveEXP(15000);  
+
+   action       AddNpcText(99, "...");
+
+   action addNpcInput(99, 1, "It seems that the skeletons are going through mutations..");
+
+   rule InputNpc(1) goto MoreInvestigationNeeded
+}
+state MoreInvestigationNeeded 
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I see! Well, thats not good, there must be a void breaking time and space!");
+
+   rule         TalkedToNpc(99) goto Void
+}
+state Void
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I've sent some guards to check out the location where strange energy is coming from, but they never returned.. Can you check on them?");
+
+   action addNpcInput(99, 1, "I guess I have no choice.. Do I..");
+
+   rule InputNpc(1) goto VoidAcceptLevel
+}
+state VoidAcceptLevel
+{
+     if IsLevel(12) SetState("VoidAccept");
+     else SetState("VoidTrain");
+}
+state VoidTrain
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "You are too weak to help me right now.. Reach Level 12.");
+
+   rule         TalkedToNpc(99) goto VoidAcceptLevel
+}
+state VoidAccept
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Ha! You are getting the hang of this. Well.. This time I will help you. Here, let me look for a key, it will open the doors to the strange void.");
+
+   action addNpcInput(99, 1, "And how will you help?");
+
+   rule InputNpc(1) goto VoidHelp
+}
+state VoidHelp
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Along with the key I managed to get you a scroll. It will allow you to escape the void in case something goes wrong. Report back to me immediately!");
+
+   rule         TalkedToNpc(99) goto VoidItems
+}
+state VoidItems
+{
+   desc         "Explore the void"
+
+   action ShowHint("Shadow hands you a key and escape scroll.");
+   action GiveItem(73, 1);
+   action GiveItem(79, 1);
+
+   rule EnterCoord(12,74,5) goto ExploredVoid
+}
+state ExploredVoid
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 20000 EXP for completing Shadows task!");
+   action GiveEXP(20000);  
+
+   action       AddNpcText(99, "...");
+
+   action addNpcInput(99, 1, "The void is damaged..");
+
+   rule InputNpc(1) goto VoidDamage
+}
+state VoidDamage
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I can feel the energy! The void is being consumed. We need to act fast. I can't tell where the source is yet.. Can you bring me 30 Cosmic Dust for investigation?");
+
+   action addNpcInput(99, 1, "Working on it!");
+
+   rule InputNpc(1) goto GetDust
+}
+state GetDust
+{
+   desc         "Get 30 Cosmic Dust"
+
+   action       AddNpcText(99, "Come back to me once you have it.");
+
+   rule GotItems(77, 30) goto GotDust
+}
+state GotDust
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Did you get it?");
+
+   action addNpcInput(99, 1, "Yes! Here you go");
+
+   rule InputNpc(1) goto RemoveDust
+}
+state RemoveDust
+{
+   if GotItems(77, 30) SetState("RemoveDustReward");
+   else SetState("GotDust");
+}
+state RemoveDustReward
+{
+   action ShowHint("You gained 30000 EXP for completing Shadows task!");
+   action GiveEXP(30000);  
+   action RemoveItem(77, 30);
+   action SetState("Energy");
+}
+state Energy
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Let me see what we have here..");
+
+   rule         TalkedToNpc(99) goto EnergyPortal
+}
+state EnergyPortal
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "The energy collected from the dust is leading me to Forgotten Arena. Can you find an opening to another dimension there?");
+
+   action addNpcInput(99, 1, "Will report back ASAP!");
+   rule InputNpc(1) goto PortalLoc
+   rule TalkedToNpc(99) goto PortalLoc
+}
+state PortalLoc
+{
+   desc         "Find portal in Forgotten Arena"
+
+   action StartQuest(85, "Start");
+
+   action       AddNpcText(99, "Thanks! I will be waiting for you..");
+}
+state EnergyInvestigated
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Did you find it?");
+
+   action addNpcInput(99, 1, "Yes.. Looks like a secret passage.");
+   rule InputNpc(1) goto EnergyInvestigatedPassage
+}
+state EnergyInvestigatedPassage
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "A secret passage?! We have to do something about it.. Was there anything else?");
+
+   action addNpcInput(99, 1, "I got shocked.. Twice!");
+   rule InputNpc(1) goto EnergyShock
+}
+state EnergyShock
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I see.. We can try to build a shield to absorb all that energy. I will need your help on this one. Can you bring me 200 Wood?");
+
+   action addNpcInput(99, 1, "I'll get back to you once I have it");
+   rule InputNpc(1) goto ShieldMats
+}
+state ShieldMats
+{
+   desc         "Get 200 Wood"
+
+   action       AddNpcText(99, "Alright. We will build something for this once you are back.");
+
+   rule GotItems(57, 200) goto GotShieldMats
+}
+state GotShieldMats
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "Do you have the wood I requested?");
+
+   action addNpcInput(99, 1, "Yes! All here");
+
+   rule InputNpc(1) goto RemoveShieldMats
+}
+state RemoveShieldMats
+{
+   if GotItems(57, 200) SetState("RemoveShieldMatsReward");
+   else SetState("GotShieldMats");
+}
+state RemoveShieldMatsReward
+{
+   action ShowHint("You gained 35000 EXP for completing Shadows task!");
+   action GiveEXP(35000);  
+   action RemoveItem(57, 200);
+   action SetState("CraftShield");   
+}
+state CraftShield
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "I've combined some cosmic dust with the wood you provided and managed to build you an Energy Absorber.");
+
+   rule         TalkedToNpc(99) goto ShieldInfo
+}
+state ShieldInfo
+{
+   desc         "Enter the Portal"
+
+   action ShowHint("Shadow hands you Energy Absorber");
+
+   action GiveItem(109, 1);
+
+   action       AddNpcText(99, "Wear it when you enter the secret passage, it should absorb the energy and move you forward in to.. the unknown.. Let me know what you find in there.");
+
+   rule EnterMap(16) goto EnterSecretPassage
+}
+state EnterSecretPassage
+{
+   desc         "Talk to Shadow"
+
+   action AddNpcBox("Secret Passage", "You can feel the energy slowly absorbing you.. The area looks dangerous. Return to Shadow with your findings.");   
+
+   action       AddNpcText(99, "Well, how did it go?");
+
+   action addNpcInput(99, 1, "It's full of.. Void Eaters?");
+
+   rule InputNpc(1) goto ClearSecretPassage
+}
+state ClearSecretPassage
+{
+   desc         "Talk to Shadow"
+
+   action       AddNpcText(99, "That explains why the energy is bursting out of that place.. Can you clear them so I could send someone to investigate the area?");
+
+   action addNpcInput(99, 1, "On it!");
+
+   rule InputNpc(1) goto KillVoidEaters
+}
+state KillVoidEaters
+{
+   desc         "Kill 200 Void Eaters"
+
+   action       AddNpcText(99, "We need to get rid of all those Void Eaters to progress further.. I can't send anyone there right now!");
+
+   rule KilledNpcs(52, 200) goto KilledVoidEaters
+}
+state KilledVoidEaters
+{
+   desc         "Talk to Shadow"
+
+   action ShowHint("You gained 40000 EXP for completing Shadows task!");
+   action GiveEXP(40000);     
+
+   action       AddNpcText(99, "...");
+
+   action addNpcInput(99, 1, "I cleared it!");
+
+   rule InputNpc(1) goto InvestigationContinues
+}
+state InvestigationContinues
+{
+   desc         "Talk to Shadow" 
+
+   action       AddNpcText(99, "I have sent some scientists to investigate. Unfortunately, once they tried to enter a portal a Blademaster appeard! I need your immediate help clear it out");
+
+   action addNpcInput(99, 1, "On it!");
+
+   rule InputNpc(1) goto KillGuards
+}
+state KillGuards
+{
+   desc         "Kill 3 Shadow Blademasters" 
+
+   action       AddNpcText(99, "The Shadow Blademasters seem to be hidden. However, if you kill enough Void Eaters, they will come to you. Be careful!");
+
+   rule KilledNpcs(53, 3) goto KilledGuards
+}
+state KilledGuards
+{
+   desc         "Talk to Shadow" 
+
+   action ShowHint("You gained 70000 EXP for completing Shadows task!");
+   action GiveEXP(70000);      
+
+   action       AddNpcText(99, "Great job! We managed to secure the portal. Orelius is already waiting for you to travel. Go speak to him.");
+   action StartQuest(94, "Intro");
+   action SetQuestState(94, "Intro");
+
+   rule         TalkedToNpc(99) goto NextTask
+}
+
+state NextTask
+
+{
+   desc         "To be continued.." 
+
+   action       AddNpcText(99, "Nothing to do now.. I'll talk to you soon!");
+
+   rule         TalkedToNpc(99) goto NextTask
+}

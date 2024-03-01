@@ -1,0 +1,28 @@
+main
+{
+        questname   "Gear Recycling"
+        version  1.0
+}
+
+state begin
+{
+        desc        "Start Recycler"
+        
+        action     AddNpcText(90, "[HINT] Drag items into chest to recycle. [Accepted Items] All unpacked items from: [Level. X] Item Sets");
+
+        action     addNpcInput(90, 1, "Start Recycling");
+        action     addNpcInput(90, 2, "Leave");
+
+        rule       InputNpc(1) goto Recycle
+        rule       InputNpc(2) goto Exit
+}
+state Recycle
+{ 
+        action     Recycle();
+        action     Reset();
+
+}
+state Exit
+{   
+        action     Reset();
+}
